@@ -9,13 +9,19 @@ import vocabulary from '@/data/vocabulary.json'
 import type { VocabItem } from '@/types'
 
 const CATEGORIES = [
-  { id: 'all',     label: 'All',     icon: '✨', color: '#f97316' },
-  { id: 'objects', label: 'Things',  icon: '🧸', color: '#3b82f6' },
-  { id: 'animals', label: 'Animals', icon: '🐾', color: '#22c55e' },
-  { id: 'food',    label: 'Food',    icon: '🍎', color: '#ef4444' },
-  { id: 'colors',  label: 'Colors',  icon: '🎨', color: '#a855f7' },
-  { id: 'body',    label: 'Body',    icon: '👁️', color: '#06b6d4' },
-  { id: 'numbers', label: 'Numbers', icon: '🔢', color: '#f59e0b' },
+  { id: 'all',       label: 'All',       icon: '✨', color: '#f97316' },
+  { id: 'objects',   label: 'Things',    icon: '🧸', color: '#3b82f6' },
+  { id: 'animals',   label: 'Animals',   icon: '🐾', color: '#22c55e' },
+  { id: 'food',      label: 'Food',      icon: '🍎', color: '#ef4444' },
+  { id: 'nature',    label: 'Nature',    icon: '🌿', color: '#16a34a' },
+  { id: 'transport', label: 'Transport', icon: '🚌', color: '#f97316' },
+  { id: 'clothes',   label: 'Clothes',   icon: '👕', color: '#6366f1' },
+  { id: 'family',    label: 'Family',    icon: '👨‍👩‍👧', color: '#ec4899' },
+  { id: 'feelings',  label: 'Feelings',  icon: '😊', color: '#eab308' },
+  { id: 'places',    label: 'Places',    icon: '🏫', color: '#0891b2' },
+  { id: 'colors',    label: 'Colors',    icon: '🎨', color: '#a855f7' },
+  { id: 'body',      label: 'Body',      icon: '👁️', color: '#06b6d4' },
+  { id: 'numbers',   label: 'Numbers',   icon: '🔢', color: '#f59e0b' },
 ]
 
 export default function LearnPage() {

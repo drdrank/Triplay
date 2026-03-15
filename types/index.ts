@@ -2,7 +2,7 @@ export type Language = 'de' | 'nl' | 'tr'
 
 export interface VocabItem {
   id: string
-  category: 'objects' | 'animals' | 'food' | 'colors' | 'body' | 'numbers'
+  category: 'objects' | 'animals' | 'food' | 'colors' | 'body' | 'numbers' | 'nature' | 'clothes' | 'family' | 'feelings' | 'transport' | 'places'
   emoji: string
   color: string
   de: string

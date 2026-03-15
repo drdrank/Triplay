@@ -8,7 +8,7 @@ import { useProgress } from '@/hooks/useProgress'
 import { speakWord } from '@/lib/speech'
 import vocabulary from '@/data/vocabulary.json'
 import type { VocabItem, Language, StickerItem } from '@/types'
-import { LANG_FLAGS, LANG_LABELS } from '@/types'
+import { LANG_FLAGS, LANG_LABELS, LANG_COLORS } from '@/types'
 
 type GameState = 'playing' | 'correct' | 'wrong' | 'sticker'
 
@@ -173,9 +173,23 @@ export default function GamePage() {
               }}
             >
               <span className="text-6xl leading-none">{item.emoji}</span>
-              <span className="text-base font-extrabold text-gray-700">
-                {item[lang]}
-              </span>
+              {/* All 3 languages */}
+              <div className="flex flex-col items-center gap-0.5 w-full px-1">
+                {langs.map((l) => (
+                  <span
+                    key={l}
+                    className="text-xs font-bold rounded-full px-2 py-0.5 w-full text-center truncate"
+                    style={{
+                      background: l === lang ? LANG_COLORS[l] + '20' : 'transparent',
+                      color: l === lang ? LANG_COLORS[l] : '#6B7280',
+                      fontWeight: l === lang ? 800 : 600,
+                      fontSize: l === lang ? '15px' : '11px',
+                    }}
+                  >
+                    {LANG_FLAGS[l]} {item[l]}
+                  </span>
+                ))}
+              </div>
               {isCorrect && <span className="text-2xl animate-bounce-in">✅</span>}
               {isWrong   && <span className="text-2xl animate-bounce-in">❌</span>}
             </button>
