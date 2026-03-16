@@ -30,10 +30,21 @@ const LANG_FG: Record<Language, string> = {
 export default function CardModal({ item, languages, audioSpeed, onClose }: Props) {
   const [speaking, setSpeaking] = useState(false)
   const [activeLang, setActiveLang] = useState<Language | null>(null)
-  // Use a ref so the guard is always current — avoids stale closure bug
   const speakingRef = useRef(false)
 
   const rate = audioSpeed === 'slow' ? 0.6 : 1
+
+  const stopAll = useCallback(() => {
+    speakingRef.current = false
+    setSpeaking(false)
+    setActiveLang(null)
+    window.speechSynthesis?.cancel()
+  }, [])
+
+  // Cancel on close
+  useEffect(() => {
+    return () => { stopAll() }
+  }, [stopAll])
 
   const playAll = useCallback(async () => {
     if (speakingRef.current) return
@@ -42,7 +53,7 @@ export default function CardModal({ item, languages, audioSpeed, onClose }: Prop
     setActiveLang(null)
 
     for (const lang of languages) {
-      if (!speakingRef.current) break // stopped externally (e.g. modal closed)
+      if (!speakingRef.current) break
       setActiveLang(lang)
       await speakWord(item[lang], lang, rate)
       await new Promise<void>((r) => setTimeout(r, 350))
@@ -53,32 +64,25 @@ export default function CardModal({ item, languages, audioSpeed, onClose }: Prop
     setActiveLang(null)
   }, [item, languages, rate])
 
-  // Auto-play on open; cancel + reset on close
-  useEffect(() => {
-    const t = setTimeout(playAll, 300)
-    return () => {
-      clearTimeout(t)
-      speakingRef.current = false
-      window.speechSynthesis?.cancel()
-    }
-  }, [playAll])
+  // Tap a single language row — stays synchronous to keep iOS gesture chain intact
+  function handleSingleLang(lang: Language) {
+    // Stop anything in progress
+    speakingRef.current = false
+    window.speechSynthesis?.cancel()
 
-  async function handleSingleLang(lang: Language) {
-    if (speakingRef.current) {
-      // Stop current playback first
-      speakingRef.current = false
-      window.speechSynthesis?.cancel()
-      setSpeaking(false)
-      setActiveLang(null)
-      await new Promise<void>((r) => setTimeout(r, 80))
-    }
+    // Start new utterance (speakWord calls ss.speak() synchronously)
     speakingRef.current = true
     setSpeaking(true)
     setActiveLang(lang)
-    await speakWord(item[lang], lang, rate)
-    speakingRef.current = false
-    setSpeaking(false)
-    setActiveLang(null)
+
+    speakWord(item[lang], lang, rate).then(() => {
+      // Only reset if this utterance is still the active one
+      if (speakingRef.current) {
+        speakingRef.current = false
+        setSpeaking(false)
+        setActiveLang(null)
+      }
+    })
   }
 
   return (
@@ -133,9 +137,8 @@ export default function CardModal({ item, languages, audioSpeed, onClose }: Prop
         {/* Controls */}
         <div className="flex gap-2.5">
           <button
-            onClick={playAll}
-            disabled={speaking}
-            className="flex flex-1 items-center justify-center gap-2 rounded-2xl py-3.5 text-white font-bold text-base transition-all active:scale-95 disabled:opacity-50"
+            onClick={speaking ? stopAll : playAll}
+            className="flex flex-1 items-center justify-center gap-2 rounded-2xl py-3.5 text-white font-bold text-base transition-all active:scale-95"
             style={{
               background: speaking
                 ? '#a1a1aa'
@@ -144,9 +147,11 @@ export default function CardModal({ item, languages, audioSpeed, onClose }: Prop
             }}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M5 3l14 9-14 9V3z"/>
+              {speaking
+                ? <path d="M6 4h4v16H6zm8 0h4v16h-4z"/>
+                : <path d="M5 3l14 9-14 9V3z"/>}
             </svg>
-            {speaking ? 'Playing…' : 'Play All'}
+            {speaking ? 'Stop' : 'Play All'}
           </button>
           <button
             onClick={onClose}

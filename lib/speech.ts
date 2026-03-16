@@ -8,7 +8,6 @@ const LANG_CODES: Record<Language, string[]> = {
 
 let voiceCache: SpeechSynthesisVoice[] | null = null
 
-// Call once early (e.g. on app mount) so voices are ready for the first tap
 export function preloadVoices(): void {
   if (typeof window === 'undefined' || !window.speechSynthesis) return
   const voices = window.speechSynthesis.getVoices()
@@ -36,27 +35,30 @@ function findVoice(
 }
 
 /**
- * Speak a word. Calls speechSynthesis.speak() synchronously so it works
- * within an iOS user-gesture handler. Voices are used from cache if available;
- * on first call they're loaded for subsequent taps.
+ * Speak a word synchronously (no awaits before speak() — keeps iOS gesture chain intact).
+ * Resolves when done, or after a 3s safety timeout.
  */
 export function speakWord(text: string, lang: Language, rate = 1): Promise<void> {
   if (typeof window === 'undefined' || !window.speechSynthesis) return Promise.resolve()
 
   const ss = window.speechSynthesis
-  ss.cancel()
+
+  // iOS: resume if the synth got paused (e.g. after lock screen)
+  if (ss.paused) ss.resume()
+
+  // Cancel anything playing
+  if (ss.speaking || ss.pending) ss.cancel()
 
   const utterance = new SpeechSynthesisUtterance(text)
   utterance.lang = LANG_CODES[lang][0]
   utterance.rate = rate
 
-  // Assign voice synchronously from cache (avoids breaking iOS gesture chain)
+  // Use cached voice synchronously (keeps iOS gesture chain intact)
   if (voiceCache && voiceCache.length > 0) {
     const voice = findVoice(voiceCache, lang)
     if (voice) utterance.voice = voice
   } else {
-    // Kick off loading for next time (fire-and-forget)
-    preloadVoices()
+    preloadVoices() // populate cache for next call
   }
 
   return new Promise<void>((resolve) => {
@@ -67,9 +69,8 @@ export function speakWord(text: string, lang: Language, rate = 1): Promise<void>
       resolve()
     }
 
-    // iOS sometimes never fires onend — resolve after a generous timeout
-    const fallback = setTimeout(finish, 7000)
-
+    // 3s safety — if iOS never fires onend/onerror, don't hang forever
+    const fallback = setTimeout(finish, 3000)
     utterance.onend = () => { clearTimeout(fallback); finish() }
     utterance.onerror = () => { clearTimeout(fallback); finish() }
 
