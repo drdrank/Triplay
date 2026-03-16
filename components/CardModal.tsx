@@ -1,8 +1,8 @@
 'use client'
 
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, useRef } from 'react'
 import { VocabItem, Language, LANG_FLAGS, LANG_LABELS } from '@/types'
-import { speakSequence, speakWord } from '@/lib/speech'
+import { speakWord } from '@/lib/speech'
 
 interface Props {
   item: VocabItem
@@ -30,37 +30,55 @@ const LANG_FG: Record<Language, string> = {
 export default function CardModal({ item, languages, audioSpeed, onClose }: Props) {
   const [speaking, setSpeaking] = useState(false)
   const [activeLang, setActiveLang] = useState<Language | null>(null)
+  // Use a ref so the guard is always current — avoids stale closure bug
+  const speakingRef = useRef(false)
 
   const rate = audioSpeed === 'slow' ? 0.6 : 1
 
   const playAll = useCallback(async () => {
-    if (speaking) return
+    if (speakingRef.current) return
+    speakingRef.current = true
     setSpeaking(true)
+    setActiveLang(null)
+
     for (const lang of languages) {
+      if (!speakingRef.current) break // stopped externally (e.g. modal closed)
       setActiveLang(lang)
       await speakWord(item[lang], lang, rate)
-      await new Promise((r) => setTimeout(r, 380))
+      await new Promise<void>((r) => setTimeout(r, 350))
     }
-    setActiveLang(null)
-    setSpeaking(false)
-  }, [item, languages, rate, speaking])
 
+    speakingRef.current = false
+    setSpeaking(false)
+    setActiveLang(null)
+  }, [item, languages, rate])
+
+  // Auto-play on open; cancel + reset on close
   useEffect(() => {
     const t = setTimeout(playAll, 300)
     return () => {
       clearTimeout(t)
+      speakingRef.current = false
       window.speechSynthesis?.cancel()
     }
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [playAll])
 
-  function handleSingleLang(lang: Language) {
-    if (speaking) return
+  async function handleSingleLang(lang: Language) {
+    if (speakingRef.current) {
+      // Stop current playback first
+      speakingRef.current = false
+      window.speechSynthesis?.cancel()
+      setSpeaking(false)
+      setActiveLang(null)
+      await new Promise<void>((r) => setTimeout(r, 80))
+    }
+    speakingRef.current = true
     setSpeaking(true)
     setActiveLang(lang)
-    speakWord(item[lang], lang, rate).then(() => {
-      setActiveLang(null)
-      setSpeaking(false)
-    })
+    await speakWord(item[lang], lang, rate)
+    speakingRef.current = false
+    setSpeaking(false)
+    setActiveLang(null)
   }
 
   return (
@@ -132,8 +150,8 @@ export default function CardModal({ item, languages, audioSpeed, onClose }: Prop
           </button>
           <button
             onClick={onClose}
-            className="rounded-2xl px-4 py-3.5 text-surface-500 font-bold transition-all active:scale-95"
-            style={{ background: '#f4f4f5' }}
+            className="rounded-2xl px-4 py-3.5 font-bold transition-all active:scale-95"
+            style={{ background: '#f4f4f5', color: '#71717a' }}
             aria-label="Close"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -143,7 +161,7 @@ export default function CardModal({ item, languages, audioSpeed, onClose }: Prop
         </div>
 
         {audioSpeed === 'slow' && (
-          <p className="mt-3 text-center text-xs text-surface-400 font-medium">Slow mode on 🐌</p>
+          <p className="mt-3 text-center text-xs font-medium" style={{ color: '#a1a1aa' }}>Slow mode on 🐌</p>
         )}
       </div>
     </div>
