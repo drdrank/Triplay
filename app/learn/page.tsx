@@ -19,6 +19,8 @@ const CATEGORIES = [
   { id: 'family',    label: 'Family',    icon: '👨‍👩‍👧', color: '#ec4899' },
   { id: 'feelings',  label: 'Feelings',  icon: '😊', color: '#eab308' },
   { id: 'places',    label: 'Places',    icon: '🏫', color: '#0891b2' },
+  { id: 'school',    label: 'School',    icon: '🎒', color: '#f97316' },
+  { id: 'sports',    label: 'Sports',    icon: '⚽', color: '#22c55e' },
   { id: 'colors',    label: 'Colors',    icon: '🎨', color: '#a855f7' },
   { id: 'body',      label: 'Body',      icon: '👁️', color: '#06b6d4' },
   { id: 'numbers',   label: 'Numbers',   icon: '🔢', color: '#f59e0b' },
