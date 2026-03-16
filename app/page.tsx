@@ -2,7 +2,18 @@
 
 import Link from 'next/link'
 import { useProgress } from '@/hooks/useProgress'
+import { useStreak } from '@/hooks/useStreak'
+import { useSettings } from '@/hooks/useSettings'
 import stickers from '@/data/stickers.json'
+import vocabulary from '@/data/vocabulary.json'
+import type { VocabItem } from '@/types'
+import { LANG_FLAGS } from '@/types'
+
+// Deterministic "word of the day" — same word all day, rotates daily
+function getWordOfDay(items: VocabItem[]): VocabItem {
+  const epoch = Math.floor(Date.now() / 86_400_000) // days since unix epoch
+  return items[epoch % items.length]
+}
 
 const MAIN_BUTTONS = [
   {
@@ -17,9 +28,17 @@ const MAIN_BUTTONS = [
     href: '/game',
     icon: '🎮',
     label: 'Play',
-    sub: 'Spielen · Spelen · Oynamak',
+    sub: 'Find the right word',
     gradient: 'linear-gradient(135deg, #f59e0b 0%, #f97316 100%)',
     glow: 'rgba(245,158,11,0.30)',
+  },
+  {
+    href: '/listen',
+    icon: '🎧',
+    label: 'Listen & Find',
+    sub: 'Hear it · tap the emoji',
+    gradient: 'linear-gradient(135deg, #0369a1 0%, #0ea5e9 100%)',
+    glow: 'rgba(14,165,233,0.30)',
   },
   {
     href: '/memory',
@@ -34,8 +53,8 @@ const MAIN_BUTTONS = [
     icon: '⭐',
     label: 'Stickers',
     sub: 'Sticker · Stickers · Çıkartmalar',
-    gradient: 'linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)',
-    glow: 'rgba(6,182,212,0.30)',
+    gradient: 'linear-gradient(135deg, #d97706 0%, #f59e0b 100%)',
+    glow: 'rgba(217,119,6,0.30)',
   },
 ]
 
@@ -47,7 +66,12 @@ const QUICK_LINKS = [
 
 export default function Home() {
   const { progress } = useProgress()
+  const { streak } = useStreak()
+  const { settings } = useSettings()
+
   const unlockedCount = progress.unlockedStickers.length
+  const wordOfDay = getWordOfDay(vocabulary as VocabItem[])
+  const displayLangs = settings.languages.length > 0 ? settings.languages : (['de', 'nl', 'tr'] as const)
 
   return (
     <div className="flex flex-col min-h-dvh bg-white">
@@ -57,14 +81,12 @@ export default function Home() {
         className="relative overflow-hidden"
         style={{ background: 'linear-gradient(145deg, #1e1b4b 0%, #3730a3 40%, #6366f1 100%)' }}
       >
-        {/* Decorative circles */}
         <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full opacity-10"
           style={{ background: 'radial-gradient(circle, #a5b4fc, transparent)' }} />
         <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full opacity-15"
           style={{ background: 'radial-gradient(circle, #818cf8, transparent)' }} />
 
         <div className="relative flex flex-col items-center pt-14 pb-12 px-6">
-          {/* Globe */}
           <div className="text-7xl mb-3 animate-bounce-in drop-shadow-xl">🌍</div>
 
           <h1 className="text-5xl font-black text-white tracking-tight leading-none mb-1">
@@ -74,9 +96,8 @@ export default function Home() {
             Learn 3 languages through play
           </p>
 
-          {/* Flags */}
           <div className="flex gap-3 text-4xl mb-2">
-            {['🇩🇪', '🇳🇱', '🇹🇷'].map((flag, i) => (
+            {(['🇩🇪', '🇳🇱', '🇹🇷'] as const).map((flag, i) => (
               <span
                 key={i}
                 className="animate-bounce-in drop-shadow-lg"
@@ -90,21 +111,113 @@ export default function Home() {
 
         {/* Stats pill */}
         <div
-          className="absolute -bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-4 rounded-full px-6 py-2.5 shadow-card-lg whitespace-nowrap"
+          className="absolute -bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-3 rounded-full px-5 py-2.5 shadow-card-lg whitespace-nowrap"
           style={{ background: 'white', border: '1px solid rgba(0,0,0,0.06)' }}
         >
+          {streak > 0 && (
+            <>
+              <span className="text-sm font-black" style={{ color: streak >= 7 ? '#d97706' : '#f97316' }}>
+                🔥 {streak}d
+              </span>
+              <div className="w-px h-4 bg-surface-200" />
+            </>
+          )}
           <span className="text-sm font-bold text-surface-500">
             ⭐ {unlockedCount}/{stickers.length}
           </span>
           <div className="w-px h-4 bg-surface-200" />
           <span className="text-sm font-bold text-surface-500">
-            🏆 {progress.totalCorrect} correct
+            🏆 {progress.totalCorrect}
           </span>
         </div>
       </div>
 
+      {/* ── Word of the Day ────────────────────────────────────────── */}
+      <div className="px-4 pt-12 pb-0">
+        <div
+          className="rounded-3xl overflow-hidden animate-fade-up"
+          style={{
+            background: 'white',
+            border: '1.5px solid #e4e4e7',
+            boxShadow: '0 2px 12px rgba(0,0,0,0.05)',
+          }}
+        >
+          {/* Header strip */}
+          <div
+            className="px-4 py-2 flex items-center gap-2"
+            style={{ background: `${wordOfDay.color}12`, borderBottom: `1.5px solid ${wordOfDay.color}20` }}
+          >
+            <span className="text-xs font-black uppercase tracking-widest" style={{ color: wordOfDay.color }}>
+              ✦ Word of the Day
+            </span>
+          </div>
+
+          <div className="flex items-center gap-4 p-4">
+            {/* Emoji */}
+            <div
+              className="flex items-center justify-center rounded-2xl flex-shrink-0"
+              style={{
+                width: 64,
+                height: 64,
+                background: `${wordOfDay.color}14`,
+                fontSize: 40,
+              }}
+            >
+              {wordOfDay.emoji}
+            </div>
+
+            {/* Words */}
+            <div className="flex-1 min-w-0">
+              <div className="flex flex-wrap gap-x-3 gap-y-0.5">
+                {displayLangs.map(lang => (
+                  <div key={lang} className="flex items-center gap-1.5">
+                    <span className="text-sm">{LANG_FLAGS[lang]}</span>
+                    <span className="text-base font-black text-surface-800">
+                      {wordOfDay[lang]}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-surface-400 font-medium mt-1 capitalize">
+                {wordOfDay.category}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Streak banner (only if streak > 0) ─────────────────────── */}
+      {streak > 0 && (
+        <div className="px-4 pt-3">
+          <div
+            className="rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{
+              background: streak >= 7
+                ? 'linear-gradient(135deg, #92400e, #d97706)'
+                : 'linear-gradient(135deg, #ea580c, #f97316)',
+              boxShadow: streak >= 7
+                ? '0 4px 16px rgba(217,119,6,0.3)'
+                : '0 4px 16px rgba(249,115,22,0.25)',
+            }}
+          >
+            <span className="text-2xl">{streak >= 7 ? '🔥' : '⚡'}</span>
+            <div className="flex-1">
+              <div className="text-white font-black text-sm">
+                {streak} day streak!
+                {streak >= 7 && ' You&apos;re on fire!'}
+                {streak >= 30 && ' Incredible!!'}
+              </div>
+              <div className="text-white/65 text-xs font-medium">
+                Come back tomorrow to keep it going
+              </div>
+            </div>
+            <div className="text-white/40 text-xl font-black">{streak}🔥</div>
+          </div>
+        </div>
+      )}
+
       {/* ── Main buttons ───────────────────────────────────────────── */}
-      <div className="flex flex-col gap-3 px-4 pt-12 pb-4">
+      <div className="flex flex-col gap-3 px-4 pt-4 pb-4">
         {MAIN_BUTTONS.map(({ href, icon, label, sub, gradient, glow }, i) => (
           <Link
             key={href}
@@ -113,12 +226,12 @@ export default function Home() {
             style={{
               background: gradient,
               boxShadow: `0 6px 20px ${glow}`,
-              animationDelay: `${i * 0.06}s`,
+              animationDelay: `${i * 0.05}s`,
             }}
           >
             <div
               className="flex items-center justify-center rounded-2xl text-4xl flex-shrink-0"
-              style={{ width: 56, height: 56, background: 'rgba(255,255,255,0.15)' }}
+              style={{ width: 52, height: 52, background: 'rgba(255,255,255,0.15)' }}
             >
               {icon}
             </div>
