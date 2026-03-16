@@ -2,8 +2,6 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect } from 'react'
-import { preloadVoices } from '@/lib/speech'
 
 const NAV = [
   { href: '/',         label: 'Home',   icon: (a: boolean) => (
@@ -44,8 +42,6 @@ const NAV = [
 
 export default function NavBar() {
   const pathname = usePathname()
-
-  useEffect(() => { preloadVoices() }, [])
 
   return (
     <nav

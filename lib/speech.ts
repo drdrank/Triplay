@@ -1,5 +1,6 @@
 import type { Language } from '@/types'
 
+// Preferred BCP-47 tags per language (first match wins)
 const LANG_CODES: Record<Language, string[]> = {
   de: ['de-DE', 'de-AT', 'de-CH', 'de'],
   nl: ['nl-NL', 'nl-BE', 'nl'],
@@ -8,16 +9,19 @@ const LANG_CODES: Record<Language, string[]> = {
 
 let voiceCache: SpeechSynthesisVoice[] | null = null
 
-export function preloadVoices(): void {
-  if (typeof window === 'undefined' || !window.speechSynthesis) return
-  const voices = window.speechSynthesis.getVoices()
-  if (voices.length > 0) {
-    voiceCache = voices
-  } else {
+function getVoices(): Promise<SpeechSynthesisVoice[]> {
+  return new Promise((resolve) => {
+    if (voiceCache) return resolve(voiceCache)
+    const voices = window.speechSynthesis.getVoices()
+    if (voices.length > 0) {
+      voiceCache = voices
+      return resolve(voices)
+    }
     window.speechSynthesis.onvoiceschanged = () => {
       voiceCache = window.speechSynthesis.getVoices()
+      resolve(voiceCache)
     }
-  }
+  })
 }
 
 function findVoice(
@@ -34,47 +38,26 @@ function findVoice(
   return undefined
 }
 
-/**
- * Speak a word synchronously (no awaits before speak() — keeps iOS gesture chain intact).
- * Resolves when done, or after a 3s safety timeout.
- */
-export function speakWord(text: string, lang: Language, rate = 1): Promise<void> {
-  if (typeof window === 'undefined' || !window.speechSynthesis) return Promise.resolve()
+export async function speakWord(
+  text: string,
+  lang: Language,
+  rate = 1
+): Promise<void> {
+  if (typeof window === 'undefined' || !window.speechSynthesis) return
 
-  const ss = window.speechSynthesis
+  const voices = await getVoices()
+  const voice = findVoice(voices, lang)
 
-  // iOS: resume if the synth got paused (e.g. after lock screen)
-  if (ss.paused) ss.resume()
+  window.speechSynthesis.cancel()
 
-  // Cancel anything playing
-  if (ss.speaking || ss.pending) ss.cancel()
-
-  const utterance = new SpeechSynthesisUtterance(text)
-  utterance.lang = LANG_CODES[lang][0]
-  utterance.rate = rate
-
-  // Use cached voice synchronously (keeps iOS gesture chain intact)
-  if (voiceCache && voiceCache.length > 0) {
-    const voice = findVoice(voiceCache, lang)
+  return new Promise((resolve) => {
+    const utterance = new SpeechSynthesisUtterance(text)
+    utterance.lang = LANG_CODES[lang][0]
+    utterance.rate = rate
     if (voice) utterance.voice = voice
-  } else {
-    preloadVoices() // populate cache for next call
-  }
-
-  return new Promise<void>((resolve) => {
-    let settled = false
-    const finish = () => {
-      if (settled) return
-      settled = true
-      resolve()
-    }
-
-    // 3s safety — if iOS never fires onend/onerror, don't hang forever
-    const fallback = setTimeout(finish, 3000)
-    utterance.onend = () => { clearTimeout(fallback); finish() }
-    utterance.onerror = () => { clearTimeout(fallback); finish() }
-
-    ss.speak(utterance)
+    utterance.onend = () => resolve()
+    utterance.onerror = () => resolve()
+    window.speechSynthesis.speak(utterance)
   })
 }
 
