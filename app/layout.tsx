@@ -18,7 +18,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
-  themeColor: '#7C3AED',
+  themeColor: '#6366f1',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -29,7 +29,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="apple-mobile-web-app-capable" content="yes" />
       </head>
       <body className="app-bg">
-        {/* Desktop: shows a phone frame. Mobile: fills screen. */}
         <div className="app-frame">
           <PWARegister />
           {children}

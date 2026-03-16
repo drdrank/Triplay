@@ -9,12 +9,23 @@ interface Props {
   onTap: (item: VocabItem) => void
 }
 
+const LANG_BG: Record<Language, string> = {
+  de: '#f0fdf4',
+  nl: '#eff6ff',
+  tr: '#fef2f2',
+}
+const LANG_FG: Record<Language, string> = {
+  de: '#15803d',
+  nl: '#1d4ed8',
+  tr: '#b91c1c',
+}
+
 export default function VocabCard({ item, languages, onTap }: Props) {
-  const [popped, setPopped] = useState(false)
+  const [pressed, setPressed] = useState(false)
 
   function handleTap() {
-    setPopped(true)
-    setTimeout(() => setPopped(false), 280)
+    setPressed(true)
+    setTimeout(() => setPressed(false), 200)
     onTap(item)
   }
 
@@ -23,47 +34,43 @@ export default function VocabCard({ item, languages, onTap }: Props) {
   return (
     <button
       onClick={handleTap}
-      className="flex flex-col items-center justify-center rounded-3xl bg-white py-5 px-3 shadow-md transition-all card-press w-full"
+      className="flex flex-col items-center rounded-3xl bg-white w-full overflow-hidden transition-all duration-150"
       style={{
-        boxShadow: `0 4px 16px ${item.color}22`,
+        boxShadow: pressed
+          ? `0 2px 8px ${item.color}20`
+          : `0 2px 12px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04)`,
+        transform: pressed ? 'scale(0.96)' : 'scale(1)',
         borderTop: `3px solid ${item.color}`,
-        transform: popped ? 'scale(1.06)' : 'scale(1)',
       }}
     >
-      {/* Emoji circle */}
+      {/* Emoji area */}
       <div
-        className="flex items-center justify-center rounded-2xl mb-3"
-        style={{
-          width: 72,
-          height: 72,
-          background: `${item.color}15`,
-        }}
+        className="flex items-center justify-center w-full py-5"
+        style={{ background: `${item.color}10` }}
       >
-        <span style={{ fontSize: 42, lineHeight: 1 }}>{item.emoji}</span>
+        <span style={{ fontSize: 44, lineHeight: 1 }}>{item.emoji}</span>
       </div>
 
-      {/* Word */}
-      <span className="text-base font-extrabold text-gray-800 leading-tight text-center">
-        {item[primaryLang]}
-      </span>
+      {/* Words */}
+      <div className="w-full px-3 py-3 flex flex-col gap-1.5">
+        <span className="text-base font-extrabold text-surface-800 leading-tight text-center">
+          {item[primaryLang]}
+        </span>
 
-      {/* Secondary languages */}
-      {languages.length > 1 && (
-        <div className="flex gap-1 mt-1.5 flex-wrap justify-center">
-          {languages.slice(1).map((lang) => (
-            <span
-              key={lang}
-              className="text-[11px] font-semibold rounded-full px-2 py-0.5"
-              style={{
-                background: lang === 'de' ? '#dcfce7' : lang === 'nl' ? '#dbeafe' : '#fee2e2',
-                color:      lang === 'de' ? '#16a34a' : lang === 'nl' ? '#1d4ed8' : '#dc2626',
-              }}
-            >
-              {item[lang]}
-            </span>
-          ))}
-        </div>
-      )}
+        {languages.length > 1 && (
+          <div className="flex flex-wrap gap-1 justify-center">
+            {languages.slice(1).map((lang) => (
+              <span
+                key={lang}
+                className="text-[11px] font-bold rounded-lg px-1.5 py-0.5"
+                style={{ background: LANG_BG[lang], color: LANG_FG[lang] }}
+              >
+                {item[lang]}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
     </button>
   )
 }

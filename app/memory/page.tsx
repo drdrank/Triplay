@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import Confetti from '@/components/Confetti'
 import { useSettings } from '@/hooks/useSettings'
@@ -11,7 +11,7 @@ import type { VocabItem, Language } from '@/types'
 import { LANG_FLAGS } from '@/types'
 
 interface Card {
-  uid: string       // unique per card instance
+  uid: string
   item: VocabItem
   type: 'image' | 'word'
   flipped: boolean
@@ -27,7 +27,7 @@ function shuffle<T>(arr: T[]): T[] {
   return a
 }
 
-function buildDeck(items: VocabItem[], lang: Language): Card[] {
+function buildDeck(items: VocabItem[]): Card[] {
   const cards: Card[] = []
   items.forEach((item) => {
     cards.push({ uid: item.id + '-img',  item, type: 'image', flipped: false, matched: false })
@@ -36,10 +36,10 @@ function buildDeck(items: VocabItem[], lang: Language): Card[] {
   return shuffle(cards)
 }
 
-const GRID_SIZES = [
-  { pairs: 4,  label: 'Easy',   cols: 4 },
-  { pairs: 6,  label: 'Medium', cols: 4 },
-  { pairs: 8,  label: 'Hard',   cols: 4 },
+const DIFFICULTIES = [
+  { pairs: 4, label: 'Easy',   sub: '4 pairs',  gradient: 'linear-gradient(135deg, #16a34a, #22c55e)', glow: 'rgba(34,197,94,0.3)' },
+  { pairs: 6, label: 'Medium', sub: '6 pairs',  gradient: 'linear-gradient(135deg, #d97706, #f59e0b)', glow: 'rgba(245,158,11,0.3)' },
+  { pairs: 8, label: 'Hard',   sub: '8 pairs',  gradient: 'linear-gradient(135deg, #dc2626, #ef4444)', glow: 'rgba(239,68,68,0.3)' },
 ]
 
 export default function MemoryPage() {
@@ -59,7 +59,7 @@ export default function MemoryPage() {
 
   function startGame(pairs: number) {
     const items = shuffle(vocabulary as VocabItem[]).slice(0, pairs)
-    setDeck(buildDeck(items, lang))
+    setDeck(buildDeck(items))
     setSelected([])
     setLocked(false)
     setMoves(0)
@@ -67,35 +67,24 @@ export default function MemoryPage() {
     setDifficulty(pairs)
   }
 
-  // Speak word when a word-card is flipped
-  function speakCard(card: Card) {
-    if (card.type === 'word') {
-      speakWord(card.item[lang], lang, rate)
-    }
-  }
-
   function handleFlip(uid: string) {
     if (locked) return
     if (selected.includes(uid)) return
-
     const card = deck.find(c => c.uid === uid)
     if (!card || card.matched || card.flipped) return
 
-    // Flip it
     const newDeck = deck.map(c => c.uid === uid ? { ...c, flipped: true } : c)
     setDeck(newDeck)
-    speakCard(card)
+    if (card.type === 'word') speakWord(card.item[lang], lang, rate)
 
     const newSelected = [...selected, uid]
 
     if (newSelected.length === 2) {
       setLocked(true)
       setMoves(m => m + 1)
-
       const [a, b] = newSelected.map(id => newDeck.find(c => c.uid === id)!)
 
       if (a.item.id === b.item.id) {
-        // Match!
         const matched = newDeck.map(c =>
           c.uid === a.uid || c.uid === b.uid ? { ...c, matched: true } : c
         )
@@ -103,24 +92,21 @@ export default function MemoryPage() {
         setSelected([])
         setLocked(false)
         addCorrect()
-
         if (matched.every(c => c.matched)) {
           setShowConfetti(true)
           setTimeout(() => setShowConfetti(false), 100)
           setWon(true)
         }
       } else {
-        // No match — flip back after delay
         setTimeout(() => {
           setDeck(d => d.map(c =>
             c.uid === a.uid || c.uid === b.uid ? { ...c, flipped: false } : c
           ))
           setSelected([])
           setLocked(false)
-        }, 1000)
+        }, 900)
       }
-      if (newSelected.length < 2) setSelected(newSelected)
-      else setSelected([])
+      setSelected([])
     } else {
       setSelected(newSelected)
     }
@@ -129,118 +115,140 @@ export default function MemoryPage() {
   const pairs = difficulty ?? 4
   const matched = deck.filter(c => c.matched).length / 2
 
-  // ── Difficulty picker ──────────────────────────────────────────
+  // Difficulty picker
   if (difficulty === null) {
     return (
-      <div className="flex flex-col min-h-dvh" style={{ background: '#f8f7ff' }}>
-        <div className="px-5 pt-12 pb-6"
-          style={{ background: 'linear-gradient(160deg,#0891b2,#06b6d4)' }}>
+      <div className="flex flex-col min-h-dvh bg-white">
+        <div
+          className="px-5 pt-12 pb-6"
+          style={{ background: 'linear-gradient(145deg, #0c4a6e 0%, #0369a1 50%, #0ea5e9 100%)' }}
+        >
           <div className="flex items-center gap-3">
-            <Link href="/" className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center text-white font-bold text-lg active:opacity-60">←</Link>
+            <Link
+              href="/"
+              className="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center text-white active:opacity-60 transition-opacity"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+            </Link>
             <h1 className="text-xl font-black text-white">Memory Game</h1>
           </div>
-          <p className="text-white/70 text-sm mt-1 pl-12">Match the image to the word!</p>
+          <p className="text-sky-100/70 text-sm mt-1 pl-12">Match the image to the word!</p>
         </div>
 
-        <div className="flex flex-col gap-4 px-5 pt-10">
-          <p className="text-center text-gray-500 font-bold mb-2">Choose difficulty</p>
-          {GRID_SIZES.map(({ pairs, label }) => (
+        <div className="flex flex-col gap-3 px-5 pt-8 pb-28">
+          <p className="text-sm font-bold text-surface-500 mb-1">Choose difficulty</p>
+
+          {DIFFICULTIES.map(({ pairs, label, sub, gradient, glow }) => (
             <button
               key={pairs}
               onClick={() => startGame(pairs)}
-              className="rounded-3xl py-5 text-white font-black text-xl active:scale-95 transition-transform"
-              style={{
-                background: pairs === 4
-                  ? 'linear-gradient(135deg,#22c55e,#16a34a)'
-                  : pairs === 6
-                  ? 'linear-gradient(135deg,#f97316,#ea580c)'
-                  : 'linear-gradient(135deg,#ef4444,#dc2626)',
-                boxShadow: pairs === 4
-                  ? '0 6px 20px rgba(34,197,94,0.35)'
-                  : pairs === 6
-                  ? '0 6px 20px rgba(249,115,22,0.35)'
-                  : '0 6px 20px rgba(239,68,68,0.35)',
-              }}
+              className="rounded-3xl py-5 px-6 text-white active:scale-[0.97] transition-transform flex items-center justify-between"
+              style={{ background: gradient, boxShadow: `0 6px 20px ${glow}` }}
             >
-              {label} — {pairs} pairs
+              <div className="text-left">
+                <div className="font-black text-xl">{label}</div>
+                <div className="text-white/65 text-sm font-medium">{sub}</div>
+              </div>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
             </button>
           ))}
 
-          <div className="mt-4 rounded-3xl bg-white p-4 shadow-md text-center">
-            <p className="text-sm text-gray-500">
-              Playing in <strong>{LANG_FLAGS[lang]} {lang.toUpperCase()}</strong> · tap a word card to hear it!
-            </p>
+          <div
+            className="mt-2 rounded-2xl p-4 text-center text-sm text-surface-500"
+            style={{ background: '#f4f4f5' }}
+          >
+            Playing in <strong>{LANG_FLAGS[lang]} {lang.toUpperCase()}</strong> · tap a word card to hear it
           </div>
         </div>
       </div>
     )
   }
 
-  // ── Game board ─────────────────────────────────────────────────
+  // Game board
   return (
-    <div className="flex flex-col min-h-dvh" style={{ background: '#f8f7ff' }}>
+    <div className="flex flex-col min-h-dvh bg-white">
       <Confetti active={showConfetti} count={60} />
 
       {/* Header */}
-      <div className="flex items-center justify-between px-5 pt-12 pb-4"
-        style={{ background: 'linear-gradient(160deg,#0891b2,#06b6d4)' }}>
-        <button onClick={() => setDifficulty(null)}
-          className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center text-white font-bold text-lg active:opacity-60">←</button>
+      <div
+        className="flex items-center justify-between px-5 pt-12 pb-4"
+        style={{ background: 'linear-gradient(145deg, #0c4a6e 0%, #0369a1 50%, #0ea5e9 100%)' }}
+      >
+        <button
+          onClick={() => setDifficulty(null)}
+          className="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center text-white active:opacity-60 transition-opacity"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+
         <div className="text-center">
-          <div className="text-white font-black">Memory</div>
-          <div className="text-white/70 text-xs">{matched}/{pairs} matched</div>
+          <div className="text-white font-black text-base">Memory</div>
+          <div className="text-sky-200 text-xs font-medium">{matched}/{pairs} matched</div>
         </div>
-        <div className="bg-white/20 rounded-xl px-3 py-1.5 text-white font-black text-sm">
+
+        <div
+          className="rounded-2xl px-3 py-1.5 text-white font-bold text-sm"
+          style={{ background: 'rgba(255,255,255,0.15)' }}
+        >
           {moves} moves
         </div>
       </div>
 
       {/* Progress bar */}
-      <div className="h-2 bg-gray-100">
-        <div className="h-full transition-all duration-500"
-          style={{ width: `${(matched / pairs) * 100}%`, background: 'linear-gradient(to right,#06b6d4,#0891b2)' }} />
+      <div className="h-1.5 bg-surface-100">
+        <div
+          className="h-full transition-all duration-500"
+          style={{
+            width: `${(matched / pairs) * 100}%`,
+            background: 'linear-gradient(to right, #0ea5e9, #0369a1)',
+          }}
+        />
       </div>
 
       {/* Card grid */}
       <div className="grid grid-cols-4 gap-2 p-3 flex-1">
         {deck.map((card) => {
-          const isFlipped  = card.flipped || card.matched
-          const isMatched  = card.matched
+          const isFlipped = card.flipped || card.matched
+          const isMatched = card.matched
 
           return (
             <button
               key={card.uid}
               onClick={() => handleFlip(card.uid)}
-              className="aspect-square rounded-2xl transition-all active:scale-90 relative overflow-hidden"
+              className="aspect-square rounded-2xl transition-all active:scale-90 overflow-hidden"
               style={{
                 background: isMatched
                   ? '#f0fdf4'
                   : isFlipped
                   ? 'white'
-                  : 'linear-gradient(135deg,#0891b2,#06b6d4)',
+                  : 'linear-gradient(135deg, #0369a1, #0ea5e9)',
                 boxShadow: isMatched
-                  ? '0 2px 8px rgba(34,197,94,0.25)'
+                  ? '0 2px 8px rgba(34,197,94,0.2), 0 0 0 1.5px #86efac'
                   : isFlipped
-                  ? '0 2px 12px rgba(0,0,0,0.1)'
-                  : '0 2px 8px rgba(8,145,178,0.3)',
-                border: isMatched ? '2px solid #86efac' : '2px solid transparent',
-                transform: isFlipped ? 'rotateY(0deg)' : 'rotateY(0deg)',
+                  ? '0 2px 8px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.05)'
+                  : '0 2px 8px rgba(3,105,161,0.25)',
               }}
             >
               {isFlipped ? (
-                <div className="flex flex-col items-center justify-center h-full p-1 gap-0.5">
+                <div className="flex flex-col items-center justify-center h-full p-1">
                   {card.type === 'image' ? (
-                    <span style={{ fontSize: 36 }}>{card.item.emoji}</span>
+                    <span style={{ fontSize: 34 }}>{card.item.emoji}</span>
                   ) : (
-                    <span className="text-xs font-black text-gray-700 text-center leading-tight px-1">
+                    <span className="text-[11px] font-black text-surface-700 text-center leading-tight px-1">
                       {card.item[lang]}
                     </span>
                   )}
-                  {isMatched && <span className="text-xs">✅</span>}
+                  {isMatched && <span className="text-[10px] mt-0.5">✓</span>}
                 </div>
               ) : (
                 <div className="flex items-center justify-center h-full">
-                  <span className="text-2xl opacity-60">?</span>
+                  <span className="text-2xl text-white/50 font-black">?</span>
                 </div>
               )}
             </button>
@@ -250,20 +258,30 @@ export default function MemoryPage() {
 
       {/* Won overlay */}
       {won && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-6"
-          style={{ background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(8px)' }}>
-          <div className="modal-panel w-full max-w-xs rounded-4xl bg-white p-8 text-center shadow-2xl">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-6"
+          style={{ background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(8px)' }}
+        >
+          <div
+            className="modal-panel w-full max-w-xs rounded-4xl bg-white p-8 text-center"
+            style={{ boxShadow: '0 24px 60px rgba(0,0,0,0.25)' }}
+          >
             <div className="text-8xl mb-4 animate-bounce-in">🎉</div>
-            <div className="text-3xl font-black text-gray-800 mb-1">You did it!</div>
-            <div className="text-base text-gray-500 mb-2">{pairs} pairs in {moves} moves</div>
-            <div className="flex gap-3 mt-6">
-              <button onClick={() => startGame(pairs)}
-                className="flex-1 rounded-3xl py-4 font-black text-white active:scale-95 transition-transform text-base"
-                style={{ background: 'linear-gradient(135deg,#06b6d4,#0891b2)' }}>
+            <div className="text-2xl font-black text-surface-800 mb-1">You did it!</div>
+            <div className="text-sm text-surface-400 mb-2 font-medium">{pairs} pairs · {moves} moves</div>
+            <div className="flex gap-2.5 mt-6">
+              <button
+                onClick={() => startGame(pairs)}
+                className="flex-1 rounded-2xl py-3.5 font-black text-white active:scale-95 transition-transform text-sm"
+                style={{ background: 'linear-gradient(135deg, #0369a1, #0ea5e9)' }}
+              >
                 Play Again
               </button>
-              <button onClick={() => setDifficulty(null)}
-                className="flex-1 rounded-3xl py-4 font-black bg-gray-100 text-gray-600 active:scale-95 transition-transform text-base">
+              <button
+                onClick={() => setDifficulty(null)}
+                className="flex-1 rounded-2xl py-3.5 font-black text-surface-600 active:scale-95 transition-transform text-sm"
+                style={{ background: '#f4f4f5' }}
+              >
                 Menu
               </button>
             </div>
