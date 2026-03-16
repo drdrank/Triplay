@@ -3526,5 +3526,635 @@
     "de": "Teich",
     "nl": "Vijver",
     "tr": "Gölet"
+  },
+  {
+    "id": "bedroom",
+    "de": "Schlafzimmer",
+    "nl": "slaapkamer",
+    "tr": "yatak odası",
+    "emoji": "🛏️",
+    "color": "#8b5cf6",
+    "category": "house"
+  },
+  {
+    "id": "kitchen",
+    "de": "Küche",
+    "nl": "keuken",
+    "tr": "mutfak",
+    "emoji": "🍳",
+    "color": "#f59e0b",
+    "category": "house"
+  },
+  {
+    "id": "bathroom",
+    "de": "Badezimmer",
+    "nl": "badkamer",
+    "tr": "banyo",
+    "emoji": "🛁",
+    "color": "#0ea5e9",
+    "category": "house"
+  },
+  {
+    "id": "sofa",
+    "de": "Sofa",
+    "nl": "bank",
+    "tr": "kanepe",
+    "emoji": "🛋️",
+    "color": "#6366f1",
+    "category": "house"
+  },
+  {
+    "id": "house-door",
+    "de": "Tür",
+    "nl": "deur",
+    "tr": "kapı",
+    "emoji": "🚪",
+    "color": "#92400e",
+    "category": "house"
+  },
+  {
+    "id": "house-window",
+    "de": "Fenster",
+    "nl": "raam",
+    "tr": "pencere",
+    "emoji": "🪟",
+    "color": "#0ea5e9",
+    "category": "house"
+  },
+  {
+    "id": "house-lamp",
+    "de": "Lampe",
+    "nl": "lamp",
+    "tr": "lamba",
+    "emoji": "💡",
+    "color": "#f59e0b",
+    "category": "house"
+  },
+  {
+    "id": "house-mirror",
+    "de": "Spiegel",
+    "nl": "spiegel",
+    "tr": "ayna",
+    "emoji": "🪞",
+    "color": "#a855f7",
+    "category": "house"
+  },
+  {
+    "id": "stairs",
+    "de": "Treppe",
+    "nl": "trap",
+    "tr": "merdiven",
+    "emoji": "🪜",
+    "color": "#78716c",
+    "category": "house"
+  },
+  {
+    "id": "roof",
+    "de": "Dach",
+    "nl": "dak",
+    "tr": "çatı",
+    "emoji": "🏠",
+    "color": "#b45309",
+    "category": "house"
+  },
+  {
+    "id": "garage",
+    "de": "Garage",
+    "nl": "garage",
+    "tr": "garaj",
+    "emoji": "🏗️",
+    "color": "#6b7280",
+    "category": "house"
+  },
+  {
+    "id": "insect-butterfly",
+    "de": "Schmetterling",
+    "nl": "vlinder",
+    "tr": "kelebek",
+    "emoji": "🦋",
+    "color": "#8b5cf6",
+    "category": "insects"
+  },
+  {
+    "id": "insect-bee",
+    "de": "Biene",
+    "nl": "bij",
+    "tr": "arı",
+    "emoji": "🐝",
+    "color": "#f59e0b",
+    "category": "insects"
+  },
+  {
+    "id": "insect-ant",
+    "de": "Ameise",
+    "nl": "mier",
+    "tr": "karınca",
+    "emoji": "🐜",
+    "color": "#92400e",
+    "category": "insects"
+  },
+  {
+    "id": "insect-ladybug",
+    "de": "Marienkäfer",
+    "nl": "lieveheersbeestje",
+    "tr": "uğur böceği",
+    "emoji": "🐞",
+    "color": "#dc2626",
+    "category": "insects"
+  },
+  {
+    "id": "insect-spider",
+    "de": "Spinne",
+    "nl": "spin",
+    "tr": "örümcek",
+    "emoji": "🕷️",
+    "color": "#374151",
+    "category": "insects"
+  },
+  {
+    "id": "insect-caterpillar",
+    "de": "Raupe",
+    "nl": "rups",
+    "tr": "tırtıl",
+    "emoji": "🐛",
+    "color": "#16a34a",
+    "category": "insects"
+  },
+  {
+    "id": "insect-grasshopper",
+    "de": "Heuschrecke",
+    "nl": "sprinkhaan",
+    "tr": "çekirge",
+    "emoji": "🦗",
+    "color": "#4d7c0f",
+    "category": "insects"
+  },
+  {
+    "id": "insect-worm",
+    "de": "Wurm",
+    "nl": "worm",
+    "tr": "solucan",
+    "emoji": "🪱",
+    "color": "#b45309",
+    "category": "insects"
+  },
+  {
+    "id": "insect-snail",
+    "de": "Schnecke",
+    "nl": "slak",
+    "tr": "salyangoz",
+    "emoji": "🐌",
+    "color": "#78716c",
+    "category": "insects"
+  },
+  {
+    "id": "insect-mosquito",
+    "de": "Mücke",
+    "nl": "mug",
+    "tr": "sivrisinek",
+    "emoji": "🦟",
+    "color": "#374151",
+    "category": "insects"
+  },
+  {
+    "id": "farm-goat",
+    "de": "Ziege",
+    "nl": "geit",
+    "tr": "keçi",
+    "emoji": "🐐",
+    "color": "#a3a3a3",
+    "category": "farm"
+  },
+  {
+    "id": "farm-fence",
+    "de": "Zaun",
+    "nl": "hek",
+    "tr": "çit",
+    "emoji": "🪵",
+    "color": "#92400e",
+    "category": "farm"
+  },
+  {
+    "id": "body-thumb",
+    "de": "Daumen",
+    "nl": "duim",
+    "tr": "başparmak",
+    "emoji": "👍",
+    "color": "#f59e0b",
+    "category": "body"
+  },
+  {
+    "id": "body-shoulder",
+    "de": "Schulter",
+    "nl": "schouder",
+    "tr": "omuz",
+    "emoji": "💪",
+    "color": "#f97316",
+    "category": "body"
+  },
+  {
+    "id": "body-elbow",
+    "de": "Ellbogen",
+    "nl": "elleboog",
+    "tr": "dirsek",
+    "emoji": "🦾",
+    "color": "#6366f1",
+    "category": "body"
+  },
+  {
+    "id": "body-heel",
+    "de": "Ferse",
+    "nl": "hiel",
+    "tr": "topuk",
+    "emoji": "🦶",
+    "color": "#f59e0b",
+    "category": "body"
+  },
+  {
+    "id": "body-chin",
+    "de": "Kinn",
+    "nl": "kin",
+    "tr": "çene",
+    "emoji": "😶",
+    "color": "#f97316",
+    "category": "body"
+  },
+  {
+    "id": "body-cheek",
+    "de": "Wange",
+    "nl": "wang",
+    "tr": "yanak",
+    "emoji": "🫠",
+    "color": "#f9a8d4",
+    "category": "body"
+  },
+  {
+    "id": "body-forehead",
+    "de": "Stirn",
+    "nl": "voorhoofd",
+    "tr": "alın",
+    "emoji": "🧠",
+    "color": "#a855f7",
+    "category": "body"
+  },
+  {
+    "id": "animal-hedgehog",
+    "de": "Igel",
+    "nl": "egel",
+    "tr": "kirpi",
+    "emoji": "🦔",
+    "color": "#92400e",
+    "category": "animals"
+  },
+  {
+    "id": "animal-bat",
+    "de": "Fledermaus",
+    "nl": "vleermuis",
+    "tr": "yarasa",
+    "emoji": "🦇",
+    "color": "#374151",
+    "category": "animals"
+  },
+  {
+    "id": "animal-gorilla",
+    "de": "Gorilla",
+    "nl": "gorilla",
+    "tr": "goril",
+    "emoji": "🦍",
+    "color": "#374151",
+    "category": "animals"
+  },
+  {
+    "id": "animal-camel",
+    "de": "Kamel",
+    "nl": "kameel",
+    "tr": "deve",
+    "emoji": "🐪",
+    "color": "#f59e0b",
+    "category": "animals"
+  },
+  {
+    "id": "animal-zebra",
+    "de": "Zebra",
+    "nl": "zebra",
+    "tr": "zebra",
+    "emoji": "🦓",
+    "color": "#374151",
+    "category": "animals"
+  },
+  {
+    "id": "animal-flamingo",
+    "de": "Flamingo",
+    "nl": "flamingo",
+    "tr": "flamingo",
+    "emoji": "🦩",
+    "color": "#f9a8d4",
+    "category": "animals"
+  },
+  {
+    "id": "animal-whale",
+    "de": "Wal",
+    "nl": "walvis",
+    "tr": "balina",
+    "emoji": "🐳",
+    "color": "#0ea5e9",
+    "category": "animals"
+  },
+  {
+    "id": "animal-kangaroo",
+    "de": "Känguru",
+    "nl": "kangoeroe",
+    "tr": "kanguru",
+    "emoji": "🦘",
+    "color": "#f97316",
+    "category": "animals"
+  },
+  {
+    "id": "animal-panda",
+    "de": "Panda",
+    "nl": "panda",
+    "tr": "panda",
+    "emoji": "🐼",
+    "color": "#374151",
+    "category": "animals"
+  },
+  {
+    "id": "animal-koala",
+    "de": "Koala",
+    "nl": "koala",
+    "tr": "koala",
+    "emoji": "🐨",
+    "color": "#a3a3a3",
+    "category": "animals"
+  },
+  {
+    "id": "food-kiwi",
+    "de": "Kiwi",
+    "nl": "kiwi",
+    "tr": "kivi",
+    "emoji": "🥝",
+    "color": "#16a34a",
+    "category": "food"
+  },
+  {
+    "id": "food-coconut",
+    "de": "Kokosnuss",
+    "nl": "kokosnoot",
+    "tr": "hindistan cevizi",
+    "emoji": "🥥",
+    "color": "#92400e",
+    "category": "food"
+  },
+  {
+    "id": "food-dumpling",
+    "de": "Knödel",
+    "nl": "knoedel",
+    "tr": "hamur böreği",
+    "emoji": "🥟",
+    "color": "#f97316",
+    "category": "food"
+  },
+  {
+    "id": "food-noodles",
+    "de": "Nudeln",
+    "nl": "noedels",
+    "tr": "erişte",
+    "emoji": "🍜",
+    "color": "#f97316",
+    "category": "food"
+  },
+  {
+    "id": "food-taco",
+    "de": "Taco",
+    "nl": "taco",
+    "tr": "taco",
+    "emoji": "🌮",
+    "color": "#f59e0b",
+    "category": "food"
+  },
+  {
+    "id": "food-pretzel",
+    "de": "Brezel",
+    "nl": "pretzel",
+    "tr": "simit",
+    "emoji": "🥨",
+    "color": "#b45309",
+    "category": "food"
+  },
+  {
+    "id": "food-mango",
+    "de": "Mango",
+    "nl": "mango",
+    "tr": "mango",
+    "emoji": "🥭",
+    "color": "#f97316",
+    "category": "food"
+  },
+  {
+    "id": "food-blueberry",
+    "de": "Heidelbeere",
+    "nl": "bosbes",
+    "tr": "yaban mersini",
+    "emoji": "🫐",
+    "color": "#6366f1",
+    "category": "food"
+  },
+  {
+    "id": "food-avocado",
+    "de": "Avocado",
+    "nl": "avocado",
+    "tr": "avokado",
+    "emoji": "🥑",
+    "color": "#16a34a",
+    "category": "food"
+  },
+  {
+    "id": "sport-bowling",
+    "de": "Bowling",
+    "nl": "bowlen",
+    "tr": "bowling",
+    "emoji": "🎳",
+    "color": "#6366f1",
+    "category": "sports"
+  },
+  {
+    "id": "sport-boxing",
+    "de": "Boxen",
+    "nl": "boksen",
+    "tr": "boks",
+    "emoji": "🥊",
+    "color": "#dc2626",
+    "category": "sports"
+  },
+  {
+    "id": "sport-surfing",
+    "de": "Surfen",
+    "nl": "surfen",
+    "tr": "sörf",
+    "emoji": "🏄",
+    "color": "#0ea5e9",
+    "category": "sports"
+  },
+  {
+    "id": "sport-skiing",
+    "de": "Skifahren",
+    "nl": "skiën",
+    "tr": "kayak",
+    "emoji": "⛷️",
+    "color": "#0ea5e9",
+    "category": "sports"
+  },
+  {
+    "id": "sport-golf",
+    "de": "Golf",
+    "nl": "golf",
+    "tr": "golf",
+    "emoji": "⛳",
+    "color": "#16a34a",
+    "category": "sports"
+  },
+  {
+    "id": "sport-gymnastics",
+    "de": "Turnen",
+    "nl": "turnen",
+    "tr": "jimnastik",
+    "emoji": "🤸",
+    "color": "#8b5cf6",
+    "category": "sports"
+  },
+  {
+    "id": "transport-tram",
+    "de": "Straßenbahn",
+    "nl": "tram",
+    "tr": "tramvay",
+    "emoji": "🚋",
+    "color": "#f59e0b",
+    "category": "transport"
+  },
+  {
+    "id": "transport-scooter",
+    "de": "Roller",
+    "nl": "scooter",
+    "tr": "scooter",
+    "emoji": "🛵",
+    "color": "#f97316",
+    "category": "transport"
+  },
+  {
+    "id": "transport-canoe",
+    "de": "Kanu",
+    "nl": "kano",
+    "tr": "kano",
+    "emoji": "🛶",
+    "color": "#92400e",
+    "category": "transport"
+  },
+  {
+    "id": "transport-helicopter",
+    "de": "Hubschrauber",
+    "nl": "helikopter",
+    "tr": "helikopter",
+    "emoji": "🚁",
+    "color": "#dc2626",
+    "category": "transport"
+  },
+  {
+    "id": "weather-tornado",
+    "de": "Tornado",
+    "nl": "tornado",
+    "tr": "hortum",
+    "emoji": "🌪️",
+    "color": "#6b7280",
+    "category": "weather"
+  },
+  {
+    "id": "weather-frost",
+    "de": "Frost",
+    "nl": "vorst",
+    "tr": "don",
+    "emoji": "🥶",
+    "color": "#bfdbfe",
+    "category": "weather"
+  },
+  {
+    "id": "weather-rainbow",
+    "de": "Regenbogen",
+    "nl": "regenboog",
+    "tr": "gökkuşağı",
+    "emoji": "🌈",
+    "color": "#f97316",
+    "category": "weather"
+  },
+  {
+    "id": "place-lighthouse",
+    "de": "Leuchtturm",
+    "nl": "vuurtoren",
+    "tr": "deniz feneri",
+    "emoji": "🗼",
+    "color": "#f59e0b",
+    "category": "places"
+  },
+  {
+    "id": "place-castle",
+    "de": "Burg",
+    "nl": "kasteel",
+    "tr": "kale",
+    "emoji": "🏰",
+    "color": "#6b7280",
+    "category": "places"
+  },
+  {
+    "id": "place-cave",
+    "de": "Höhle",
+    "nl": "grot",
+    "tr": "mağara",
+    "emoji": "🌑",
+    "color": "#78716c",
+    "category": "places"
+  },
+  {
+    "id": "place-stadium",
+    "de": "Stadion",
+    "nl": "stadion",
+    "tr": "stadyum",
+    "emoji": "🏟️",
+    "color": "#16a34a",
+    "category": "places"
+  },
+  {
+    "id": "school-ruler",
+    "de": "Lineal",
+    "nl": "liniaal",
+    "tr": "cetvel",
+    "emoji": "📏",
+    "color": "#f59e0b",
+    "category": "school"
+  },
+  {
+    "id": "school-compass",
+    "de": "Zirkel",
+    "nl": "passer",
+    "tr": "pergel",
+    "emoji": "📐",
+    "color": "#6366f1",
+    "category": "school"
+  },
+  {
+    "id": "school-globe",
+    "de": "Globus",
+    "nl": "wereldbol",
+    "tr": "küre",
+    "emoji": "🌍",
+    "color": "#0ea5e9",
+    "category": "school"
+  },
+  {
+    "id": "school-microscope",
+    "de": "Mikroskop",
+    "nl": "microscoop",
+    "tr": "mikroskop",
+    "emoji": "🔬",
+    "color": "#6366f1",
+    "category": "school"
   }
 ]
