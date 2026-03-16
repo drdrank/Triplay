@@ -1,308 +1,3530 @@
 [
-  { "id": "ball",      "category": "objects", "emoji": "⚽", "color": "#22C55E", "de": "Ball",        "nl": "Bal",         "tr": "Top"        },
-  { "id": "car",       "category": "objects", "emoji": "🚗", "color": "#3B82F6", "de": "Auto",        "nl": "Auto",        "tr": "Araba"      },
-  { "id": "house",     "category": "objects", "emoji": "🏠", "color": "#F59E0B", "de": "Haus",        "nl": "Huis",        "tr": "Ev"         },
-  { "id": "book",      "category": "objects", "emoji": "📚", "color": "#8B5CF6", "de": "Buch",        "nl": "Boek",        "tr": "Kitap"      },
-  { "id": "chair",     "category": "objects", "emoji": "🪑", "color": "#A16207", "de": "Stuhl",       "nl": "Stoel",       "tr": "Sandalye"   },
-  { "id": "table",     "category": "objects", "emoji": "🪵", "color": "#92400E", "de": "Tisch",       "nl": "Tafel",       "tr": "Masa"       },
-  { "id": "sun",       "category": "objects", "emoji": "☀️", "color": "#F59E0B", "de": "Sonne",       "nl": "Zon",         "tr": "Güneş"      },
-  { "id": "moon",      "category": "objects", "emoji": "🌙", "color": "#6366F1", "de": "Mond",        "nl": "Maan",        "tr": "Ay"         },
-  { "id": "star",      "category": "objects", "emoji": "⭐", "color": "#EAB308", "de": "Stern",       "nl": "Ster",        "tr": "Yıldız"     },
-  { "id": "flower",    "category": "objects", "emoji": "🌸", "color": "#EC4899", "de": "Blume",       "nl": "Bloem",       "tr": "Çiçek"      },
-  { "id": "tree",      "category": "objects", "emoji": "🌳", "color": "#16A34A", "de": "Baum",        "nl": "Boom",        "tr": "Ağaç"       },
-  { "id": "bicycle",   "category": "objects", "emoji": "🚲", "color": "#0891B2", "de": "Fahrrad",     "nl": "Fiets",       "tr": "Bisiklet"   },
-  { "id": "airplane",  "category": "objects", "emoji": "✈️", "color": "#0EA5E9", "de": "Flugzeug",    "nl": "Vliegtuig",   "tr": "Uçak"       },
-  { "id": "clock",     "category": "objects", "emoji": "🕐", "color": "#64748B", "de": "Uhr",         "nl": "Klok",        "tr": "Saat"       },
-  { "id": "hat",       "category": "objects", "emoji": "🎩", "color": "#1E293B", "de": "Hut",         "nl": "Hoed",        "tr": "Şapka"      },
-  { "id": "shoe",      "category": "objects", "emoji": "👟", "color": "#DC2626", "de": "Schuh",       "nl": "Schoen",      "tr": "Ayakkabı"   },
-  { "id": "bed",       "category": "objects", "emoji": "🛏️", "color": "#7C3AED", "de": "Bett",        "nl": "Bed",         "tr": "Yatak"      },
-  { "id": "balloon",   "category": "objects", "emoji": "🎈", "color": "#F43F5E", "de": "Ballon",      "nl": "Ballon",      "tr": "Balon"      },
-  { "id": "umbrella",  "category": "objects", "emoji": "☂️", "color": "#6366F1", "de": "Regenschirm", "nl": "Paraplu",     "tr": "Şemsiye"    },
-  { "id": "key",       "category": "objects", "emoji": "🔑", "color": "#CA8A04", "de": "Schlüssel",   "nl": "Sleutel",     "tr": "Anahtar"    },
-  { "id": "cup",       "category": "objects", "emoji": "☕", "color": "#92400E", "de": "Tasse",       "nl": "Beker",       "tr": "Bardak"     },
-  { "id": "spoon",     "category": "objects", "emoji": "🥄", "color": "#94A3B8", "de": "Löffel",      "nl": "Lepel",       "tr": "Kaşık"      },
-  { "id": "fork",      "category": "objects", "emoji": "🍴", "color": "#64748B", "de": "Gabel",       "nl": "Vork",        "tr": "Çatal"      },
-  { "id": "plate",     "category": "objects", "emoji": "🍽️", "color": "#CBD5E1", "de": "Teller",      "nl": "Bord",        "tr": "Tabak"      },
-  { "id": "door",      "category": "objects", "emoji": "🚪", "color": "#78350F", "de": "Tür",         "nl": "Deur",        "tr": "Kapı"       },
-  { "id": "window",    "category": "objects", "emoji": "🪟", "color": "#0EA5E9", "de": "Fenster",     "nl": "Raam",        "tr": "Pencere"    },
-  { "id": "phone",     "category": "objects", "emoji": "📱", "color": "#1E293B", "de": "Telefon",     "nl": "Telefoon",    "tr": "Telefon"    },
-  { "id": "pencil",    "category": "objects", "emoji": "✏️", "color": "#EAB308", "de": "Bleistift",   "nl": "Potlood",     "tr": "Kalem"      },
-  { "id": "scissors",  "category": "objects", "emoji": "✂️", "color": "#EF4444", "de": "Schere",      "nl": "Schaar",      "tr": "Makas"      },
-  { "id": "mirror",    "category": "objects", "emoji": "🪞", "color": "#06B6D4", "de": "Spiegel",     "nl": "Spiegel",     "tr": "Ayna"       },
-  { "id": "lamp",      "category": "objects", "emoji": "💡", "color": "#F59E0B", "de": "Lampe",       "nl": "Lamp",        "tr": "Lamba"      },
-  { "id": "bag",       "category": "objects", "emoji": "👜", "color": "#A855F7", "de": "Tasche",      "nl": "Tas",         "tr": "Çanta"      },
-  { "id": "drum",      "category": "objects", "emoji": "🥁", "color": "#DC2626", "de": "Trommel",     "nl": "Trom",        "tr": "Davul"      },
-  { "id": "kite",      "category": "objects", "emoji": "🪁", "color": "#F97316", "de": "Drachen",     "nl": "Vlieger",     "tr": "Uçurtma"    },
-  { "id": "teddy",     "category": "objects", "emoji": "🧸", "color": "#D97706", "de": "Teddybär",    "nl": "Teddybeer",   "tr": "Oyuncak ayı"},
-  { "id": "swing",     "category": "objects", "emoji": "🛝", "color": "#22C55E", "de": "Schaukel",    "nl": "Schommel",    "tr": "Salıncak"   },
-
-  { "id": "dog",        "category": "animals", "emoji": "🐶", "color": "#F97316", "de": "Hund",          "nl": "Hond",        "tr": "Köpek"       },
-  { "id": "cat",        "category": "animals", "emoji": "🐱", "color": "#EC4899", "de": "Katze",         "nl": "Kat",         "tr": "Kedi"        },
-  { "id": "bird",       "category": "animals", "emoji": "🐦", "color": "#06B6D4", "de": "Vogel",         "nl": "Vogel",       "tr": "Kuş"         },
-  { "id": "fish",       "category": "animals", "emoji": "🐟", "color": "#14B8A6", "de": "Fisch",         "nl": "Vis",         "tr": "Balık"       },
-  { "id": "horse",      "category": "animals", "emoji": "🐴", "color": "#92400E", "de": "Pferd",         "nl": "Paard",       "tr": "At"          },
-  { "id": "rabbit",     "category": "animals", "emoji": "🐰", "color": "#F9A8D4", "de": "Hase",          "nl": "Konijn",      "tr": "Tavşan"      },
-  { "id": "elephant",   "category": "animals", "emoji": "🐘", "color": "#94A3B8", "de": "Elefant",       "nl": "Olifant",     "tr": "Fil"         },
-  { "id": "lion",       "category": "animals", "emoji": "🦁", "color": "#F59E0B", "de": "Löwe",          "nl": "Leeuw",       "tr": "Aslan"       },
-  { "id": "duck",       "category": "animals", "emoji": "🦆", "color": "#EAB308", "de": "Ente",          "nl": "Eend",        "tr": "Ördek"       },
-  { "id": "frog",       "category": "animals", "emoji": "🐸", "color": "#22C55E", "de": "Frosch",        "nl": "Kikker",      "tr": "Kurbağa"     },
-  { "id": "bear",       "category": "animals", "emoji": "🐻", "color": "#A16207", "de": "Bär",           "nl": "Beer",        "tr": "Ayı"         },
-  { "id": "monkey",     "category": "animals", "emoji": "🐵", "color": "#D97706", "de": "Affe",          "nl": "Aap",         "tr": "Maymun"      },
-  { "id": "bee",        "category": "animals", "emoji": "🐝", "color": "#EAB308", "de": "Biene",         "nl": "Bij",         "tr": "Arı"         },
-  { "id": "butterfly",  "category": "animals", "emoji": "🦋", "color": "#A78BFA", "de": "Schmetterling", "nl": "Vlinder",     "tr": "Kelebek"     },
-  { "id": "cow",        "category": "animals", "emoji": "🐮", "color": "#6B7280", "de": "Kuh",           "nl": "Koe",         "tr": "İnek"        },
-  { "id": "pig",        "category": "animals", "emoji": "🐷", "color": "#F9A8D4", "de": "Schwein",       "nl": "Varken",      "tr": "Domuz"       },
-  { "id": "turtle",     "category": "animals", "emoji": "🐢", "color": "#15803D", "de": "Schildkröte",   "nl": "Schildpad",   "tr": "Kaplumbağa"  },
-  { "id": "snail",      "category": "animals", "emoji": "🐌", "color": "#78350F", "de": "Schnecke",      "nl": "Slak",        "tr": "Salyangoz"   },
-  { "id": "sheep",      "category": "animals", "emoji": "🐑", "color": "#E5E7EB", "de": "Schaf",         "nl": "Schaap",      "tr": "Koyun"       },
-  { "id": "chicken",    "category": "animals", "emoji": "🐔", "color": "#F97316", "de": "Huhn",          "nl": "Kip",         "tr": "Tavuk"       },
-  { "id": "mouse",      "category": "animals", "emoji": "🐭", "color": "#94A3B8", "de": "Maus",          "nl": "Muis",        "tr": "Fare"        },
-  { "id": "fox",        "category": "animals", "emoji": "🦊", "color": "#F97316", "de": "Fuchs",         "nl": "Vos",         "tr": "Tilki"       },
-  { "id": "owl",        "category": "animals", "emoji": "🦉", "color": "#78350F", "de": "Eule",          "nl": "Uil",         "tr": "Baykuş"      },
-  { "id": "penguin",    "category": "animals", "emoji": "🐧", "color": "#1E293B", "de": "Pinguin",       "nl": "Pinguïn",     "tr": "Penguen"     },
-  { "id": "giraffe",    "category": "animals", "emoji": "🦒", "color": "#EAB308", "de": "Giraffe",       "nl": "Giraf",       "tr": "Zürafa"      },
-  { "id": "crocodile",  "category": "animals", "emoji": "🐊", "color": "#16A34A", "de": "Krokodil",      "nl": "Krokodil",    "tr": "Timsah"      },
-  { "id": "spider",     "category": "animals", "emoji": "🕷️", "color": "#1E293B", "de": "Spinne",        "nl": "Spin",        "tr": "Örümcek"     },
-  { "id": "whale",      "category": "animals", "emoji": "🐋", "color": "#3B82F6", "de": "Wal",           "nl": "Walvis",      "tr": "Balina"      },
-  { "id": "deer",       "category": "animals", "emoji": "🦌", "color": "#A16207", "de": "Reh",           "nl": "Hert",        "tr": "Geyik"       },
-  { "id": "parrot",     "category": "animals", "emoji": "🦜", "color": "#22C55E", "de": "Papagei",       "nl": "Papegaai",    "tr": "Papağan"     },
-  { "id": "wolf",       "category": "animals", "emoji": "🐺", "color": "#64748B", "de": "Wolf",          "nl": "Wolf",        "tr": "Kurt"        },
-  { "id": "squirrel",   "category": "animals", "emoji": "🐿️", "color": "#D97706", "de": "Eichhörnchen",  "nl": "Eekhoorn",    "tr": "Sincap"      },
-
-  { "id": "apple",      "category": "food", "emoji": "🍎", "color": "#EF4444", "de": "Apfel",       "nl": "Appel",        "tr": "Elma"      },
-  { "id": "bread",      "category": "food", "emoji": "🍞", "color": "#D97706", "de": "Brot",        "nl": "Brood",        "tr": "Ekmek"     },
-  { "id": "milk",       "category": "food", "emoji": "🥛", "color": "#64748B", "de": "Milch",       "nl": "Melk",         "tr": "Süt"       },
-  { "id": "water",      "category": "food", "emoji": "💧", "color": "#0EA5E9", "de": "Wasser",      "nl": "Water",        "tr": "Su"        },
-  { "id": "banana",     "category": "food", "emoji": "🍌", "color": "#EAB308", "de": "Banane",      "nl": "Banaan",       "tr": "Muz"       },
-  { "id": "orange",     "category": "food", "emoji": "🍊", "color": "#F97316", "de": "Orange",      "nl": "Sinaasappel",  "tr": "Portakal"  },
-  { "id": "egg",        "category": "food", "emoji": "🥚", "color": "#FEF9C3", "de": "Ei",          "nl": "Ei",           "tr": "Yumurta"   },
-  { "id": "cheese",     "category": "food", "emoji": "🧀", "color": "#EAB308", "de": "Käse",        "nl": "Kaas",         "tr": "Peynir"    },
-  { "id": "cake",       "category": "food", "emoji": "🎂", "color": "#F472B6", "de": "Kuchen",      "nl": "Taart",        "tr": "Pasta"     },
-  { "id": "carrot",     "category": "food", "emoji": "🥕", "color": "#F97316", "de": "Karotte",     "nl": "Wortel",       "tr": "Havuç"     },
-  { "id": "strawberry", "category": "food", "emoji": "🍓", "color": "#EF4444", "de": "Erdbeere",    "nl": "Aardbei",      "tr": "Çilek"     },
-  { "id": "grapes",     "category": "food", "emoji": "🍇", "color": "#7C3AED", "de": "Trauben",     "nl": "Druiven",      "tr": "Üzüm"      },
-  { "id": "icecream",   "category": "food", "emoji": "🍦", "color": "#F9A8D4", "de": "Eis",         "nl": "Ijs",          "tr": "Dondurma"  },
-  { "id": "cookie",     "category": "food", "emoji": "🍪", "color": "#A16207", "de": "Keks",        "nl": "Koekje",       "tr": "Kurabiye"  },
-  { "id": "soup",       "category": "food", "emoji": "🍲", "color": "#DC2626", "de": "Suppe",       "nl": "Soep",         "tr": "Çorba"     },
-  { "id": "rice",       "category": "food", "emoji": "🍚", "color": "#CBD5E1", "de": "Reis",        "nl": "Rijst",        "tr": "Pirinç"    },
-  { "id": "tomato",     "category": "food", "emoji": "🍅", "color": "#EF4444", "de": "Tomate",      "nl": "Tomaat",       "tr": "Domates"   },
-  { "id": "potato",     "category": "food", "emoji": "🥔", "color": "#A16207", "de": "Kartoffel",   "nl": "Aardappel",    "tr": "Patates"   },
-  { "id": "lemon",      "category": "food", "emoji": "🍋", "color": "#EAB308", "de": "Zitrone",     "nl": "Citroen",      "tr": "Limon"     },
-  { "id": "cherry",     "category": "food", "emoji": "🍒", "color": "#DC2626", "de": "Kirsche",     "nl": "Kers",         "tr": "Kiraz"     },
-  { "id": "pear",       "category": "food", "emoji": "🍐", "color": "#86EFAC", "de": "Birne",       "nl": "Peer",         "tr": "Armut"     },
-  { "id": "watermelon", "category": "food", "emoji": "🍉", "color": "#16A34A", "de": "Wassermelone","nl": "Watermeloen",  "tr": "Karpuz"    },
-  { "id": "pasta",      "category": "food", "emoji": "🍝", "color": "#F59E0B", "de": "Nudeln",      "nl": "Pasta",        "tr": "Makarna"   },
-  { "id": "yogurt",     "category": "food", "emoji": "🥛", "color": "#E2E8F0", "de": "Joghurt",     "nl": "Yoghurt",      "tr": "Yoğurt"    },
-  { "id": "honey",      "category": "food", "emoji": "🍯", "color": "#F59E0B", "de": "Honig",       "nl": "Honing",       "tr": "Bal"       },
-  { "id": "garlic",     "category": "food", "emoji": "🧄", "color": "#E2E8F0", "de": "Knoblauch",   "nl": "Knoflook",     "tr": "Sarımsak"  },
-  { "id": "corn",       "category": "food", "emoji": "🌽", "color": "#EAB308", "de": "Mais",        "nl": "Maïs",         "tr": "Mısır"     },
-  { "id": "cucumber",   "category": "food", "emoji": "🥒", "color": "#16A34A", "de": "Gurke",       "nl": "Komkommer",    "tr": "Salatalık" },
-  { "id": "mango",      "category": "food", "emoji": "🥭", "color": "#F97316", "de": "Mango",       "nl": "Mango",        "tr": "Mango"     },
-  { "id": "pineapple",  "category": "food", "emoji": "🍍", "color": "#EAB308", "de": "Ananas",      "nl": "Ananas",       "tr": "Ananas"    },
-
-  { "id": "red",          "category": "colors", "emoji": "🔴", "color": "#EF4444", "de": "Rot",         "nl": "Rood",     "tr": "Kırmızı"     },
-  { "id": "blue",         "category": "colors", "emoji": "🔵", "color": "#3B82F6", "de": "Blau",        "nl": "Blauw",    "tr": "Mavi"        },
-  { "id": "green",        "category": "colors", "emoji": "🟢", "color": "#22C55E", "de": "Grün",        "nl": "Groen",    "tr": "Yeşil"       },
-  { "id": "yellow",       "category": "colors", "emoji": "🟡", "color": "#EAB308", "de": "Gelb",        "nl": "Geel",     "tr": "Sarı"        },
-  { "id": "purple",       "category": "colors", "emoji": "🟣", "color": "#A855F7", "de": "Lila",        "nl": "Paars",    "tr": "Mor"         },
-  { "id": "pink",         "category": "colors", "emoji": "🩷", "color": "#EC4899", "de": "Rosa",        "nl": "Roze",     "tr": "Pembe"       },
-  { "id": "white",        "category": "colors", "emoji": "⬜", "color": "#94A3B8", "de": "Weiß",        "nl": "Wit",      "tr": "Beyaz"       },
-  { "id": "black",        "category": "colors", "emoji": "⬛", "color": "#1E293B", "de": "Schwarz",     "nl": "Zwart",    "tr": "Siyah"       },
-  { "id": "orange-color", "category": "colors", "emoji": "🟠", "color": "#F97316", "de": "Orange",      "nl": "Oranje",   "tr": "Turuncu"     },
-  { "id": "brown",        "category": "colors", "emoji": "🟫", "color": "#92400E", "de": "Braun",       "nl": "Bruin",    "tr": "Kahverengi"  },
-  { "id": "gray",         "category": "colors", "emoji": "🔘", "color": "#6B7280", "de": "Grau",        "nl": "Grijs",    "tr": "Gri"         },
-
-  { "id": "eye",    "category": "body", "emoji": "👁️", "color": "#06B6D4", "de": "Auge",   "nl": "Oog",    "tr": "Göz"    },
-  { "id": "nose",   "category": "body", "emoji": "👃",  "color": "#F97316", "de": "Nase",   "nl": "Neus",   "tr": "Burun"  },
-  { "id": "mouth",  "category": "body", "emoji": "👄",  "color": "#EF4444", "de": "Mund",   "nl": "Mond",   "tr": "Ağız"   },
-  { "id": "ear",    "category": "body", "emoji": "👂",  "color": "#F9A8D4", "de": "Ohr",    "nl": "Oor",    "tr": "Kulak"  },
-  { "id": "hand",   "category": "body", "emoji": "✋",  "color": "#F59E0B", "de": "Hand",   "nl": "Hand",   "tr": "El"     },
-  { "id": "foot",   "category": "body", "emoji": "🦶",  "color": "#A16207", "de": "Fuß",    "nl": "Voet",   "tr": "Ayak"   },
-  { "id": "head",   "category": "body", "emoji": "🗣️", "color": "#8B5CF6", "de": "Kopf",   "nl": "Hoofd",  "tr": "Kafa"   },
-  { "id": "hair",   "category": "body", "emoji": "💇",  "color": "#92400E", "de": "Haar",   "nl": "Haar",   "tr": "Saç"    },
-  { "id": "heart",  "category": "body", "emoji": "❤️", "color": "#EF4444", "de": "Herz",   "nl": "Hart",   "tr": "Kalp"   },
-  { "id": "belly",  "category": "body", "emoji": "🫃",  "color": "#F97316", "de": "Bauch",  "nl": "Buik",   "tr": "Karın"  },
-  { "id": "knee",   "category": "body", "emoji": "🦵",  "color": "#FCA5A5", "de": "Knie",   "nl": "Knie",   "tr": "Diz"    },
-  { "id": "finger", "category": "body", "emoji": "☝️", "color": "#FBBF24", "de": "Finger", "nl": "Vinger", "tr": "Parmak" },
-  { "id": "tooth",  "category": "body", "emoji": "🦷",  "color": "#E2E8F0", "de": "Zahn",   "nl": "Tand",   "tr": "Diş"    },
-  { "id": "back",   "category": "body", "emoji": "🔙",  "color": "#94A3B8", "de": "Rücken", "nl": "Rug",    "tr": "Sırt"   },
-
-  { "id": "one",   "category": "numbers", "emoji": "1️⃣", "color": "#EF4444", "de": "Eins",   "nl": "Één",   "tr": "Bir"   },
-  { "id": "two",   "category": "numbers", "emoji": "2️⃣", "color": "#F97316", "de": "Zwei",   "nl": "Twee",  "tr": "İki"   },
-  { "id": "three", "category": "numbers", "emoji": "3️⃣", "color": "#EAB308", "de": "Drei",   "nl": "Drie",  "tr": "Üç"    },
-  { "id": "four",  "category": "numbers", "emoji": "4️⃣", "color": "#22C55E", "de": "Vier",   "nl": "Vier",  "tr": "Dört"  },
-  { "id": "five",  "category": "numbers", "emoji": "5️⃣", "color": "#06B6D4", "de": "Fünf",   "nl": "Vijf",  "tr": "Beş"   },
-  { "id": "six",   "category": "numbers", "emoji": "6️⃣", "color": "#3B82F6", "de": "Sechs",  "nl": "Zes",   "tr": "Altı"  },
-  { "id": "seven", "category": "numbers", "emoji": "7️⃣", "color": "#8B5CF6", "de": "Sieben", "nl": "Zeven", "tr": "Yedi"  },
-  { "id": "eight", "category": "numbers", "emoji": "8️⃣", "color": "#EC4899", "de": "Acht",   "nl": "Acht",  "tr": "Sekiz" },
-  { "id": "nine",  "category": "numbers", "emoji": "9️⃣", "color": "#F43F5E", "de": "Neun",   "nl": "Negen", "tr": "Dokuz" },
-  { "id": "ten",   "category": "numbers", "emoji": "🔟",  "color": "#7C3AED", "de": "Zehn",   "nl": "Tien",  "tr": "On"    },
-
-  { "id": "rain",      "category": "nature", "emoji": "🌧️", "color": "#3B82F6", "de": "Regen",      "nl": "Regen",      "tr": "Yağmur"    },
-  { "id": "cloud",     "category": "nature", "emoji": "☁️", "color": "#94A3B8", "de": "Wolke",      "nl": "Wolk",       "tr": "Bulut"     },
-  { "id": "snow",      "category": "nature", "emoji": "❄️", "color": "#BAE6FD", "de": "Schnee",     "nl": "Sneeuw",     "tr": "Kar"       },
-  { "id": "wind",      "category": "nature", "emoji": "💨", "color": "#7DD3FC", "de": "Wind",       "nl": "Wind",       "tr": "Rüzgar"    },
-  { "id": "rainbow",   "category": "nature", "emoji": "🌈", "color": "#F97316", "de": "Regenbogen", "nl": "Regenboog",  "tr": "Gökkuşağı" },
-  { "id": "mountain",  "category": "nature", "emoji": "⛰️", "color": "#6B7280", "de": "Berg",       "nl": "Berg",       "tr": "Dağ"       },
-  { "id": "river",     "category": "nature", "emoji": "🏞️", "color": "#0EA5E9", "de": "Fluss",      "nl": "Rivier",     "tr": "Nehir"     },
-  { "id": "sea",       "category": "nature", "emoji": "🌊", "color": "#0891B2", "de": "Meer",       "nl": "Zee",        "tr": "Deniz"     },
-  { "id": "forest",    "category": "nature", "emoji": "🌲", "color": "#15803D", "de": "Wald",       "nl": "Bos",        "tr": "Orman"     },
-  { "id": "fire",      "category": "nature", "emoji": "🔥", "color": "#EF4444", "de": "Feuer",      "nl": "Vuur",       "tr": "Ateş"      },
-  { "id": "rock",      "category": "nature", "emoji": "🪨", "color": "#6B7280", "de": "Stein",      "nl": "Steen",      "tr": "Taş"       },
-  { "id": "leaf",      "category": "nature", "emoji": "🍃", "color": "#16A34A", "de": "Blatt",      "nl": "Blad",       "tr": "Yaprak"    },
-  { "id": "lightning", "category": "nature", "emoji": "⚡", "color": "#EAB308", "de": "Blitz",      "nl": "Bliksem",    "tr": "Şimşek"    },
-  { "id": "sand",      "category": "nature", "emoji": "🏖️", "color": "#F59E0B", "de": "Sand",       "nl": "Zand",       "tr": "Kum"       },
-  { "id": "grass",     "category": "nature", "emoji": "🌿", "color": "#22C55E", "de": "Gras",       "nl": "Gras",       "tr": "Çimen"     },
-
-  { "id": "shirt",    "category": "clothes", "emoji": "👕", "color": "#3B82F6", "de": "Hemd",         "nl": "Shirt",       "tr": "Gömlek"   },
-  { "id": "pants",    "category": "clothes", "emoji": "👖", "color": "#1E293B", "de": "Hose",         "nl": "Broek",       "tr": "Pantolon" },
-  { "id": "dress",    "category": "clothes", "emoji": "👗", "color": "#EC4899", "de": "Kleid",        "nl": "Jurk",        "tr": "Elbise"   },
-  { "id": "socks",    "category": "clothes", "emoji": "🧦", "color": "#F97316", "de": "Socken",       "nl": "Sokken",      "tr": "Çorap"    },
-  { "id": "jacket",   "category": "clothes", "emoji": "🧥", "color": "#64748B", "de": "Jacke",        "nl": "Jas",         "tr": "Ceket"    },
-  { "id": "scarf",    "category": "clothes", "emoji": "🧣", "color": "#EF4444", "de": "Schal",        "nl": "Sjaal",       "tr": "Atkı"     },
-  { "id": "sweater",  "category": "clothes", "emoji": "🧶", "color": "#A855F7", "de": "Pullover",     "nl": "Trui",        "tr": "Kazak"    },
-  { "id": "boots",    "category": "clothes", "emoji": "👢", "color": "#78350F", "de": "Stiefel",      "nl": "Laarzen",     "tr": "Çizme"    },
-  { "id": "gloves",   "category": "clothes", "emoji": "🧤", "color": "#DC2626", "de": "Handschuhe",   "nl": "Handschoenen","tr": "Eldiven"  },
-  { "id": "cap",      "category": "clothes", "emoji": "🧢", "color": "#0EA5E9", "de": "Mütze",        "nl": "Pet",         "tr": "Bere"     },
-
-  { "id": "mom",      "category": "family", "emoji": "👩", "color": "#EC4899", "de": "Mama",     "nl": "Mama",    "tr": "Anne"          },
-  { "id": "dad",      "category": "family", "emoji": "👨", "color": "#3B82F6", "de": "Papa",     "nl": "Papa",    "tr": "Baba"          },
-  { "id": "baby",     "category": "family", "emoji": "👶", "color": "#F9A8D4", "de": "Baby",     "nl": "Baby",    "tr": "Bebek"         },
-  { "id": "sister",   "category": "family", "emoji": "👧", "color": "#F472B6", "de": "Schwester","nl": "Zus",     "tr": "Kız kardeş"   },
-  { "id": "brother",  "category": "family", "emoji": "👦", "color": "#60A5FA", "de": "Bruder",   "nl": "Broer",   "tr": "Erkek kardeş" },
-  { "id": "grandma",  "category": "family", "emoji": "👵", "color": "#D97706", "de": "Oma",      "nl": "Oma",     "tr": "Büyükanne"     },
-  { "id": "grandpa",  "category": "family", "emoji": "👴", "color": "#6B7280", "de": "Opa",      "nl": "Opa",     "tr": "Büyükbaba"     },
-  { "id": "family",   "category": "family", "emoji": "👨‍👩‍👧", "color": "#F59E0B", "de": "Familie", "nl": "Familie", "tr": "Aile"         },
-  { "id": "child",    "category": "family", "emoji": "🧒", "color": "#22C55E", "de": "Kind",     "nl": "Kind",    "tr": "Çocuk"         },
-
-  { "id": "happy",   "category": "feelings", "emoji": "😊", "color": "#EAB308", "de": "Glücklich",  "nl": "Blij",        "tr": "Mutlu"    },
-  { "id": "sad",     "category": "feelings", "emoji": "😢", "color": "#3B82F6", "de": "Traurig",    "nl": "Verdrietig",  "tr": "Üzgün"    },
-  { "id": "angry",   "category": "feelings", "emoji": "😠", "color": "#EF4444", "de": "Wütend",     "nl": "Boos",        "tr": "Kızgın"   },
-  { "id": "scared",  "category": "feelings", "emoji": "😨", "color": "#8B5CF6", "de": "Ängstlich",  "nl": "Bang",        "tr": "Korkmuş"  },
-  { "id": "tired",   "category": "feelings", "emoji": "😴", "color": "#94A3B8", "de": "Müde",       "nl": "Moe",         "tr": "Yorgun"   },
-  { "id": "hungry",  "category": "feelings", "emoji": "😋", "color": "#F97316", "de": "Hungrig",    "nl": "Hongerig",    "tr": "Aç"       },
-  { "id": "funny",   "category": "feelings", "emoji": "😄", "color": "#22C55E", "de": "Lustig",     "nl": "Grappig",     "tr": "Komik"    },
-  { "id": "love",    "category": "feelings", "emoji": "🥰", "color": "#F43F5E", "de": "Liebe",      "nl": "Liefde",      "tr": "Sevgi"    },
-  { "id": "sleepy",  "category": "feelings", "emoji": "🥱", "color": "#A78BFA", "de": "Schläfrig",  "nl": "Slaperig",    "tr": "Uykulu"   },
-  { "id": "brave",   "category": "feelings", "emoji": "💪", "color": "#F59E0B", "de": "Mutig",      "nl": "Dapper",      "tr": "Cesur"    },
-
-  { "id": "bus",         "category": "transport", "emoji": "🚌", "color": "#F97316", "de": "Bus",          "nl": "Bus",          "tr": "Otobüs"       },
-  { "id": "train",       "category": "transport", "emoji": "🚂", "color": "#EF4444", "de": "Zug",          "nl": "Trein",        "tr": "Tren"         },
-  { "id": "boat",        "category": "transport", "emoji": "⛵", "color": "#0EA5E9", "de": "Boot",         "nl": "Boot",         "tr": "Tekne"        },
-  { "id": "truck",       "category": "transport", "emoji": "🚚", "color": "#6B7280", "de": "Lastwagen",    "nl": "Vrachtwagen",  "tr": "Kamyon"       },
-  { "id": "rocket",      "category": "transport", "emoji": "🚀", "color": "#8B5CF6", "de": "Rakete",       "nl": "Raket",        "tr": "Roket"        },
-  { "id": "helicopter",  "category": "transport", "emoji": "🚁", "color": "#22C55E", "de": "Hubschrauber", "nl": "Helikopter",   "tr": "Helikopter"   },
-  { "id": "tractor",     "category": "transport", "emoji": "🚜", "color": "#16A34A", "de": "Traktor",      "nl": "Tractor",      "tr": "Traktör"      },
-  { "id": "ambulance",   "category": "transport", "emoji": "🚑", "color": "#EF4444", "de": "Krankenwagen", "nl": "Ambulance",    "tr": "Ambulans"     },
-  { "id": "firetruck",   "category": "transport", "emoji": "🚒", "color": "#DC2626", "de": "Feuerwehrauto","nl": "Brandweerauto","tr": "İtfaiye arabası"},
-  { "id": "ship",        "category": "transport", "emoji": "🚢", "color": "#1E40AF", "de": "Schiff",       "nl": "Schip",        "tr": "Gemi"         },
-
-  { "id": "school",      "category": "places", "emoji": "🏫", "color": "#F97316", "de": "Schule",          "nl": "School",       "tr": "Okul"          },
-  { "id": "park",        "category": "places", "emoji": "🌳", "color": "#16A34A", "de": "Park",            "nl": "Park",         "tr": "Park"          },
-  { "id": "beach",       "category": "places", "emoji": "🏖️", "color": "#F59E0B", "de": "Strand",          "nl": "Strand",       "tr": "Plaj"          },
-  { "id": "farm",        "category": "places", "emoji": "🏡", "color": "#A16207", "de": "Bauernhof",       "nl": "Boerderij",    "tr": "Çiftlik"       },
-  { "id": "zoo",         "category": "places", "emoji": "🦁", "color": "#D97706", "de": "Zoo",             "nl": "Dierentuin",   "tr": "Hayvanat bahçesi"},
-  { "id": "playground",  "category": "places", "emoji": "🛝", "color": "#22C55E", "de": "Spielplatz",      "nl": "Speeltuin",    "tr": "Oyun alanı"    },
-  { "id": "hospital",    "category": "places", "emoji": "🏥", "color": "#EF4444", "de": "Krankenhaus",     "nl": "Ziekenhuis",   "tr": "Hastane"       },
-  { "id": "library",     "category": "places", "emoji": "📚", "color": "#8B5CF6", "de": "Bibliothek",      "nl": "Bibliotheek",  "tr": "Kütüphane"     },
-  { "id": "supermarket", "category": "places", "emoji": "🛒", "color": "#0EA5E9", "de": "Supermarkt",      "nl": "Supermarkt",   "tr": "Süpermarket"   },
-  { "id": "home",        "category": "places", "emoji": "🏠", "color": "#EAB308", "de": "Zuhause",         "nl": "Thuis",        "tr": "Ev"            },
-  { "id": "cinema",      "category": "places", "emoji": "🎬", "color": "#DC2626", "de": "Kino",            "nl": "Bioscoop",     "tr": "Sinema"        },
-  { "id": "restaurant",  "category": "places", "emoji": "🍽️", "color": "#F97316", "de": "Restaurant",      "nl": "Restaurant",   "tr": "Restoran"      },
-  { "id": "airport",     "category": "places", "emoji": "✈️", "color": "#0891B2", "de": "Flughafen",       "nl": "Luchthaven",   "tr": "Havaalanı"     },
-  { "id": "castle",      "category": "places", "emoji": "🏰", "color": "#6B7280", "de": "Burg",            "nl": "Kasteel",      "tr": "Kale"          },
-  { "id": "market",      "category": "places", "emoji": "🏪", "color": "#D97706", "de": "Markt",           "nl": "Markt",        "tr": "Pazar"         },
-
-  { "id": "candle",      "category": "objects", "emoji": "🕯️", "color": "#F59E0B", "de": "Kerze",        "nl": "Kaars",       "tr": "Mum"              },
-  { "id": "camera",      "category": "objects", "emoji": "📷", "color": "#1E293B", "de": "Kamera",       "nl": "Camera",      "tr": "Kamera"           },
-  { "id": "guitar",      "category": "objects", "emoji": "🎸", "color": "#92400E", "de": "Gitarre",      "nl": "Gitaar",      "tr": "Gitar"            },
-  { "id": "piano",       "category": "objects", "emoji": "🎹", "color": "#1E293B", "de": "Klavier",      "nl": "Piano",       "tr": "Piyano"           },
-  { "id": "crown",       "category": "objects", "emoji": "👑", "color": "#EAB308", "de": "Krone",        "nl": "Kroon",       "tr": "Taç"              },
-  { "id": "paintbrush",  "category": "objects", "emoji": "🖌️", "color": "#A855F7", "de": "Pinsel",       "nl": "Penseel",     "tr": "Fırça"            },
-  { "id": "magnify",     "category": "objects", "emoji": "🔍", "color": "#3B82F6", "de": "Lupe",         "nl": "Vergrootglas","tr": "Büyüteç"          },
-  { "id": "trophy",      "category": "objects", "emoji": "🏆", "color": "#F59E0B", "de": "Pokal",        "nl": "Trofee",      "tr": "Kupa"             },
-  { "id": "map",         "category": "objects", "emoji": "🗺️", "color": "#16A34A", "de": "Karte",        "nl": "Kaart",       "tr": "Harita"           },
-  { "id": "magnet",      "category": "objects", "emoji": "🧲", "color": "#EF4444", "de": "Magnet",       "nl": "Magneet",     "tr": "Mıknatıs"         },
-  { "id": "robot",       "category": "objects", "emoji": "🤖", "color": "#06B6D4", "de": "Roboter",      "nl": "Robot",       "tr": "Robot"            },
-  { "id": "puzzle",      "category": "objects", "emoji": "🧩", "color": "#8B5CF6", "de": "Puzzle",       "nl": "Puzzel",      "tr": "Yapboz"           },
-
-  { "id": "zebra",       "category": "animals", "emoji": "🦓", "color": "#1E293B", "de": "Zebra",        "nl": "Zebra",       "tr": "Zebra"            },
-  { "id": "hippo",       "category": "animals", "emoji": "🦛", "color": "#94A3B8", "de": "Nilpferd",     "nl": "Nijlpaard",   "tr": "Hipopotam"        },
-  { "id": "kangaroo",    "category": "animals", "emoji": "🦘", "color": "#D97706", "de": "Känguru",      "nl": "Kangoeroe",   "tr": "Kanguru"          },
-  { "id": "camel",       "category": "animals", "emoji": "🐪", "color": "#D97706", "de": "Kamel",        "nl": "Kameel",      "tr": "Deve"             },
-  { "id": "flamingo",    "category": "animals", "emoji": "🦩", "color": "#EC4899", "de": "Flamingo",     "nl": "Flamingo",    "tr": "Flamingo"         },
-  { "id": "crab",        "category": "animals", "emoji": "🦀", "color": "#EF4444", "de": "Krabbe",       "nl": "Krab",        "tr": "Yengeç"           },
-  { "id": "octopus",     "category": "animals", "emoji": "🐙", "color": "#A855F7", "de": "Oktopus",      "nl": "Octopus",     "tr": "Ahtapot"          },
-  { "id": "ladybug",     "category": "animals", "emoji": "🐞", "color": "#EF4444", "de": "Marienkäfer",  "nl": "Lieveheersbeestje", "tr": "Uğur böceği"},
-  { "id": "hamster",     "category": "animals", "emoji": "🐹", "color": "#F97316", "de": "Hamster",      "nl": "Hamster",     "tr": "Hamster"          },
-  { "id": "shark",       "category": "animals", "emoji": "🦈", "color": "#64748B", "de": "Hai",          "nl": "Haai",        "tr": "Köpekbalığı"      },
-  { "id": "gorilla",     "category": "animals", "emoji": "🦍", "color": "#374151", "de": "Gorilla",      "nl": "Gorilla",     "tr": "Goril"            },
-  { "id": "leopard",     "category": "animals", "emoji": "🐆", "color": "#D97706", "de": "Leopard",      "nl": "Luipaard",    "tr": "Leopar"           },
-  { "id": "swan",        "category": "animals", "emoji": "🦢", "color": "#E2E8F0", "de": "Schwan",       "nl": "Zwaan",       "tr": "Kuğu"             },
-
-  { "id": "sandwich",    "category": "food", "emoji": "🥪", "color": "#D97706", "de": "Sandwich",     "nl": "Broodje",      "tr": "Sandviç"          },
-  { "id": "juice",       "category": "food", "emoji": "🍹", "color": "#F97316", "de": "Saft",         "nl": "Sap",          "tr": "Meyve suyu"       },
-  { "id": "chocolate",   "category": "food", "emoji": "🍫", "color": "#92400E", "de": "Schokolade",   "nl": "Chocolade",    "tr": "Çikolata"         },
-  { "id": "pancake",     "category": "food", "emoji": "🥞", "color": "#D97706", "de": "Pfannkuchen",  "nl": "Pannenkoek",   "tr": "Krep"             },
-  { "id": "popcorn",     "category": "food", "emoji": "🍿", "color": "#EAB308", "de": "Popcorn",      "nl": "Popcorn",      "tr": "Patlamış mısır"   },
-  { "id": "spaghetti",   "category": "food", "emoji": "🍝", "color": "#EF4444", "de": "Spaghetti",    "nl": "Spaghetti",    "tr": "Spagetti"         },
-  { "id": "salad",       "category": "food", "emoji": "🥗", "color": "#22C55E", "de": "Salat",        "nl": "Salade",       "tr": "Salata"           },
-  { "id": "olive",       "category": "food", "emoji": "🫒", "color": "#16A34A", "de": "Olive",        "nl": "Olijf",        "tr": "Zeytin"           },
-  { "id": "pepper",      "category": "food", "emoji": "🫑", "color": "#16A34A", "de": "Paprika",      "nl": "Paprika",      "tr": "Biber"            },
-  { "id": "donut",       "category": "food", "emoji": "🍩", "color": "#F97316", "de": "Donut",        "nl": "Donut",        "tr": "Donut"            },
-  { "id": "taco",        "category": "food", "emoji": "🌮", "color": "#F59E0B", "de": "Taco",         "nl": "Taco",         "tr": "Taco"             },
-  { "id": "sushi",       "category": "food", "emoji": "🍣", "color": "#EF4444", "de": "Sushi",        "nl": "Sushi",        "tr": "Suşi"             },
-
-  { "id": "lake",        "category": "nature", "emoji": "🏞️", "color": "#0EA5E9", "de": "See",         "nl": "Meer",         "tr": "Göl"              },
-  { "id": "wave",        "category": "nature", "emoji": "🌊", "color": "#0891B2", "de": "Welle",       "nl": "Golf",         "tr": "Dalga"            },
-  { "id": "cave",        "category": "nature", "emoji": "🕳️", "color": "#374151", "de": "Höhle",       "nl": "Grot",         "tr": "Mağara"           },
-  { "id": "waterfall",   "category": "nature", "emoji": "💦", "color": "#3B82F6", "de": "Wasserfall",  "nl": "Waterval",     "tr": "Şelale"           },
-  { "id": "island",      "category": "nature", "emoji": "🏝️", "color": "#16A34A", "de": "Insel",       "nl": "Eiland",       "tr": "Ada"              },
-  { "id": "volcano",     "category": "nature", "emoji": "🌋", "color": "#EF4444", "de": "Vulkan",      "nl": "Vulkaan",      "tr": "Yanardağ"         },
-
-  { "id": "pajamas",     "category": "clothes", "emoji": "🩲", "color": "#A855F7", "de": "Schlafanzug", "nl": "Pyjama",      "tr": "Pijama"           },
-  { "id": "skirt",       "category": "clothes", "emoji": "👗", "color": "#EC4899", "de": "Rock",        "nl": "Rok",         "tr": "Etek"             },
-  { "id": "sunglasses",  "category": "clothes", "emoji": "🕶️", "color": "#1E293B", "de": "Sonnenbrille","nl": "Zonnebril",   "tr": "Güneş gözlüğü"   },
-  { "id": "tie",         "category": "clothes", "emoji": "👔", "color": "#1E40AF", "de": "Krawatte",    "nl": "Stropdas",    "tr": "Kravat"           },
-  { "id": "swimsuit",    "category": "clothes", "emoji": "👙", "color": "#F97316", "de": "Badeanzug",   "nl": "Zwempak",     "tr": "Mayo"             },
-
-  { "id": "uncle",       "category": "family", "emoji": "👨", "color": "#3B82F6", "de": "Onkel",       "nl": "Oom",         "tr": "Amca"             },
-  { "id": "aunt",        "category": "family", "emoji": "👩", "color": "#EC4899", "de": "Tante",       "nl": "Tante",       "tr": "Hala"             },
-  { "id": "friend",      "category": "family", "emoji": "🤝", "color": "#22C55E", "de": "Freund",      "nl": "Vriend",      "tr": "Arkadaş"          },
-  { "id": "teacher",     "category": "family", "emoji": "👩‍🏫","color": "#F97316", "de": "Lehrerin",    "nl": "Juf",         "tr": "Öğretmen"         },
-  { "id": "neighbor",    "category": "family", "emoji": "🏘️", "color": "#6B7280", "de": "Nachbar",     "nl": "Buur",        "tr": "Komşu"            },
-
-  { "id": "excited",     "category": "feelings", "emoji": "🤩", "color": "#F59E0B", "de": "Aufgeregt",  "nl": "Opgewonden",  "tr": "Heyecanlı"        },
-  { "id": "surprised",   "category": "feelings", "emoji": "😲", "color": "#A855F7", "de": "Überrascht", "nl": "Verrast",     "tr": "Şaşkın"           },
-  { "id": "sick",        "category": "feelings", "emoji": "🤒", "color": "#94A3B8", "de": "Krank",      "nl": "Ziek",        "tr": "Hasta"            },
-  { "id": "cold-feel",   "category": "feelings", "emoji": "🥶", "color": "#BAE6FD", "de": "Kalt",       "nl": "Koud",        "tr": "Soğuk"            },
-  { "id": "hot-feel",    "category": "feelings", "emoji": "🥵", "color": "#EF4444", "de": "Heiß",       "nl": "Heet",        "tr": "Sıcak"            },
-
-  { "id": "taxi",        "category": "transport", "emoji": "🚕", "color": "#EAB308", "de": "Taxi",          "nl": "Taxi",         "tr": "Taksi"           },
-  { "id": "motorcycle",  "category": "transport", "emoji": "🏍️", "color": "#1E293B", "de": "Motorrad",      "nl": "Motor",        "tr": "Motosiklet"      },
-  { "id": "submarine",   "category": "transport", "emoji": "🤿", "color": "#1E40AF", "de": "U-Boot",        "nl": "Onderzeeër",   "tr": "Denizaltı"       },
-  { "id": "scooter",     "category": "transport", "emoji": "🛴", "color": "#22C55E", "de": "Roller",        "nl": "Step",         "tr": "Scooter"         },
-  { "id": "hot-balloon", "category": "transport", "emoji": "🎈", "color": "#F97316", "de": "Heißluftballon","nl": "Luchtballon",  "tr": "Sıcak hava balonu"},
-
-  { "id": "eraser",      "category": "school", "emoji": "🧹", "color": "#EC4899", "de": "Radiergummi",  "nl": "Gum",          "tr": "Silgi"            },
-  { "id": "ruler",       "category": "school", "emoji": "📏", "color": "#3B82F6", "de": "Lineal",       "nl": "Liniaal",      "tr": "Cetvel"           },
-  { "id": "backpack",    "category": "school", "emoji": "🎒", "color": "#F97316", "de": "Rucksack",     "nl": "Rugzak",       "tr": "Sırt çantası"     },
-  { "id": "notebook",    "category": "school", "emoji": "📓", "color": "#22C55E", "de": "Heft",         "nl": "Schrift",      "tr": "Defter"           },
-  { "id": "glue",        "category": "school", "emoji": "🖊️", "color": "#EAB308", "de": "Kleber",       "nl": "Lijm",         "tr": "Yapıştırıcı"      },
-  { "id": "paint",       "category": "school", "emoji": "🎨", "color": "#A855F7", "de": "Farbe",        "nl": "Verf",         "tr": "Boya"             },
-  { "id": "chalk",       "category": "school", "emoji": "✏️", "color": "#94A3B8", "de": "Kreide",       "nl": "Krijtje",      "tr": "Tebeşir"          },
-  { "id": "pencilcase",  "category": "school", "emoji": "🗂️", "color": "#F59E0B", "de": "Federmäppchen","nl": "Etui",         "tr": "Kalem kutusu"     },
-  { "id": "globe-obj",   "category": "school", "emoji": "🌍", "color": "#16A34A", "de": "Globus",       "nl": "Wereldbol",    "tr": "Küre"             },
-  { "id": "classroom",   "category": "school", "emoji": "🏫", "color": "#0891B2", "de": "Klassenzimmer","nl": "Klas",         "tr": "Sınıf"            },
-
-  { "id": "football",    "category": "sports", "emoji": "⚽", "color": "#22C55E", "de": "Fußball",      "nl": "Voetbal",      "tr": "Futbol"           },
-  { "id": "swimming",    "category": "sports", "emoji": "🏊", "color": "#0EA5E9", "de": "Schwimmen",    "nl": "Zwemmen",      "tr": "Yüzme"            },
-  { "id": "tennis",      "category": "sports", "emoji": "🎾", "color": "#EAB308", "de": "Tennis",       "nl": "Tennis",       "tr": "Tenis"            },
-  { "id": "basketball",  "category": "sports", "emoji": "🏀", "color": "#F97316", "de": "Basketball",   "nl": "Basketbal",    "tr": "Basketbol"        },
-  { "id": "cycling",     "category": "sports", "emoji": "🚴", "color": "#3B82F6", "de": "Radfahren",    "nl": "Fietsen",      "tr": "Bisiklet"         },
-  { "id": "dancing",     "category": "sports", "emoji": "💃", "color": "#EC4899", "de": "Tanzen",       "nl": "Dansen",       "tr": "Dans"             },
-  { "id": "running",     "category": "sports", "emoji": "🏃", "color": "#EF4444", "de": "Laufen",       "nl": "Rennen",       "tr": "Koşma"            },
-  { "id": "skiing",      "category": "sports", "emoji": "⛷️", "color": "#BAE6FD", "de": "Skifahren",    "nl": "Skiën",        "tr": "Kayak"            },
-  { "id": "gymnastics",  "category": "sports", "emoji": "🤸", "color": "#A855F7", "de": "Turnen",       "nl": "Turnen",       "tr": "Jimnastik"        },
-  { "id": "yoga",        "category": "sports", "emoji": "🧘", "color": "#16A34A", "de": "Yoga",         "nl": "Yoga",         "tr": "Yoga"             }
+  {
+    "id": "ball",
+    "category": "objects",
+    "emoji": "⚽",
+    "color": "#22C55E",
+    "de": "Ball",
+    "nl": "Bal",
+    "tr": "Top"
+  },
+  {
+    "id": "car",
+    "category": "objects",
+    "emoji": "🚗",
+    "color": "#3B82F6",
+    "de": "Auto",
+    "nl": "Auto",
+    "tr": "Araba"
+  },
+  {
+    "id": "house",
+    "category": "objects",
+    "emoji": "🏠",
+    "color": "#F59E0B",
+    "de": "Haus",
+    "nl": "Huis",
+    "tr": "Ev"
+  },
+  {
+    "id": "book",
+    "category": "objects",
+    "emoji": "📚",
+    "color": "#8B5CF6",
+    "de": "Buch",
+    "nl": "Boek",
+    "tr": "Kitap"
+  },
+  {
+    "id": "chair",
+    "category": "objects",
+    "emoji": "🪑",
+    "color": "#A16207",
+    "de": "Stuhl",
+    "nl": "Stoel",
+    "tr": "Sandalye"
+  },
+  {
+    "id": "table",
+    "category": "objects",
+    "emoji": "🪵",
+    "color": "#92400E",
+    "de": "Tisch",
+    "nl": "Tafel",
+    "tr": "Masa"
+  },
+  {
+    "id": "sun",
+    "category": "objects",
+    "emoji": "☀️",
+    "color": "#F59E0B",
+    "de": "Sonne",
+    "nl": "Zon",
+    "tr": "Güneş"
+  },
+  {
+    "id": "moon",
+    "category": "objects",
+    "emoji": "🌙",
+    "color": "#6366F1",
+    "de": "Mond",
+    "nl": "Maan",
+    "tr": "Ay"
+  },
+  {
+    "id": "star",
+    "category": "objects",
+    "emoji": "⭐",
+    "color": "#EAB308",
+    "de": "Stern",
+    "nl": "Ster",
+    "tr": "Yıldız"
+  },
+  {
+    "id": "flower",
+    "category": "objects",
+    "emoji": "🌸",
+    "color": "#EC4899",
+    "de": "Blume",
+    "nl": "Bloem",
+    "tr": "Çiçek"
+  },
+  {
+    "id": "tree",
+    "category": "objects",
+    "emoji": "🌳",
+    "color": "#16A34A",
+    "de": "Baum",
+    "nl": "Boom",
+    "tr": "Ağaç"
+  },
+  {
+    "id": "bicycle",
+    "category": "objects",
+    "emoji": "🚲",
+    "color": "#0891B2",
+    "de": "Fahrrad",
+    "nl": "Fiets",
+    "tr": "Bisiklet"
+  },
+  {
+    "id": "airplane",
+    "category": "objects",
+    "emoji": "✈️",
+    "color": "#0EA5E9",
+    "de": "Flugzeug",
+    "nl": "Vliegtuig",
+    "tr": "Uçak"
+  },
+  {
+    "id": "clock",
+    "category": "objects",
+    "emoji": "🕐",
+    "color": "#64748B",
+    "de": "Uhr",
+    "nl": "Klok",
+    "tr": "Saat"
+  },
+  {
+    "id": "hat",
+    "category": "objects",
+    "emoji": "🎩",
+    "color": "#1E293B",
+    "de": "Hut",
+    "nl": "Hoed",
+    "tr": "Şapka"
+  },
+  {
+    "id": "shoe",
+    "category": "objects",
+    "emoji": "👟",
+    "color": "#DC2626",
+    "de": "Schuh",
+    "nl": "Schoen",
+    "tr": "Ayakkabı"
+  },
+  {
+    "id": "bed",
+    "category": "objects",
+    "emoji": "🛏️",
+    "color": "#7C3AED",
+    "de": "Bett",
+    "nl": "Bed",
+    "tr": "Yatak"
+  },
+  {
+    "id": "balloon",
+    "category": "objects",
+    "emoji": "🎈",
+    "color": "#F43F5E",
+    "de": "Ballon",
+    "nl": "Ballon",
+    "tr": "Balon"
+  },
+  {
+    "id": "umbrella",
+    "category": "objects",
+    "emoji": "☂️",
+    "color": "#6366F1",
+    "de": "Regenschirm",
+    "nl": "Paraplu",
+    "tr": "Şemsiye"
+  },
+  {
+    "id": "key",
+    "category": "objects",
+    "emoji": "🔑",
+    "color": "#CA8A04",
+    "de": "Schlüssel",
+    "nl": "Sleutel",
+    "tr": "Anahtar"
+  },
+  {
+    "id": "cup",
+    "category": "objects",
+    "emoji": "☕",
+    "color": "#92400E",
+    "de": "Tasse",
+    "nl": "Beker",
+    "tr": "Bardak"
+  },
+  {
+    "id": "spoon",
+    "category": "objects",
+    "emoji": "🥄",
+    "color": "#94A3B8",
+    "de": "Löffel",
+    "nl": "Lepel",
+    "tr": "Kaşık"
+  },
+  {
+    "id": "fork",
+    "category": "objects",
+    "emoji": "🍴",
+    "color": "#64748B",
+    "de": "Gabel",
+    "nl": "Vork",
+    "tr": "Çatal"
+  },
+  {
+    "id": "plate",
+    "category": "objects",
+    "emoji": "🍽️",
+    "color": "#CBD5E1",
+    "de": "Teller",
+    "nl": "Bord",
+    "tr": "Tabak"
+  },
+  {
+    "id": "door",
+    "category": "objects",
+    "emoji": "🚪",
+    "color": "#78350F",
+    "de": "Tür",
+    "nl": "Deur",
+    "tr": "Kapı"
+  },
+  {
+    "id": "window",
+    "category": "objects",
+    "emoji": "🪟",
+    "color": "#0EA5E9",
+    "de": "Fenster",
+    "nl": "Raam",
+    "tr": "Pencere"
+  },
+  {
+    "id": "phone",
+    "category": "objects",
+    "emoji": "📱",
+    "color": "#1E293B",
+    "de": "Telefon",
+    "nl": "Telefoon",
+    "tr": "Telefon"
+  },
+  {
+    "id": "pencil",
+    "category": "objects",
+    "emoji": "✏️",
+    "color": "#EAB308",
+    "de": "Bleistift",
+    "nl": "Potlood",
+    "tr": "Kalem"
+  },
+  {
+    "id": "scissors",
+    "category": "objects",
+    "emoji": "✂️",
+    "color": "#EF4444",
+    "de": "Schere",
+    "nl": "Schaar",
+    "tr": "Makas"
+  },
+  {
+    "id": "mirror",
+    "category": "objects",
+    "emoji": "🪞",
+    "color": "#06B6D4",
+    "de": "Spiegel",
+    "nl": "Spiegel",
+    "tr": "Ayna"
+  },
+  {
+    "id": "lamp",
+    "category": "objects",
+    "emoji": "💡",
+    "color": "#F59E0B",
+    "de": "Lampe",
+    "nl": "Lamp",
+    "tr": "Lamba"
+  },
+  {
+    "id": "bag",
+    "category": "objects",
+    "emoji": "👜",
+    "color": "#A855F7",
+    "de": "Tasche",
+    "nl": "Tas",
+    "tr": "Çanta"
+  },
+  {
+    "id": "drum",
+    "category": "objects",
+    "emoji": "🥁",
+    "color": "#DC2626",
+    "de": "Trommel",
+    "nl": "Trom",
+    "tr": "Davul"
+  },
+  {
+    "id": "kite",
+    "category": "objects",
+    "emoji": "🪁",
+    "color": "#F97316",
+    "de": "Drachen",
+    "nl": "Vlieger",
+    "tr": "Uçurtma"
+  },
+  {
+    "id": "teddy",
+    "category": "objects",
+    "emoji": "🧸",
+    "color": "#D97706",
+    "de": "Teddybär",
+    "nl": "Teddybeer",
+    "tr": "Oyuncak ayı"
+  },
+  {
+    "id": "swing",
+    "category": "objects",
+    "emoji": "🛝",
+    "color": "#22C55E",
+    "de": "Schaukel",
+    "nl": "Schommel",
+    "tr": "Salıncak"
+  },
+  {
+    "id": "dog",
+    "category": "animals",
+    "emoji": "🐶",
+    "color": "#F97316",
+    "de": "Hund",
+    "nl": "Hond",
+    "tr": "Köpek"
+  },
+  {
+    "id": "cat",
+    "category": "animals",
+    "emoji": "🐱",
+    "color": "#EC4899",
+    "de": "Katze",
+    "nl": "Kat",
+    "tr": "Kedi"
+  },
+  {
+    "id": "bird",
+    "category": "animals",
+    "emoji": "🐦",
+    "color": "#06B6D4",
+    "de": "Vogel",
+    "nl": "Vogel",
+    "tr": "Kuş"
+  },
+  {
+    "id": "fish",
+    "category": "animals",
+    "emoji": "🐟",
+    "color": "#14B8A6",
+    "de": "Fisch",
+    "nl": "Vis",
+    "tr": "Balık"
+  },
+  {
+    "id": "horse",
+    "category": "animals",
+    "emoji": "🐴",
+    "color": "#92400E",
+    "de": "Pferd",
+    "nl": "Paard",
+    "tr": "At"
+  },
+  {
+    "id": "rabbit",
+    "category": "animals",
+    "emoji": "🐰",
+    "color": "#F9A8D4",
+    "de": "Hase",
+    "nl": "Konijn",
+    "tr": "Tavşan"
+  },
+  {
+    "id": "elephant",
+    "category": "animals",
+    "emoji": "🐘",
+    "color": "#94A3B8",
+    "de": "Elefant",
+    "nl": "Olifant",
+    "tr": "Fil"
+  },
+  {
+    "id": "lion",
+    "category": "animals",
+    "emoji": "🦁",
+    "color": "#F59E0B",
+    "de": "Löwe",
+    "nl": "Leeuw",
+    "tr": "Aslan"
+  },
+  {
+    "id": "duck",
+    "category": "animals",
+    "emoji": "🦆",
+    "color": "#EAB308",
+    "de": "Ente",
+    "nl": "Eend",
+    "tr": "Ördek"
+  },
+  {
+    "id": "frog",
+    "category": "animals",
+    "emoji": "🐸",
+    "color": "#22C55E",
+    "de": "Frosch",
+    "nl": "Kikker",
+    "tr": "Kurbağa"
+  },
+  {
+    "id": "bear",
+    "category": "animals",
+    "emoji": "🐻",
+    "color": "#A16207",
+    "de": "Bär",
+    "nl": "Beer",
+    "tr": "Ayı"
+  },
+  {
+    "id": "monkey",
+    "category": "animals",
+    "emoji": "🐵",
+    "color": "#D97706",
+    "de": "Affe",
+    "nl": "Aap",
+    "tr": "Maymun"
+  },
+  {
+    "id": "bee",
+    "category": "animals",
+    "emoji": "🐝",
+    "color": "#EAB308",
+    "de": "Biene",
+    "nl": "Bij",
+    "tr": "Arı"
+  },
+  {
+    "id": "butterfly",
+    "category": "animals",
+    "emoji": "🦋",
+    "color": "#A78BFA",
+    "de": "Schmetterling",
+    "nl": "Vlinder",
+    "tr": "Kelebek"
+  },
+  {
+    "id": "cow",
+    "category": "animals",
+    "emoji": "🐮",
+    "color": "#6B7280",
+    "de": "Kuh",
+    "nl": "Koe",
+    "tr": "İnek"
+  },
+  {
+    "id": "pig",
+    "category": "animals",
+    "emoji": "🐷",
+    "color": "#F9A8D4",
+    "de": "Schwein",
+    "nl": "Varken",
+    "tr": "Domuz"
+  },
+  {
+    "id": "turtle",
+    "category": "animals",
+    "emoji": "🐢",
+    "color": "#15803D",
+    "de": "Schildkröte",
+    "nl": "Schildpad",
+    "tr": "Kaplumbağa"
+  },
+  {
+    "id": "snail",
+    "category": "animals",
+    "emoji": "🐌",
+    "color": "#78350F",
+    "de": "Schnecke",
+    "nl": "Slak",
+    "tr": "Salyangoz"
+  },
+  {
+    "id": "sheep",
+    "category": "animals",
+    "emoji": "🐑",
+    "color": "#E5E7EB",
+    "de": "Schaf",
+    "nl": "Schaap",
+    "tr": "Koyun"
+  },
+  {
+    "id": "chicken",
+    "category": "animals",
+    "emoji": "🐔",
+    "color": "#F97316",
+    "de": "Huhn",
+    "nl": "Kip",
+    "tr": "Tavuk"
+  },
+  {
+    "id": "mouse",
+    "category": "animals",
+    "emoji": "🐭",
+    "color": "#94A3B8",
+    "de": "Maus",
+    "nl": "Muis",
+    "tr": "Fare"
+  },
+  {
+    "id": "fox",
+    "category": "animals",
+    "emoji": "🦊",
+    "color": "#F97316",
+    "de": "Fuchs",
+    "nl": "Vos",
+    "tr": "Tilki"
+  },
+  {
+    "id": "owl",
+    "category": "animals",
+    "emoji": "🦉",
+    "color": "#78350F",
+    "de": "Eule",
+    "nl": "Uil",
+    "tr": "Baykuş"
+  },
+  {
+    "id": "penguin",
+    "category": "animals",
+    "emoji": "🐧",
+    "color": "#1E293B",
+    "de": "Pinguin",
+    "nl": "Pinguïn",
+    "tr": "Penguen"
+  },
+  {
+    "id": "giraffe",
+    "category": "animals",
+    "emoji": "🦒",
+    "color": "#EAB308",
+    "de": "Giraffe",
+    "nl": "Giraf",
+    "tr": "Zürafa"
+  },
+  {
+    "id": "crocodile",
+    "category": "animals",
+    "emoji": "🐊",
+    "color": "#16A34A",
+    "de": "Krokodil",
+    "nl": "Krokodil",
+    "tr": "Timsah"
+  },
+  {
+    "id": "spider",
+    "category": "animals",
+    "emoji": "🕷️",
+    "color": "#1E293B",
+    "de": "Spinne",
+    "nl": "Spin",
+    "tr": "Örümcek"
+  },
+  {
+    "id": "whale",
+    "category": "animals",
+    "emoji": "🐋",
+    "color": "#3B82F6",
+    "de": "Wal",
+    "nl": "Walvis",
+    "tr": "Balina"
+  },
+  {
+    "id": "deer",
+    "category": "animals",
+    "emoji": "🦌",
+    "color": "#A16207",
+    "de": "Reh",
+    "nl": "Hert",
+    "tr": "Geyik"
+  },
+  {
+    "id": "parrot",
+    "category": "animals",
+    "emoji": "🦜",
+    "color": "#22C55E",
+    "de": "Papagei",
+    "nl": "Papegaai",
+    "tr": "Papağan"
+  },
+  {
+    "id": "wolf",
+    "category": "animals",
+    "emoji": "🐺",
+    "color": "#64748B",
+    "de": "Wolf",
+    "nl": "Wolf",
+    "tr": "Kurt"
+  },
+  {
+    "id": "squirrel",
+    "category": "animals",
+    "emoji": "🐿️",
+    "color": "#D97706",
+    "de": "Eichhörnchen",
+    "nl": "Eekhoorn",
+    "tr": "Sincap"
+  },
+  {
+    "id": "apple",
+    "category": "food",
+    "emoji": "🍎",
+    "color": "#EF4444",
+    "de": "Apfel",
+    "nl": "Appel",
+    "tr": "Elma"
+  },
+  {
+    "id": "bread",
+    "category": "food",
+    "emoji": "🍞",
+    "color": "#D97706",
+    "de": "Brot",
+    "nl": "Brood",
+    "tr": "Ekmek"
+  },
+  {
+    "id": "milk",
+    "category": "food",
+    "emoji": "🥛",
+    "color": "#64748B",
+    "de": "Milch",
+    "nl": "Melk",
+    "tr": "Süt"
+  },
+  {
+    "id": "water",
+    "category": "food",
+    "emoji": "💧",
+    "color": "#0EA5E9",
+    "de": "Wasser",
+    "nl": "Water",
+    "tr": "Su"
+  },
+  {
+    "id": "banana",
+    "category": "food",
+    "emoji": "🍌",
+    "color": "#EAB308",
+    "de": "Banane",
+    "nl": "Banaan",
+    "tr": "Muz"
+  },
+  {
+    "id": "orange",
+    "category": "food",
+    "emoji": "🍊",
+    "color": "#F97316",
+    "de": "Orange",
+    "nl": "Sinaasappel",
+    "tr": "Portakal"
+  },
+  {
+    "id": "egg",
+    "category": "food",
+    "emoji": "🥚",
+    "color": "#FEF9C3",
+    "de": "Ei",
+    "nl": "Ei",
+    "tr": "Yumurta"
+  },
+  {
+    "id": "cheese",
+    "category": "food",
+    "emoji": "🧀",
+    "color": "#EAB308",
+    "de": "Käse",
+    "nl": "Kaas",
+    "tr": "Peynir"
+  },
+  {
+    "id": "cake",
+    "category": "food",
+    "emoji": "🎂",
+    "color": "#F472B6",
+    "de": "Kuchen",
+    "nl": "Taart",
+    "tr": "Pasta"
+  },
+  {
+    "id": "carrot",
+    "category": "food",
+    "emoji": "🥕",
+    "color": "#F97316",
+    "de": "Karotte",
+    "nl": "Wortel",
+    "tr": "Havuç"
+  },
+  {
+    "id": "strawberry",
+    "category": "food",
+    "emoji": "🍓",
+    "color": "#EF4444",
+    "de": "Erdbeere",
+    "nl": "Aardbei",
+    "tr": "Çilek"
+  },
+  {
+    "id": "grapes",
+    "category": "food",
+    "emoji": "🍇",
+    "color": "#7C3AED",
+    "de": "Trauben",
+    "nl": "Druiven",
+    "tr": "Üzüm"
+  },
+  {
+    "id": "icecream",
+    "category": "food",
+    "emoji": "🍦",
+    "color": "#F9A8D4",
+    "de": "Eis",
+    "nl": "Ijs",
+    "tr": "Dondurma"
+  },
+  {
+    "id": "cookie",
+    "category": "food",
+    "emoji": "🍪",
+    "color": "#A16207",
+    "de": "Keks",
+    "nl": "Koekje",
+    "tr": "Kurabiye"
+  },
+  {
+    "id": "soup",
+    "category": "food",
+    "emoji": "🍲",
+    "color": "#DC2626",
+    "de": "Suppe",
+    "nl": "Soep",
+    "tr": "Çorba"
+  },
+  {
+    "id": "rice",
+    "category": "food",
+    "emoji": "🍚",
+    "color": "#CBD5E1",
+    "de": "Reis",
+    "nl": "Rijst",
+    "tr": "Pirinç"
+  },
+  {
+    "id": "tomato",
+    "category": "food",
+    "emoji": "🍅",
+    "color": "#EF4444",
+    "de": "Tomate",
+    "nl": "Tomaat",
+    "tr": "Domates"
+  },
+  {
+    "id": "potato",
+    "category": "food",
+    "emoji": "🥔",
+    "color": "#A16207",
+    "de": "Kartoffel",
+    "nl": "Aardappel",
+    "tr": "Patates"
+  },
+  {
+    "id": "lemon",
+    "category": "food",
+    "emoji": "🍋",
+    "color": "#EAB308",
+    "de": "Zitrone",
+    "nl": "Citroen",
+    "tr": "Limon"
+  },
+  {
+    "id": "cherry",
+    "category": "food",
+    "emoji": "🍒",
+    "color": "#DC2626",
+    "de": "Kirsche",
+    "nl": "Kers",
+    "tr": "Kiraz"
+  },
+  {
+    "id": "pear",
+    "category": "food",
+    "emoji": "🍐",
+    "color": "#86EFAC",
+    "de": "Birne",
+    "nl": "Peer",
+    "tr": "Armut"
+  },
+  {
+    "id": "watermelon",
+    "category": "food",
+    "emoji": "🍉",
+    "color": "#16A34A",
+    "de": "Wassermelone",
+    "nl": "Watermeloen",
+    "tr": "Karpuz"
+  },
+  {
+    "id": "pasta",
+    "category": "food",
+    "emoji": "🍝",
+    "color": "#F59E0B",
+    "de": "Nudeln",
+    "nl": "Pasta",
+    "tr": "Makarna"
+  },
+  {
+    "id": "yogurt",
+    "category": "food",
+    "emoji": "🥛",
+    "color": "#E2E8F0",
+    "de": "Joghurt",
+    "nl": "Yoghurt",
+    "tr": "Yoğurt"
+  },
+  {
+    "id": "honey",
+    "category": "food",
+    "emoji": "🍯",
+    "color": "#F59E0B",
+    "de": "Honig",
+    "nl": "Honing",
+    "tr": "Bal"
+  },
+  {
+    "id": "garlic",
+    "category": "food",
+    "emoji": "🧄",
+    "color": "#E2E8F0",
+    "de": "Knoblauch",
+    "nl": "Knoflook",
+    "tr": "Sarımsak"
+  },
+  {
+    "id": "corn",
+    "category": "food",
+    "emoji": "🌽",
+    "color": "#EAB308",
+    "de": "Mais",
+    "nl": "Maïs",
+    "tr": "Mısır"
+  },
+  {
+    "id": "cucumber",
+    "category": "food",
+    "emoji": "🥒",
+    "color": "#16A34A",
+    "de": "Gurke",
+    "nl": "Komkommer",
+    "tr": "Salatalık"
+  },
+  {
+    "id": "mango",
+    "category": "food",
+    "emoji": "🥭",
+    "color": "#F97316",
+    "de": "Mango",
+    "nl": "Mango",
+    "tr": "Mango"
+  },
+  {
+    "id": "pineapple",
+    "category": "food",
+    "emoji": "🍍",
+    "color": "#EAB308",
+    "de": "Ananas",
+    "nl": "Ananas",
+    "tr": "Ananas"
+  },
+  {
+    "id": "red",
+    "category": "colors",
+    "emoji": "🔴",
+    "color": "#EF4444",
+    "de": "Rot",
+    "nl": "Rood",
+    "tr": "Kırmızı"
+  },
+  {
+    "id": "blue",
+    "category": "colors",
+    "emoji": "🔵",
+    "color": "#3B82F6",
+    "de": "Blau",
+    "nl": "Blauw",
+    "tr": "Mavi"
+  },
+  {
+    "id": "green",
+    "category": "colors",
+    "emoji": "🟢",
+    "color": "#22C55E",
+    "de": "Grün",
+    "nl": "Groen",
+    "tr": "Yeşil"
+  },
+  {
+    "id": "yellow",
+    "category": "colors",
+    "emoji": "🟡",
+    "color": "#EAB308",
+    "de": "Gelb",
+    "nl": "Geel",
+    "tr": "Sarı"
+  },
+  {
+    "id": "purple",
+    "category": "colors",
+    "emoji": "🟣",
+    "color": "#A855F7",
+    "de": "Lila",
+    "nl": "Paars",
+    "tr": "Mor"
+  },
+  {
+    "id": "pink",
+    "category": "colors",
+    "emoji": "🩷",
+    "color": "#EC4899",
+    "de": "Rosa",
+    "nl": "Roze",
+    "tr": "Pembe"
+  },
+  {
+    "id": "white",
+    "category": "colors",
+    "emoji": "⬜",
+    "color": "#94A3B8",
+    "de": "Weiß",
+    "nl": "Wit",
+    "tr": "Beyaz"
+  },
+  {
+    "id": "black",
+    "category": "colors",
+    "emoji": "⬛",
+    "color": "#1E293B",
+    "de": "Schwarz",
+    "nl": "Zwart",
+    "tr": "Siyah"
+  },
+  {
+    "id": "orange-color",
+    "category": "colors",
+    "emoji": "🟠",
+    "color": "#F97316",
+    "de": "Orange",
+    "nl": "Oranje",
+    "tr": "Turuncu"
+  },
+  {
+    "id": "brown",
+    "category": "colors",
+    "emoji": "🟫",
+    "color": "#92400E",
+    "de": "Braun",
+    "nl": "Bruin",
+    "tr": "Kahverengi"
+  },
+  {
+    "id": "gray",
+    "category": "colors",
+    "emoji": "🔘",
+    "color": "#6B7280",
+    "de": "Grau",
+    "nl": "Grijs",
+    "tr": "Gri"
+  },
+  {
+    "id": "eye",
+    "category": "body",
+    "emoji": "👁️",
+    "color": "#06B6D4",
+    "de": "Auge",
+    "nl": "Oog",
+    "tr": "Göz"
+  },
+  {
+    "id": "nose",
+    "category": "body",
+    "emoji": "👃",
+    "color": "#F97316",
+    "de": "Nase",
+    "nl": "Neus",
+    "tr": "Burun"
+  },
+  {
+    "id": "mouth",
+    "category": "body",
+    "emoji": "👄",
+    "color": "#EF4444",
+    "de": "Mund",
+    "nl": "Mond",
+    "tr": "Ağız"
+  },
+  {
+    "id": "ear",
+    "category": "body",
+    "emoji": "👂",
+    "color": "#F9A8D4",
+    "de": "Ohr",
+    "nl": "Oor",
+    "tr": "Kulak"
+  },
+  {
+    "id": "hand",
+    "category": "body",
+    "emoji": "✋",
+    "color": "#F59E0B",
+    "de": "Hand",
+    "nl": "Hand",
+    "tr": "El"
+  },
+  {
+    "id": "foot",
+    "category": "body",
+    "emoji": "🦶",
+    "color": "#A16207",
+    "de": "Fuß",
+    "nl": "Voet",
+    "tr": "Ayak"
+  },
+  {
+    "id": "head",
+    "category": "body",
+    "emoji": "🗣️",
+    "color": "#8B5CF6",
+    "de": "Kopf",
+    "nl": "Hoofd",
+    "tr": "Kafa"
+  },
+  {
+    "id": "hair",
+    "category": "body",
+    "emoji": "💇",
+    "color": "#92400E",
+    "de": "Haar",
+    "nl": "Haar",
+    "tr": "Saç"
+  },
+  {
+    "id": "heart",
+    "category": "body",
+    "emoji": "❤️",
+    "color": "#EF4444",
+    "de": "Herz",
+    "nl": "Hart",
+    "tr": "Kalp"
+  },
+  {
+    "id": "belly",
+    "category": "body",
+    "emoji": "🫃",
+    "color": "#F97316",
+    "de": "Bauch",
+    "nl": "Buik",
+    "tr": "Karın"
+  },
+  {
+    "id": "knee",
+    "category": "body",
+    "emoji": "🦵",
+    "color": "#FCA5A5",
+    "de": "Knie",
+    "nl": "Knie",
+    "tr": "Diz"
+  },
+  {
+    "id": "finger",
+    "category": "body",
+    "emoji": "☝️",
+    "color": "#FBBF24",
+    "de": "Finger",
+    "nl": "Vinger",
+    "tr": "Parmak"
+  },
+  {
+    "id": "tooth",
+    "category": "body",
+    "emoji": "🦷",
+    "color": "#E2E8F0",
+    "de": "Zahn",
+    "nl": "Tand",
+    "tr": "Diş"
+  },
+  {
+    "id": "back",
+    "category": "body",
+    "emoji": "🔙",
+    "color": "#94A3B8",
+    "de": "Rücken",
+    "nl": "Rug",
+    "tr": "Sırt"
+  },
+  {
+    "id": "one",
+    "category": "numbers",
+    "emoji": "1️⃣",
+    "color": "#EF4444",
+    "de": "Eins",
+    "nl": "Één",
+    "tr": "Bir"
+  },
+  {
+    "id": "two",
+    "category": "numbers",
+    "emoji": "2️⃣",
+    "color": "#F97316",
+    "de": "Zwei",
+    "nl": "Twee",
+    "tr": "İki"
+  },
+  {
+    "id": "three",
+    "category": "numbers",
+    "emoji": "3️⃣",
+    "color": "#EAB308",
+    "de": "Drei",
+    "nl": "Drie",
+    "tr": "Üç"
+  },
+  {
+    "id": "four",
+    "category": "numbers",
+    "emoji": "4️⃣",
+    "color": "#22C55E",
+    "de": "Vier",
+    "nl": "Vier",
+    "tr": "Dört"
+  },
+  {
+    "id": "five",
+    "category": "numbers",
+    "emoji": "5️⃣",
+    "color": "#06B6D4",
+    "de": "Fünf",
+    "nl": "Vijf",
+    "tr": "Beş"
+  },
+  {
+    "id": "six",
+    "category": "numbers",
+    "emoji": "6️⃣",
+    "color": "#3B82F6",
+    "de": "Sechs",
+    "nl": "Zes",
+    "tr": "Altı"
+  },
+  {
+    "id": "seven",
+    "category": "numbers",
+    "emoji": "7️⃣",
+    "color": "#8B5CF6",
+    "de": "Sieben",
+    "nl": "Zeven",
+    "tr": "Yedi"
+  },
+  {
+    "id": "eight",
+    "category": "numbers",
+    "emoji": "8️⃣",
+    "color": "#EC4899",
+    "de": "Acht",
+    "nl": "Acht",
+    "tr": "Sekiz"
+  },
+  {
+    "id": "nine",
+    "category": "numbers",
+    "emoji": "9️⃣",
+    "color": "#F43F5E",
+    "de": "Neun",
+    "nl": "Negen",
+    "tr": "Dokuz"
+  },
+  {
+    "id": "ten",
+    "category": "numbers",
+    "emoji": "🔟",
+    "color": "#7C3AED",
+    "de": "Zehn",
+    "nl": "Tien",
+    "tr": "On"
+  },
+  {
+    "id": "rain",
+    "category": "nature",
+    "emoji": "🌧️",
+    "color": "#3B82F6",
+    "de": "Regen",
+    "nl": "Regen",
+    "tr": "Yağmur"
+  },
+  {
+    "id": "cloud",
+    "category": "nature",
+    "emoji": "☁️",
+    "color": "#94A3B8",
+    "de": "Wolke",
+    "nl": "Wolk",
+    "tr": "Bulut"
+  },
+  {
+    "id": "snow",
+    "category": "nature",
+    "emoji": "❄️",
+    "color": "#BAE6FD",
+    "de": "Schnee",
+    "nl": "Sneeuw",
+    "tr": "Kar"
+  },
+  {
+    "id": "wind",
+    "category": "nature",
+    "emoji": "💨",
+    "color": "#7DD3FC",
+    "de": "Wind",
+    "nl": "Wind",
+    "tr": "Rüzgar"
+  },
+  {
+    "id": "rainbow",
+    "category": "nature",
+    "emoji": "🌈",
+    "color": "#F97316",
+    "de": "Regenbogen",
+    "nl": "Regenboog",
+    "tr": "Gökkuşağı"
+  },
+  {
+    "id": "mountain",
+    "category": "nature",
+    "emoji": "⛰️",
+    "color": "#6B7280",
+    "de": "Berg",
+    "nl": "Berg",
+    "tr": "Dağ"
+  },
+  {
+    "id": "river",
+    "category": "nature",
+    "emoji": "🏞️",
+    "color": "#0EA5E9",
+    "de": "Fluss",
+    "nl": "Rivier",
+    "tr": "Nehir"
+  },
+  {
+    "id": "sea",
+    "category": "nature",
+    "emoji": "🌊",
+    "color": "#0891B2",
+    "de": "Meer",
+    "nl": "Zee",
+    "tr": "Deniz"
+  },
+  {
+    "id": "forest",
+    "category": "nature",
+    "emoji": "🌲",
+    "color": "#15803D",
+    "de": "Wald",
+    "nl": "Bos",
+    "tr": "Orman"
+  },
+  {
+    "id": "fire",
+    "category": "nature",
+    "emoji": "🔥",
+    "color": "#EF4444",
+    "de": "Feuer",
+    "nl": "Vuur",
+    "tr": "Ateş"
+  },
+  {
+    "id": "rock",
+    "category": "nature",
+    "emoji": "🪨",
+    "color": "#6B7280",
+    "de": "Stein",
+    "nl": "Steen",
+    "tr": "Taş"
+  },
+  {
+    "id": "leaf",
+    "category": "nature",
+    "emoji": "🍃",
+    "color": "#16A34A",
+    "de": "Blatt",
+    "nl": "Blad",
+    "tr": "Yaprak"
+  },
+  {
+    "id": "lightning",
+    "category": "nature",
+    "emoji": "⚡",
+    "color": "#EAB308",
+    "de": "Blitz",
+    "nl": "Bliksem",
+    "tr": "Şimşek"
+  },
+  {
+    "id": "sand",
+    "category": "nature",
+    "emoji": "🏖️",
+    "color": "#F59E0B",
+    "de": "Sand",
+    "nl": "Zand",
+    "tr": "Kum"
+  },
+  {
+    "id": "grass",
+    "category": "nature",
+    "emoji": "🌿",
+    "color": "#22C55E",
+    "de": "Gras",
+    "nl": "Gras",
+    "tr": "Çimen"
+  },
+  {
+    "id": "shirt",
+    "category": "clothes",
+    "emoji": "👕",
+    "color": "#3B82F6",
+    "de": "Hemd",
+    "nl": "Shirt",
+    "tr": "Gömlek"
+  },
+  {
+    "id": "pants",
+    "category": "clothes",
+    "emoji": "👖",
+    "color": "#1E293B",
+    "de": "Hose",
+    "nl": "Broek",
+    "tr": "Pantolon"
+  },
+  {
+    "id": "dress",
+    "category": "clothes",
+    "emoji": "👗",
+    "color": "#EC4899",
+    "de": "Kleid",
+    "nl": "Jurk",
+    "tr": "Elbise"
+  },
+  {
+    "id": "socks",
+    "category": "clothes",
+    "emoji": "🧦",
+    "color": "#F97316",
+    "de": "Socken",
+    "nl": "Sokken",
+    "tr": "Çorap"
+  },
+  {
+    "id": "jacket",
+    "category": "clothes",
+    "emoji": "🧥",
+    "color": "#64748B",
+    "de": "Jacke",
+    "nl": "Jas",
+    "tr": "Ceket"
+  },
+  {
+    "id": "scarf",
+    "category": "clothes",
+    "emoji": "🧣",
+    "color": "#EF4444",
+    "de": "Schal",
+    "nl": "Sjaal",
+    "tr": "Atkı"
+  },
+  {
+    "id": "sweater",
+    "category": "clothes",
+    "emoji": "🧶",
+    "color": "#A855F7",
+    "de": "Pullover",
+    "nl": "Trui",
+    "tr": "Kazak"
+  },
+  {
+    "id": "boots",
+    "category": "clothes",
+    "emoji": "👢",
+    "color": "#78350F",
+    "de": "Stiefel",
+    "nl": "Laarzen",
+    "tr": "Çizme"
+  },
+  {
+    "id": "gloves",
+    "category": "clothes",
+    "emoji": "🧤",
+    "color": "#DC2626",
+    "de": "Handschuhe",
+    "nl": "Handschoenen",
+    "tr": "Eldiven"
+  },
+  {
+    "id": "cap",
+    "category": "clothes",
+    "emoji": "🧢",
+    "color": "#0EA5E9",
+    "de": "Mütze",
+    "nl": "Pet",
+    "tr": "Bere"
+  },
+  {
+    "id": "mom",
+    "category": "family",
+    "emoji": "👩",
+    "color": "#EC4899",
+    "de": "Mama",
+    "nl": "Mama",
+    "tr": "Anne"
+  },
+  {
+    "id": "dad",
+    "category": "family",
+    "emoji": "👨",
+    "color": "#3B82F6",
+    "de": "Papa",
+    "nl": "Papa",
+    "tr": "Baba"
+  },
+  {
+    "id": "baby",
+    "category": "family",
+    "emoji": "👶",
+    "color": "#F9A8D4",
+    "de": "Baby",
+    "nl": "Baby",
+    "tr": "Bebek"
+  },
+  {
+    "id": "sister",
+    "category": "family",
+    "emoji": "👧",
+    "color": "#F472B6",
+    "de": "Schwester",
+    "nl": "Zus",
+    "tr": "Kız kardeş"
+  },
+  {
+    "id": "brother",
+    "category": "family",
+    "emoji": "👦",
+    "color": "#60A5FA",
+    "de": "Bruder",
+    "nl": "Broer",
+    "tr": "Erkek kardeş"
+  },
+  {
+    "id": "grandma",
+    "category": "family",
+    "emoji": "👵",
+    "color": "#D97706",
+    "de": "Oma",
+    "nl": "Oma",
+    "tr": "Büyükanne"
+  },
+  {
+    "id": "grandpa",
+    "category": "family",
+    "emoji": "👴",
+    "color": "#6B7280",
+    "de": "Opa",
+    "nl": "Opa",
+    "tr": "Büyükbaba"
+  },
+  {
+    "id": "family",
+    "category": "family",
+    "emoji": "👨‍👩‍👧",
+    "color": "#F59E0B",
+    "de": "Familie",
+    "nl": "Familie",
+    "tr": "Aile"
+  },
+  {
+    "id": "child",
+    "category": "family",
+    "emoji": "🧒",
+    "color": "#22C55E",
+    "de": "Kind",
+    "nl": "Kind",
+    "tr": "Çocuk"
+  },
+  {
+    "id": "happy",
+    "category": "feelings",
+    "emoji": "😊",
+    "color": "#EAB308",
+    "de": "Glücklich",
+    "nl": "Blij",
+    "tr": "Mutlu"
+  },
+  {
+    "id": "sad",
+    "category": "feelings",
+    "emoji": "😢",
+    "color": "#3B82F6",
+    "de": "Traurig",
+    "nl": "Verdrietig",
+    "tr": "Üzgün"
+  },
+  {
+    "id": "angry",
+    "category": "feelings",
+    "emoji": "😠",
+    "color": "#EF4444",
+    "de": "Wütend",
+    "nl": "Boos",
+    "tr": "Kızgın"
+  },
+  {
+    "id": "scared",
+    "category": "feelings",
+    "emoji": "😨",
+    "color": "#8B5CF6",
+    "de": "Ängstlich",
+    "nl": "Bang",
+    "tr": "Korkmuş"
+  },
+  {
+    "id": "tired",
+    "category": "feelings",
+    "emoji": "😴",
+    "color": "#94A3B8",
+    "de": "Müde",
+    "nl": "Moe",
+    "tr": "Yorgun"
+  },
+  {
+    "id": "hungry",
+    "category": "feelings",
+    "emoji": "😋",
+    "color": "#F97316",
+    "de": "Hungrig",
+    "nl": "Hongerig",
+    "tr": "Aç"
+  },
+  {
+    "id": "funny",
+    "category": "feelings",
+    "emoji": "😄",
+    "color": "#22C55E",
+    "de": "Lustig",
+    "nl": "Grappig",
+    "tr": "Komik"
+  },
+  {
+    "id": "love",
+    "category": "feelings",
+    "emoji": "🥰",
+    "color": "#F43F5E",
+    "de": "Liebe",
+    "nl": "Liefde",
+    "tr": "Sevgi"
+  },
+  {
+    "id": "sleepy",
+    "category": "feelings",
+    "emoji": "🥱",
+    "color": "#A78BFA",
+    "de": "Schläfrig",
+    "nl": "Slaperig",
+    "tr": "Uykulu"
+  },
+  {
+    "id": "brave",
+    "category": "feelings",
+    "emoji": "💪",
+    "color": "#F59E0B",
+    "de": "Mutig",
+    "nl": "Dapper",
+    "tr": "Cesur"
+  },
+  {
+    "id": "bus",
+    "category": "transport",
+    "emoji": "🚌",
+    "color": "#F97316",
+    "de": "Bus",
+    "nl": "Bus",
+    "tr": "Otobüs"
+  },
+  {
+    "id": "train",
+    "category": "transport",
+    "emoji": "🚂",
+    "color": "#EF4444",
+    "de": "Zug",
+    "nl": "Trein",
+    "tr": "Tren"
+  },
+  {
+    "id": "boat",
+    "category": "transport",
+    "emoji": "⛵",
+    "color": "#0EA5E9",
+    "de": "Boot",
+    "nl": "Boot",
+    "tr": "Tekne"
+  },
+  {
+    "id": "truck",
+    "category": "transport",
+    "emoji": "🚚",
+    "color": "#6B7280",
+    "de": "Lastwagen",
+    "nl": "Vrachtwagen",
+    "tr": "Kamyon"
+  },
+  {
+    "id": "rocket",
+    "category": "transport",
+    "emoji": "🚀",
+    "color": "#8B5CF6",
+    "de": "Rakete",
+    "nl": "Raket",
+    "tr": "Roket"
+  },
+  {
+    "id": "helicopter",
+    "category": "transport",
+    "emoji": "🚁",
+    "color": "#22C55E",
+    "de": "Hubschrauber",
+    "nl": "Helikopter",
+    "tr": "Helikopter"
+  },
+  {
+    "id": "tractor",
+    "category": "transport",
+    "emoji": "🚜",
+    "color": "#16A34A",
+    "de": "Traktor",
+    "nl": "Tractor",
+    "tr": "Traktör"
+  },
+  {
+    "id": "ambulance",
+    "category": "transport",
+    "emoji": "🚑",
+    "color": "#EF4444",
+    "de": "Krankenwagen",
+    "nl": "Ambulance",
+    "tr": "Ambulans"
+  },
+  {
+    "id": "firetruck",
+    "category": "transport",
+    "emoji": "🚒",
+    "color": "#DC2626",
+    "de": "Feuerwehrauto",
+    "nl": "Brandweerauto",
+    "tr": "İtfaiye arabası"
+  },
+  {
+    "id": "ship",
+    "category": "transport",
+    "emoji": "🚢",
+    "color": "#1E40AF",
+    "de": "Schiff",
+    "nl": "Schip",
+    "tr": "Gemi"
+  },
+  {
+    "id": "school",
+    "category": "places",
+    "emoji": "🏫",
+    "color": "#F97316",
+    "de": "Schule",
+    "nl": "School",
+    "tr": "Okul"
+  },
+  {
+    "id": "park",
+    "category": "places",
+    "emoji": "🌳",
+    "color": "#16A34A",
+    "de": "Park",
+    "nl": "Park",
+    "tr": "Park"
+  },
+  {
+    "id": "beach",
+    "category": "places",
+    "emoji": "🏖️",
+    "color": "#F59E0B",
+    "de": "Strand",
+    "nl": "Strand",
+    "tr": "Plaj"
+  },
+  {
+    "id": "farm",
+    "category": "places",
+    "emoji": "🏡",
+    "color": "#A16207",
+    "de": "Bauernhof",
+    "nl": "Boerderij",
+    "tr": "Çiftlik"
+  },
+  {
+    "id": "zoo",
+    "category": "places",
+    "emoji": "🦁",
+    "color": "#D97706",
+    "de": "Zoo",
+    "nl": "Dierentuin",
+    "tr": "Hayvanat bahçesi"
+  },
+  {
+    "id": "playground",
+    "category": "places",
+    "emoji": "🛝",
+    "color": "#22C55E",
+    "de": "Spielplatz",
+    "nl": "Speeltuin",
+    "tr": "Oyun alanı"
+  },
+  {
+    "id": "hospital",
+    "category": "places",
+    "emoji": "🏥",
+    "color": "#EF4444",
+    "de": "Krankenhaus",
+    "nl": "Ziekenhuis",
+    "tr": "Hastane"
+  },
+  {
+    "id": "library",
+    "category": "places",
+    "emoji": "📚",
+    "color": "#8B5CF6",
+    "de": "Bibliothek",
+    "nl": "Bibliotheek",
+    "tr": "Kütüphane"
+  },
+  {
+    "id": "supermarket",
+    "category": "places",
+    "emoji": "🛒",
+    "color": "#0EA5E9",
+    "de": "Supermarkt",
+    "nl": "Supermarkt",
+    "tr": "Süpermarket"
+  },
+  {
+    "id": "home",
+    "category": "places",
+    "emoji": "🏠",
+    "color": "#EAB308",
+    "de": "Zuhause",
+    "nl": "Thuis",
+    "tr": "Ev"
+  },
+  {
+    "id": "cinema",
+    "category": "places",
+    "emoji": "🎬",
+    "color": "#DC2626",
+    "de": "Kino",
+    "nl": "Bioscoop",
+    "tr": "Sinema"
+  },
+  {
+    "id": "restaurant",
+    "category": "places",
+    "emoji": "🍽️",
+    "color": "#F97316",
+    "de": "Restaurant",
+    "nl": "Restaurant",
+    "tr": "Restoran"
+  },
+  {
+    "id": "airport",
+    "category": "places",
+    "emoji": "✈️",
+    "color": "#0891B2",
+    "de": "Flughafen",
+    "nl": "Luchthaven",
+    "tr": "Havaalanı"
+  },
+  {
+    "id": "castle",
+    "category": "places",
+    "emoji": "🏰",
+    "color": "#6B7280",
+    "de": "Burg",
+    "nl": "Kasteel",
+    "tr": "Kale"
+  },
+  {
+    "id": "market",
+    "category": "places",
+    "emoji": "🏪",
+    "color": "#D97706",
+    "de": "Markt",
+    "nl": "Markt",
+    "tr": "Pazar"
+  },
+  {
+    "id": "candle",
+    "category": "objects",
+    "emoji": "🕯️",
+    "color": "#F59E0B",
+    "de": "Kerze",
+    "nl": "Kaars",
+    "tr": "Mum"
+  },
+  {
+    "id": "camera",
+    "category": "objects",
+    "emoji": "📷",
+    "color": "#1E293B",
+    "de": "Kamera",
+    "nl": "Camera",
+    "tr": "Kamera"
+  },
+  {
+    "id": "guitar",
+    "category": "objects",
+    "emoji": "🎸",
+    "color": "#92400E",
+    "de": "Gitarre",
+    "nl": "Gitaar",
+    "tr": "Gitar"
+  },
+  {
+    "id": "piano",
+    "category": "objects",
+    "emoji": "🎹",
+    "color": "#1E293B",
+    "de": "Klavier",
+    "nl": "Piano",
+    "tr": "Piyano"
+  },
+  {
+    "id": "crown",
+    "category": "objects",
+    "emoji": "👑",
+    "color": "#EAB308",
+    "de": "Krone",
+    "nl": "Kroon",
+    "tr": "Taç"
+  },
+  {
+    "id": "paintbrush",
+    "category": "objects",
+    "emoji": "🖌️",
+    "color": "#A855F7",
+    "de": "Pinsel",
+    "nl": "Penseel",
+    "tr": "Fırça"
+  },
+  {
+    "id": "magnify",
+    "category": "objects",
+    "emoji": "🔍",
+    "color": "#3B82F6",
+    "de": "Lupe",
+    "nl": "Vergrootglas",
+    "tr": "Büyüteç"
+  },
+  {
+    "id": "trophy",
+    "category": "objects",
+    "emoji": "🏆",
+    "color": "#F59E0B",
+    "de": "Pokal",
+    "nl": "Trofee",
+    "tr": "Kupa"
+  },
+  {
+    "id": "map",
+    "category": "objects",
+    "emoji": "🗺️",
+    "color": "#16A34A",
+    "de": "Karte",
+    "nl": "Kaart",
+    "tr": "Harita"
+  },
+  {
+    "id": "magnet",
+    "category": "objects",
+    "emoji": "🧲",
+    "color": "#EF4444",
+    "de": "Magnet",
+    "nl": "Magneet",
+    "tr": "Mıknatıs"
+  },
+  {
+    "id": "robot",
+    "category": "objects",
+    "emoji": "🤖",
+    "color": "#06B6D4",
+    "de": "Roboter",
+    "nl": "Robot",
+    "tr": "Robot"
+  },
+  {
+    "id": "puzzle",
+    "category": "objects",
+    "emoji": "🧩",
+    "color": "#8B5CF6",
+    "de": "Puzzle",
+    "nl": "Puzzel",
+    "tr": "Yapboz"
+  },
+  {
+    "id": "zebra",
+    "category": "animals",
+    "emoji": "🦓",
+    "color": "#1E293B",
+    "de": "Zebra",
+    "nl": "Zebra",
+    "tr": "Zebra"
+  },
+  {
+    "id": "hippo",
+    "category": "animals",
+    "emoji": "🦛",
+    "color": "#94A3B8",
+    "de": "Nilpferd",
+    "nl": "Nijlpaard",
+    "tr": "Hipopotam"
+  },
+  {
+    "id": "kangaroo",
+    "category": "animals",
+    "emoji": "🦘",
+    "color": "#D97706",
+    "de": "Känguru",
+    "nl": "Kangoeroe",
+    "tr": "Kanguru"
+  },
+  {
+    "id": "camel",
+    "category": "animals",
+    "emoji": "🐪",
+    "color": "#D97706",
+    "de": "Kamel",
+    "nl": "Kameel",
+    "tr": "Deve"
+  },
+  {
+    "id": "flamingo",
+    "category": "animals",
+    "emoji": "🦩",
+    "color": "#EC4899",
+    "de": "Flamingo",
+    "nl": "Flamingo",
+    "tr": "Flamingo"
+  },
+  {
+    "id": "crab",
+    "category": "animals",
+    "emoji": "🦀",
+    "color": "#EF4444",
+    "de": "Krabbe",
+    "nl": "Krab",
+    "tr": "Yengeç"
+  },
+  {
+    "id": "octopus",
+    "category": "animals",
+    "emoji": "🐙",
+    "color": "#A855F7",
+    "de": "Oktopus",
+    "nl": "Octopus",
+    "tr": "Ahtapot"
+  },
+  {
+    "id": "ladybug",
+    "category": "animals",
+    "emoji": "🐞",
+    "color": "#EF4444",
+    "de": "Marienkäfer",
+    "nl": "Lieveheersbeestje",
+    "tr": "Uğur böceği"
+  },
+  {
+    "id": "hamster",
+    "category": "animals",
+    "emoji": "🐹",
+    "color": "#F97316",
+    "de": "Hamster",
+    "nl": "Hamster",
+    "tr": "Hamster"
+  },
+  {
+    "id": "shark",
+    "category": "animals",
+    "emoji": "🦈",
+    "color": "#64748B",
+    "de": "Hai",
+    "nl": "Haai",
+    "tr": "Köpekbalığı"
+  },
+  {
+    "id": "gorilla",
+    "category": "animals",
+    "emoji": "🦍",
+    "color": "#374151",
+    "de": "Gorilla",
+    "nl": "Gorilla",
+    "tr": "Goril"
+  },
+  {
+    "id": "leopard",
+    "category": "animals",
+    "emoji": "🐆",
+    "color": "#D97706",
+    "de": "Leopard",
+    "nl": "Luipaard",
+    "tr": "Leopar"
+  },
+  {
+    "id": "swan",
+    "category": "animals",
+    "emoji": "🦢",
+    "color": "#E2E8F0",
+    "de": "Schwan",
+    "nl": "Zwaan",
+    "tr": "Kuğu"
+  },
+  {
+    "id": "sandwich",
+    "category": "food",
+    "emoji": "🥪",
+    "color": "#D97706",
+    "de": "Sandwich",
+    "nl": "Broodje",
+    "tr": "Sandviç"
+  },
+  {
+    "id": "juice",
+    "category": "food",
+    "emoji": "🍹",
+    "color": "#F97316",
+    "de": "Saft",
+    "nl": "Sap",
+    "tr": "Meyve suyu"
+  },
+  {
+    "id": "chocolate",
+    "category": "food",
+    "emoji": "🍫",
+    "color": "#92400E",
+    "de": "Schokolade",
+    "nl": "Chocolade",
+    "tr": "Çikolata"
+  },
+  {
+    "id": "pancake",
+    "category": "food",
+    "emoji": "🥞",
+    "color": "#D97706",
+    "de": "Pfannkuchen",
+    "nl": "Pannenkoek",
+    "tr": "Krep"
+  },
+  {
+    "id": "popcorn",
+    "category": "food",
+    "emoji": "🍿",
+    "color": "#EAB308",
+    "de": "Popcorn",
+    "nl": "Popcorn",
+    "tr": "Patlamış mısır"
+  },
+  {
+    "id": "spaghetti",
+    "category": "food",
+    "emoji": "🍝",
+    "color": "#EF4444",
+    "de": "Spaghetti",
+    "nl": "Spaghetti",
+    "tr": "Spagetti"
+  },
+  {
+    "id": "salad",
+    "category": "food",
+    "emoji": "🥗",
+    "color": "#22C55E",
+    "de": "Salat",
+    "nl": "Salade",
+    "tr": "Salata"
+  },
+  {
+    "id": "olive",
+    "category": "food",
+    "emoji": "🫒",
+    "color": "#16A34A",
+    "de": "Olive",
+    "nl": "Olijf",
+    "tr": "Zeytin"
+  },
+  {
+    "id": "pepper",
+    "category": "food",
+    "emoji": "🫑",
+    "color": "#16A34A",
+    "de": "Paprika",
+    "nl": "Paprika",
+    "tr": "Biber"
+  },
+  {
+    "id": "donut",
+    "category": "food",
+    "emoji": "🍩",
+    "color": "#F97316",
+    "de": "Donut",
+    "nl": "Donut",
+    "tr": "Donut"
+  },
+  {
+    "id": "taco",
+    "category": "food",
+    "emoji": "🌮",
+    "color": "#F59E0B",
+    "de": "Taco",
+    "nl": "Taco",
+    "tr": "Taco"
+  },
+  {
+    "id": "sushi",
+    "category": "food",
+    "emoji": "🍣",
+    "color": "#EF4444",
+    "de": "Sushi",
+    "nl": "Sushi",
+    "tr": "Suşi"
+  },
+  {
+    "id": "lake",
+    "category": "nature",
+    "emoji": "🏞️",
+    "color": "#0EA5E9",
+    "de": "See",
+    "nl": "Meer",
+    "tr": "Göl"
+  },
+  {
+    "id": "wave",
+    "category": "nature",
+    "emoji": "🌊",
+    "color": "#0891B2",
+    "de": "Welle",
+    "nl": "Golf",
+    "tr": "Dalga"
+  },
+  {
+    "id": "cave",
+    "category": "nature",
+    "emoji": "🕳️",
+    "color": "#374151",
+    "de": "Höhle",
+    "nl": "Grot",
+    "tr": "Mağara"
+  },
+  {
+    "id": "waterfall",
+    "category": "nature",
+    "emoji": "💦",
+    "color": "#3B82F6",
+    "de": "Wasserfall",
+    "nl": "Waterval",
+    "tr": "Şelale"
+  },
+  {
+    "id": "island",
+    "category": "nature",
+    "emoji": "🏝️",
+    "color": "#16A34A",
+    "de": "Insel",
+    "nl": "Eiland",
+    "tr": "Ada"
+  },
+  {
+    "id": "volcano",
+    "category": "nature",
+    "emoji": "🌋",
+    "color": "#EF4444",
+    "de": "Vulkan",
+    "nl": "Vulkaan",
+    "tr": "Yanardağ"
+  },
+  {
+    "id": "pajamas",
+    "category": "clothes",
+    "emoji": "🩲",
+    "color": "#A855F7",
+    "de": "Schlafanzug",
+    "nl": "Pyjama",
+    "tr": "Pijama"
+  },
+  {
+    "id": "skirt",
+    "category": "clothes",
+    "emoji": "👗",
+    "color": "#EC4899",
+    "de": "Rock",
+    "nl": "Rok",
+    "tr": "Etek"
+  },
+  {
+    "id": "sunglasses",
+    "category": "clothes",
+    "emoji": "🕶️",
+    "color": "#1E293B",
+    "de": "Sonnenbrille",
+    "nl": "Zonnebril",
+    "tr": "Güneş gözlüğü"
+  },
+  {
+    "id": "tie",
+    "category": "clothes",
+    "emoji": "👔",
+    "color": "#1E40AF",
+    "de": "Krawatte",
+    "nl": "Stropdas",
+    "tr": "Kravat"
+  },
+  {
+    "id": "swimsuit",
+    "category": "clothes",
+    "emoji": "👙",
+    "color": "#F97316",
+    "de": "Badeanzug",
+    "nl": "Zwempak",
+    "tr": "Mayo"
+  },
+  {
+    "id": "uncle",
+    "category": "family",
+    "emoji": "👨",
+    "color": "#3B82F6",
+    "de": "Onkel",
+    "nl": "Oom",
+    "tr": "Amca"
+  },
+  {
+    "id": "aunt",
+    "category": "family",
+    "emoji": "👩",
+    "color": "#EC4899",
+    "de": "Tante",
+    "nl": "Tante",
+    "tr": "Hala"
+  },
+  {
+    "id": "friend",
+    "category": "family",
+    "emoji": "🤝",
+    "color": "#22C55E",
+    "de": "Freund",
+    "nl": "Vriend",
+    "tr": "Arkadaş"
+  },
+  {
+    "id": "teacher",
+    "category": "family",
+    "emoji": "👩‍🏫",
+    "color": "#F97316",
+    "de": "Lehrerin",
+    "nl": "Juf",
+    "tr": "Öğretmen"
+  },
+  {
+    "id": "neighbor",
+    "category": "family",
+    "emoji": "🏘️",
+    "color": "#6B7280",
+    "de": "Nachbar",
+    "nl": "Buur",
+    "tr": "Komşu"
+  },
+  {
+    "id": "excited",
+    "category": "feelings",
+    "emoji": "🤩",
+    "color": "#F59E0B",
+    "de": "Aufgeregt",
+    "nl": "Opgewonden",
+    "tr": "Heyecanlı"
+  },
+  {
+    "id": "surprised",
+    "category": "feelings",
+    "emoji": "😲",
+    "color": "#A855F7",
+    "de": "Überrascht",
+    "nl": "Verrast",
+    "tr": "Şaşkın"
+  },
+  {
+    "id": "sick",
+    "category": "feelings",
+    "emoji": "🤒",
+    "color": "#94A3B8",
+    "de": "Krank",
+    "nl": "Ziek",
+    "tr": "Hasta"
+  },
+  {
+    "id": "cold-feel",
+    "category": "feelings",
+    "emoji": "🥶",
+    "color": "#BAE6FD",
+    "de": "Kalt",
+    "nl": "Koud",
+    "tr": "Soğuk"
+  },
+  {
+    "id": "hot-feel",
+    "category": "feelings",
+    "emoji": "🥵",
+    "color": "#EF4444",
+    "de": "Heiß",
+    "nl": "Heet",
+    "tr": "Sıcak"
+  },
+  {
+    "id": "taxi",
+    "category": "transport",
+    "emoji": "🚕",
+    "color": "#EAB308",
+    "de": "Taxi",
+    "nl": "Taxi",
+    "tr": "Taksi"
+  },
+  {
+    "id": "motorcycle",
+    "category": "transport",
+    "emoji": "🏍️",
+    "color": "#1E293B",
+    "de": "Motorrad",
+    "nl": "Motor",
+    "tr": "Motosiklet"
+  },
+  {
+    "id": "submarine",
+    "category": "transport",
+    "emoji": "🤿",
+    "color": "#1E40AF",
+    "de": "U-Boot",
+    "nl": "Onderzeeër",
+    "tr": "Denizaltı"
+  },
+  {
+    "id": "scooter",
+    "category": "transport",
+    "emoji": "🛴",
+    "color": "#22C55E",
+    "de": "Roller",
+    "nl": "Step",
+    "tr": "Scooter"
+  },
+  {
+    "id": "hot-balloon",
+    "category": "transport",
+    "emoji": "🎈",
+    "color": "#F97316",
+    "de": "Heißluftballon",
+    "nl": "Luchtballon",
+    "tr": "Sıcak hava balonu"
+  },
+  {
+    "id": "eraser",
+    "category": "school",
+    "emoji": "🧹",
+    "color": "#EC4899",
+    "de": "Radiergummi",
+    "nl": "Gum",
+    "tr": "Silgi"
+  },
+  {
+    "id": "ruler",
+    "category": "school",
+    "emoji": "📏",
+    "color": "#3B82F6",
+    "de": "Lineal",
+    "nl": "Liniaal",
+    "tr": "Cetvel"
+  },
+  {
+    "id": "backpack",
+    "category": "school",
+    "emoji": "🎒",
+    "color": "#F97316",
+    "de": "Rucksack",
+    "nl": "Rugzak",
+    "tr": "Sırt çantası"
+  },
+  {
+    "id": "notebook",
+    "category": "school",
+    "emoji": "📓",
+    "color": "#22C55E",
+    "de": "Heft",
+    "nl": "Schrift",
+    "tr": "Defter"
+  },
+  {
+    "id": "glue",
+    "category": "school",
+    "emoji": "🖊️",
+    "color": "#EAB308",
+    "de": "Kleber",
+    "nl": "Lijm",
+    "tr": "Yapıştırıcı"
+  },
+  {
+    "id": "paint",
+    "category": "school",
+    "emoji": "🎨",
+    "color": "#A855F7",
+    "de": "Farbe",
+    "nl": "Verf",
+    "tr": "Boya"
+  },
+  {
+    "id": "chalk",
+    "category": "school",
+    "emoji": "✏️",
+    "color": "#94A3B8",
+    "de": "Kreide",
+    "nl": "Krijtje",
+    "tr": "Tebeşir"
+  },
+  {
+    "id": "pencilcase",
+    "category": "school",
+    "emoji": "🗂️",
+    "color": "#F59E0B",
+    "de": "Federmäppchen",
+    "nl": "Etui",
+    "tr": "Kalem kutusu"
+  },
+  {
+    "id": "globe-obj",
+    "category": "school",
+    "emoji": "🌍",
+    "color": "#16A34A",
+    "de": "Globus",
+    "nl": "Wereldbol",
+    "tr": "Küre"
+  },
+  {
+    "id": "classroom",
+    "category": "school",
+    "emoji": "🏫",
+    "color": "#0891B2",
+    "de": "Klassenzimmer",
+    "nl": "Klas",
+    "tr": "Sınıf"
+  },
+  {
+    "id": "football",
+    "category": "sports",
+    "emoji": "⚽",
+    "color": "#22C55E",
+    "de": "Fußball",
+    "nl": "Voetbal",
+    "tr": "Futbol"
+  },
+  {
+    "id": "swimming",
+    "category": "sports",
+    "emoji": "🏊",
+    "color": "#0EA5E9",
+    "de": "Schwimmen",
+    "nl": "Zwemmen",
+    "tr": "Yüzme"
+  },
+  {
+    "id": "tennis",
+    "category": "sports",
+    "emoji": "🎾",
+    "color": "#EAB308",
+    "de": "Tennis",
+    "nl": "Tennis",
+    "tr": "Tenis"
+  },
+  {
+    "id": "basketball",
+    "category": "sports",
+    "emoji": "🏀",
+    "color": "#F97316",
+    "de": "Basketball",
+    "nl": "Basketbal",
+    "tr": "Basketbol"
+  },
+  {
+    "id": "cycling",
+    "category": "sports",
+    "emoji": "🚴",
+    "color": "#3B82F6",
+    "de": "Radfahren",
+    "nl": "Fietsen",
+    "tr": "Bisiklet"
+  },
+  {
+    "id": "dancing",
+    "category": "sports",
+    "emoji": "💃",
+    "color": "#EC4899",
+    "de": "Tanzen",
+    "nl": "Dansen",
+    "tr": "Dans"
+  },
+  {
+    "id": "running",
+    "category": "sports",
+    "emoji": "🏃",
+    "color": "#EF4444",
+    "de": "Laufen",
+    "nl": "Rennen",
+    "tr": "Koşma"
+  },
+  {
+    "id": "skiing",
+    "category": "sports",
+    "emoji": "⛷️",
+    "color": "#BAE6FD",
+    "de": "Skifahren",
+    "nl": "Skiën",
+    "tr": "Kayak"
+  },
+  {
+    "id": "gymnastics",
+    "category": "sports",
+    "emoji": "🤸",
+    "color": "#A855F7",
+    "de": "Turnen",
+    "nl": "Turnen",
+    "tr": "Jimnastik"
+  },
+  {
+    "id": "yoga",
+    "category": "sports",
+    "emoji": "🧘",
+    "color": "#16A34A",
+    "de": "Yoga",
+    "nl": "Yoga",
+    "tr": "Yoga"
+  },
+  {
+    "id": "trumpet",
+    "category": "music",
+    "emoji": "🎺",
+    "color": "#F97316",
+    "de": "Trompete",
+    "nl": "Trompet",
+    "tr": "Trompet"
+  },
+  {
+    "id": "violin",
+    "category": "music",
+    "emoji": "🎻",
+    "color": "#92400E",
+    "de": "Geige",
+    "nl": "Viool",
+    "tr": "Keman"
+  },
+  {
+    "id": "microphone",
+    "category": "music",
+    "emoji": "🎤",
+    "color": "#6366F1",
+    "de": "Mikrofon",
+    "nl": "Microfoon",
+    "tr": "Mikrofon"
+  },
+  {
+    "id": "headphones",
+    "category": "music",
+    "emoji": "🎧",
+    "color": "#1E293B",
+    "de": "Kopfhörer",
+    "nl": "Koptelefoon",
+    "tr": "Kulaklık"
+  },
+  {
+    "id": "accordion",
+    "category": "music",
+    "emoji": "🪗",
+    "color": "#DC2626",
+    "de": "Akkordeon",
+    "nl": "Accordeon",
+    "tr": "Akordeon"
+  },
+  {
+    "id": "saxophone",
+    "category": "music",
+    "emoji": "🎷",
+    "color": "#D97706",
+    "de": "Saxophon",
+    "nl": "Saxofoon",
+    "tr": "Saksofon"
+  },
+  {
+    "id": "flute",
+    "category": "music",
+    "emoji": "🪈",
+    "color": "#0EA5E9",
+    "de": "Flöte",
+    "nl": "Fluit",
+    "tr": "Flüt"
+  },
+  {
+    "id": "radio",
+    "category": "music",
+    "emoji": "📻",
+    "color": "#64748B",
+    "de": "Radio",
+    "nl": "Radio",
+    "tr": "Radyo"
+  },
+  {
+    "id": "song",
+    "category": "music",
+    "emoji": "🎵",
+    "color": "#8B5CF6",
+    "de": "Lied",
+    "nl": "Liedje",
+    "tr": "Şarkı"
+  },
+  {
+    "id": "concert",
+    "category": "music",
+    "emoji": "🎶",
+    "color": "#EC4899",
+    "de": "Konzert",
+    "nl": "Concert",
+    "tr": "Konser"
+  },
+  {
+    "id": "storm",
+    "category": "weather",
+    "emoji": "🌪️",
+    "color": "#475569",
+    "de": "Sturm",
+    "nl": "Storm",
+    "tr": "Fırtına"
+  },
+  {
+    "id": "fog",
+    "category": "weather",
+    "emoji": "🌫️",
+    "color": "#94A3B8",
+    "de": "Nebel",
+    "nl": "Mist",
+    "tr": "Sis"
+  },
+  {
+    "id": "ice",
+    "category": "weather",
+    "emoji": "🧊",
+    "color": "#0EA5E9",
+    "de": "Eis",
+    "nl": "IJs",
+    "tr": "Buz"
+  },
+  {
+    "id": "thunder",
+    "category": "weather",
+    "emoji": "⛈️",
+    "color": "#6366F1",
+    "de": "Donner",
+    "nl": "Donder",
+    "tr": "Gök gürültüsü"
+  },
+  {
+    "id": "hail",
+    "category": "weather",
+    "emoji": "🌨️",
+    "color": "#CBD5E1",
+    "de": "Hagel",
+    "nl": "Hagel",
+    "tr": "Dolu"
+  },
+  {
+    "id": "sunshine",
+    "category": "weather",
+    "emoji": "🌤️",
+    "color": "#F59E0B",
+    "de": "Sonnenschein",
+    "nl": "Zonneschijn",
+    "tr": "Güneşli"
+  },
+  {
+    "id": "weather",
+    "category": "weather",
+    "emoji": "⛅",
+    "color": "#0891B2",
+    "de": "Wetter",
+    "nl": "Weer",
+    "tr": "Hava"
+  },
+  {
+    "id": "hot-day",
+    "category": "weather",
+    "emoji": "🌡️",
+    "color": "#EF4444",
+    "de": "Heiß",
+    "nl": "Heet",
+    "tr": "Sıcak hava"
+  },
+  {
+    "id": "cold-day",
+    "category": "weather",
+    "emoji": "🥶",
+    "color": "#0EA5E9",
+    "de": "Kalt",
+    "nl": "Koud",
+    "tr": "Soğuk hava"
+  },
+  {
+    "id": "hurricane",
+    "category": "weather",
+    "emoji": "🌀",
+    "color": "#7C3AED",
+    "de": "Hurrikan",
+    "nl": "Orkaan",
+    "tr": "Kasırga"
+  },
+  {
+    "id": "doll",
+    "category": "toys",
+    "emoji": "🪆",
+    "color": "#EC4899",
+    "de": "Puppe",
+    "nl": "Pop",
+    "tr": "Bebek"
+  },
+  {
+    "id": "blocks",
+    "category": "toys",
+    "emoji": "🧱",
+    "color": "#F97316",
+    "de": "Baustein",
+    "nl": "Blok",
+    "tr": "Yapı taşı"
+  },
+  {
+    "id": "skateboard",
+    "category": "toys",
+    "emoji": "🛹",
+    "color": "#1E293B",
+    "de": "Skateboard",
+    "nl": "Skateboard",
+    "tr": "Kaykay"
+  },
+  {
+    "id": "yoyo",
+    "category": "toys",
+    "emoji": "🪀",
+    "color": "#EF4444",
+    "de": "Jo-Jo",
+    "nl": "Jo-jo",
+    "tr": "Yoyo"
+  },
+  {
+    "id": "boomerang",
+    "category": "toys",
+    "emoji": "🪃",
+    "color": "#D97706",
+    "de": "Bumerang",
+    "nl": "Boemerang",
+    "tr": "Bumerang"
+  },
+  {
+    "id": "frisbee",
+    "category": "toys",
+    "emoji": "🥏",
+    "color": "#0891B2",
+    "de": "Frisbee",
+    "nl": "Frisbee",
+    "tr": "Frizbi"
+  },
+  {
+    "id": "bubbles",
+    "category": "toys",
+    "emoji": "🫧",
+    "color": "#0EA5E9",
+    "de": "Seifenblasen",
+    "nl": "Zeepbellen",
+    "tr": "Sabun köpüğü"
+  },
+  {
+    "id": "marbles",
+    "category": "toys",
+    "emoji": "🔮",
+    "color": "#8B5CF6",
+    "de": "Murmeln",
+    "nl": "Knikkers",
+    "tr": "Misket"
+  },
+  {
+    "id": "bow-arrow",
+    "category": "toys",
+    "emoji": "🏹",
+    "color": "#92400E",
+    "de": "Pfeil und Bogen",
+    "nl": "Pijl en boog",
+    "tr": "Ok ve yay"
+  },
+  {
+    "id": "planet",
+    "category": "space",
+    "emoji": "🪐",
+    "color": "#8B5CF6",
+    "de": "Planet",
+    "nl": "Planeet",
+    "tr": "Gezegen"
+  },
+  {
+    "id": "alien",
+    "category": "space",
+    "emoji": "👽",
+    "color": "#22C55E",
+    "de": "Alien",
+    "nl": "Alien",
+    "tr": "Uzaylı"
+  },
+  {
+    "id": "astronaut",
+    "category": "space",
+    "emoji": "👨‍🚀",
+    "color": "#0EA5E9",
+    "de": "Astronaut",
+    "nl": "Astronaut",
+    "tr": "Astronot"
+  },
+  {
+    "id": "telescope",
+    "category": "space",
+    "emoji": "🔭",
+    "color": "#1E293B",
+    "de": "Teleskop",
+    "nl": "Telescoop",
+    "tr": "Teleskop"
+  },
+  {
+    "id": "comet",
+    "category": "space",
+    "emoji": "☄️",
+    "color": "#F97316",
+    "de": "Komet",
+    "nl": "Komeet",
+    "tr": "Kuyruklu yıldız"
+  },
+  {
+    "id": "galaxy",
+    "category": "space",
+    "emoji": "🌌",
+    "color": "#6366F1",
+    "de": "Galaxie",
+    "nl": "Sterrenstelsel",
+    "tr": "Galaksi"
+  },
+  {
+    "id": "satellite",
+    "category": "space",
+    "emoji": "🛸",
+    "color": "#64748B",
+    "de": "Satellit",
+    "nl": "Satelliet",
+    "tr": "Uydu"
+  },
+  {
+    "id": "meteor",
+    "category": "space",
+    "emoji": "🌠",
+    "color": "#F59E0B",
+    "de": "Meteor",
+    "nl": "Meteoor",
+    "tr": "Meteor"
+  },
+  {
+    "id": "spaceship",
+    "category": "space",
+    "emoji": "🚀",
+    "color": "#EF4444",
+    "de": "Raumschiff",
+    "nl": "Ruimteschip",
+    "tr": "Uzay gemisi"
+  },
+  {
+    "id": "lobster",
+    "category": "ocean",
+    "emoji": "🦞",
+    "color": "#DC2626",
+    "de": "Hummer",
+    "nl": "Kreeft",
+    "tr": "Istakoz"
+  },
+  {
+    "id": "oyster",
+    "category": "ocean",
+    "emoji": "🦪",
+    "color": "#94A3B8",
+    "de": "Auster",
+    "nl": "Oester",
+    "tr": "İstiridye"
+  },
+  {
+    "id": "coral",
+    "category": "ocean",
+    "emoji": "🪸",
+    "color": "#F43F5E",
+    "de": "Koralle",
+    "nl": "Koraal",
+    "tr": "Mercan"
+  },
+  {
+    "id": "anchor",
+    "category": "ocean",
+    "emoji": "⚓",
+    "color": "#1E293B",
+    "de": "Anker",
+    "nl": "Anker",
+    "tr": "Çapa"
+  },
+  {
+    "id": "mermaid",
+    "category": "ocean",
+    "emoji": "🧜",
+    "color": "#0891B2",
+    "de": "Meerjungfrau",
+    "nl": "Zeemeermin",
+    "tr": "Deniz kızı"
+  },
+  {
+    "id": "pirate",
+    "category": "ocean",
+    "emoji": "🏴‍☠️",
+    "color": "#1E293B",
+    "de": "Pirat",
+    "nl": "Piraat",
+    "tr": "Korsan"
+  },
+  {
+    "id": "starfish",
+    "category": "ocean",
+    "emoji": "🌟",
+    "color": "#F59E0B",
+    "de": "Seestern",
+    "nl": "Zeester",
+    "tr": "Deniz yıldızı"
+  },
+  {
+    "id": "diving",
+    "category": "ocean",
+    "emoji": "🤿",
+    "color": "#0369A1",
+    "de": "Tauchen",
+    "nl": "Duiken",
+    "tr": "Dalış"
+  },
+  {
+    "id": "treasure",
+    "category": "ocean",
+    "emoji": "💰",
+    "color": "#D97706",
+    "de": "Schatz",
+    "nl": "Schat",
+    "tr": "Hazine"
+  },
+  {
+    "id": "seaweed",
+    "category": "ocean",
+    "emoji": "🌿",
+    "color": "#16A34A",
+    "de": "Meeresalgen",
+    "nl": "Zeewier",
+    "tr": "Deniz yosunu"
+  },
+  {
+    "id": "rose",
+    "category": "garden",
+    "emoji": "🌹",
+    "color": "#DC2626",
+    "de": "Rose",
+    "nl": "Roos",
+    "tr": "Gül"
+  },
+  {
+    "id": "sunflower",
+    "category": "garden",
+    "emoji": "🌻",
+    "color": "#EAB308",
+    "de": "Sonnenblume",
+    "nl": "Zonnebloem",
+    "tr": "Ayçiçeği"
+  },
+  {
+    "id": "tulip",
+    "category": "garden",
+    "emoji": "🌷",
+    "color": "#EC4899",
+    "de": "Tulpe",
+    "nl": "Tulp",
+    "tr": "Lale"
+  },
+  {
+    "id": "mushroom",
+    "category": "garden",
+    "emoji": "🍄",
+    "color": "#D97706",
+    "de": "Pilz",
+    "nl": "Paddenstoel",
+    "tr": "Mantar"
+  },
+  {
+    "id": "worm",
+    "category": "garden",
+    "emoji": "🪱",
+    "color": "#92400E",
+    "de": "Wurm",
+    "nl": "Worm",
+    "tr": "Solucan"
+  },
+  {
+    "id": "seed",
+    "category": "garden",
+    "emoji": "🌱",
+    "color": "#22C55E",
+    "de": "Samen",
+    "nl": "Zaad",
+    "tr": "Tohum"
+  },
+  {
+    "id": "flowerpot",
+    "category": "garden",
+    "emoji": "🪴",
+    "color": "#16A34A",
+    "de": "Blumentopf",
+    "nl": "Bloempot",
+    "tr": "Saksı"
+  },
+  {
+    "id": "cactus",
+    "category": "garden",
+    "emoji": "🌵",
+    "color": "#16A34A",
+    "de": "Kaktus",
+    "nl": "Cactus",
+    "tr": "Kaktüs"
+  },
+  {
+    "id": "daisy",
+    "category": "garden",
+    "emoji": "🌼",
+    "color": "#EAB308",
+    "de": "Gänseblümchen",
+    "nl": "Madeliefje",
+    "tr": "Papatya"
+  },
+  {
+    "id": "acorn",
+    "category": "garden",
+    "emoji": "🌰",
+    "color": "#92400E",
+    "de": "Eichel",
+    "nl": "Eikel",
+    "tr": "Meşe palamudu"
+  },
+  {
+    "id": "doctor",
+    "category": "jobs",
+    "emoji": "👨‍⚕️",
+    "color": "#0EA5E9",
+    "de": "Arzt",
+    "nl": "Dokter",
+    "tr": "Doktor"
+  },
+  {
+    "id": "nurse",
+    "category": "jobs",
+    "emoji": "👩‍⚕️",
+    "color": "#EC4899",
+    "de": "Krankenpfleger",
+    "nl": "Verpleegkundige",
+    "tr": "Hemşire"
+  },
+  {
+    "id": "police",
+    "category": "jobs",
+    "emoji": "👮",
+    "color": "#1E293B",
+    "de": "Polizist",
+    "nl": "Politieagent",
+    "tr": "Polis"
+  },
+  {
+    "id": "firefighter",
+    "category": "jobs",
+    "emoji": "👨‍🚒",
+    "color": "#EF4444",
+    "de": "Feuerwehrmann",
+    "nl": "Brandweerman",
+    "tr": "İtfaiyeci"
+  },
+  {
+    "id": "chef",
+    "category": "jobs",
+    "emoji": "👨‍🍳",
+    "color": "#F97316",
+    "de": "Koch",
+    "nl": "Kok",
+    "tr": "Aşçı"
+  },
+  {
+    "id": "pilot",
+    "category": "jobs",
+    "emoji": "👨‍✈️",
+    "color": "#0369A1",
+    "de": "Pilot",
+    "nl": "Piloot",
+    "tr": "Pilot"
+  },
+  {
+    "id": "farmer-job",
+    "category": "jobs",
+    "emoji": "👨‍🌾",
+    "color": "#16A34A",
+    "de": "Bauer",
+    "nl": "Boer",
+    "tr": "Çiftçi"
+  },
+  {
+    "id": "builder",
+    "category": "jobs",
+    "emoji": "👷",
+    "color": "#D97706",
+    "de": "Bauarbeiter",
+    "nl": "Bouwvakker",
+    "tr": "İnşaatçı"
+  },
+  {
+    "id": "artist",
+    "category": "jobs",
+    "emoji": "👨‍🎨",
+    "color": "#EC4899",
+    "de": "Künstler",
+    "nl": "Kunstenaar",
+    "tr": "Sanatçı"
+  },
+  {
+    "id": "scientist",
+    "category": "jobs",
+    "emoji": "👨‍🔬",
+    "color": "#6366F1",
+    "de": "Wissenschaftler",
+    "nl": "Wetenschapper",
+    "tr": "Bilim insanı"
+  },
+  {
+    "id": "vet",
+    "category": "jobs",
+    "emoji": "🐾",
+    "color": "#22C55E",
+    "de": "Tierarzt",
+    "nl": "Dierenarts",
+    "tr": "Veteriner"
+  },
+  {
+    "id": "mechanic",
+    "category": "jobs",
+    "emoji": "🔧",
+    "color": "#64748B",
+    "de": "Mechaniker",
+    "nl": "Monteur",
+    "tr": "Tamirci"
+  },
+  {
+    "id": "rooster",
+    "category": "farm",
+    "emoji": "🐓",
+    "color": "#DC2626",
+    "de": "Hahn",
+    "nl": "Haan",
+    "tr": "Horoz"
+  },
+  {
+    "id": "hay",
+    "category": "farm",
+    "emoji": "🌾",
+    "color": "#D97706",
+    "de": "Heu",
+    "nl": "Hooi",
+    "tr": "Saman"
+  },
+  {
+    "id": "barn",
+    "category": "farm",
+    "emoji": "🏡",
+    "color": "#92400E",
+    "de": "Scheune",
+    "nl": "Schuur",
+    "tr": "Ahır"
+  },
+  {
+    "id": "donkey",
+    "category": "farm",
+    "emoji": "🫏",
+    "color": "#94A3B8",
+    "de": "Esel",
+    "nl": "Ezel",
+    "tr": "Eşek"
+  },
+  {
+    "id": "goose",
+    "category": "farm",
+    "emoji": "🪿",
+    "color": "#CBD5E1",
+    "de": "Gans",
+    "nl": "Gans",
+    "tr": "Kaz"
+  },
+  {
+    "id": "bucket",
+    "category": "farm",
+    "emoji": "🪣",
+    "color": "#0369A1",
+    "de": "Eimer",
+    "nl": "Emmer",
+    "tr": "Kova"
+  },
+  {
+    "id": "chick",
+    "category": "farm",
+    "emoji": "🐣",
+    "color": "#EAB308",
+    "de": "Küken",
+    "nl": "Kuiken",
+    "tr": "Civciv"
+  },
+  {
+    "id": "mud",
+    "category": "farm",
+    "emoji": "🟤",
+    "color": "#92400E",
+    "de": "Matsch",
+    "nl": "Modder",
+    "tr": "Çamur"
+  },
+  {
+    "id": "hamburger",
+    "category": "food",
+    "emoji": "🍔",
+    "color": "#D97706",
+    "de": "Hamburger",
+    "nl": "Hamburger",
+    "tr": "Hamburger"
+  },
+  {
+    "id": "pizza",
+    "category": "food",
+    "emoji": "🍕",
+    "color": "#EF4444",
+    "de": "Pizza",
+    "nl": "Pizza",
+    "tr": "Pizza"
+  },
+  {
+    "id": "hot-dog",
+    "category": "food",
+    "emoji": "🌭",
+    "color": "#F97316",
+    "de": "Hotdog",
+    "nl": "Hotdog",
+    "tr": "Sosisli"
+  },
+  {
+    "id": "candy",
+    "category": "food",
+    "emoji": "🍬",
+    "color": "#EC4899",
+    "de": "Bonbon",
+    "nl": "Snoepje",
+    "tr": "Şeker"
+  },
+  {
+    "id": "waffle",
+    "category": "food",
+    "emoji": "🧇",
+    "color": "#D97706",
+    "de": "Waffel",
+    "nl": "Wafel",
+    "tr": "Wafel"
+  },
+  {
+    "id": "avocado",
+    "category": "food",
+    "emoji": "🥑",
+    "color": "#16A34A",
+    "de": "Avocado",
+    "nl": "Avocado",
+    "tr": "Avokado"
+  },
+  {
+    "id": "blueberry",
+    "category": "food",
+    "emoji": "🫐",
+    "color": "#6366F1",
+    "de": "Heidelbeere",
+    "nl": "Bosbes",
+    "tr": "Yaban mersini"
+  },
+  {
+    "id": "pretzel",
+    "category": "food",
+    "emoji": "🥨",
+    "color": "#D97706",
+    "de": "Brezel",
+    "nl": "Pretzel",
+    "tr": "Simit"
+  },
+  {
+    "id": "peach",
+    "category": "food",
+    "emoji": "🍑",
+    "color": "#F97316",
+    "de": "Pfirsich",
+    "nl": "Perzik",
+    "tr": "Şeftali"
+  },
+  {
+    "id": "coconut",
+    "category": "food",
+    "emoji": "🥥",
+    "color": "#92400E",
+    "de": "Kokosnuss",
+    "nl": "Kokosnoot",
+    "tr": "Hindistan cevizi"
+  },
+  {
+    "id": "computer",
+    "category": "school",
+    "emoji": "💻",
+    "color": "#1E293B",
+    "de": "Computer",
+    "nl": "Computer",
+    "tr": "Bilgisayar"
+  },
+  {
+    "id": "homework",
+    "category": "school",
+    "emoji": "📝",
+    "color": "#6366F1",
+    "de": "Hausaufgaben",
+    "nl": "Huiswerk",
+    "tr": "Ödev"
+  },
+  {
+    "id": "crayons",
+    "category": "school",
+    "emoji": "🖍️",
+    "color": "#EC4899",
+    "de": "Buntstifte",
+    "nl": "Kleurpotloden",
+    "tr": "Renkli kalem"
+  },
+  {
+    "id": "calendar",
+    "category": "school",
+    "emoji": "📅",
+    "color": "#0891B2",
+    "de": "Kalender",
+    "nl": "Kalender",
+    "tr": "Takvim"
+  },
+  {
+    "id": "lunchbox",
+    "category": "school",
+    "emoji": "🍱",
+    "color": "#22C55E",
+    "de": "Lunchbox",
+    "nl": "Lunchbox",
+    "tr": "Yemek kutusu"
+  },
+  {
+    "id": "baseball",
+    "category": "sports",
+    "emoji": "⚾",
+    "color": "#1E293B",
+    "de": "Baseball",
+    "nl": "Honkbal",
+    "tr": "Beyzbol"
+  },
+  {
+    "id": "volleyball",
+    "category": "sports",
+    "emoji": "🏐",
+    "color": "#F97316",
+    "de": "Volleyball",
+    "nl": "Volleybal",
+    "tr": "Voleybol"
+  },
+  {
+    "id": "golf",
+    "category": "sports",
+    "emoji": "⛳",
+    "color": "#16A34A",
+    "de": "Golf",
+    "nl": "Golf",
+    "tr": "Golf"
+  },
+  {
+    "id": "boxing",
+    "category": "sports",
+    "emoji": "🥊",
+    "color": "#DC2626",
+    "de": "Boxen",
+    "nl": "Boksen",
+    "tr": "Boks"
+  },
+  {
+    "id": "surfing",
+    "category": "sports",
+    "emoji": "🏄",
+    "color": "#0891B2",
+    "de": "Surfen",
+    "nl": "Surfen",
+    "tr": "Sörf"
+  },
+  {
+    "id": "hockey",
+    "category": "sports",
+    "emoji": "🏒",
+    "color": "#0EA5E9",
+    "de": "Hockey",
+    "nl": "Hockey",
+    "tr": "Hokey"
+  },
+  {
+    "id": "archery",
+    "category": "sports",
+    "emoji": "🎯",
+    "color": "#EF4444",
+    "de": "Bogenschießen",
+    "nl": "Boogschieten",
+    "tr": "Okçuluk"
+  },
+  {
+    "id": "martial-arts",
+    "category": "sports",
+    "emoji": "🥋",
+    "color": "#1E293B",
+    "de": "Kampfkunst",
+    "nl": "Vechtsport",
+    "tr": "Dövüş sanatı"
+  },
+  {
+    "id": "desert",
+    "category": "nature",
+    "emoji": "🏜️",
+    "color": "#D97706",
+    "de": "Wüste",
+    "nl": "Woestijn",
+    "tr": "Çöl"
+  },
+  {
+    "id": "glacier",
+    "category": "nature",
+    "emoji": "🏔️",
+    "color": "#0EA5E9",
+    "de": "Gletscher",
+    "nl": "Gletsjer",
+    "tr": "Buzul"
+  },
+  {
+    "id": "swamp",
+    "category": "nature",
+    "emoji": "🌿",
+    "color": "#16A34A",
+    "de": "Sumpf",
+    "nl": "Moeras",
+    "tr": "Bataklık"
+  },
+  {
+    "id": "prairie",
+    "category": "nature",
+    "emoji": "🌾",
+    "color": "#EAB308",
+    "de": "Prärie",
+    "nl": "Prairie",
+    "tr": "Bozkır"
+  },
+  {
+    "id": "cliff",
+    "category": "nature",
+    "emoji": "🪨",
+    "color": "#64748B",
+    "de": "Klippe",
+    "nl": "Klif",
+    "tr": "Uçurum"
+  },
+  {
+    "id": "pond",
+    "category": "nature",
+    "emoji": "🪷",
+    "color": "#EC4899",
+    "de": "Teich",
+    "nl": "Vijver",
+    "tr": "Gölet"
+  }
 ]

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { VocabItem, Language } from '@/types'
+import { VocabItem, Language, LANG_FLAGS } from '@/types'
 
 interface Props {
   item: VocabItem
@@ -9,11 +9,6 @@ interface Props {
   onTap: (item: VocabItem) => void
 }
 
-const LANG_BG: Record<Language, string> = {
-  de: '#f0fdf4',
-  nl: '#eff6ff',
-  tr: '#fef2f2',
-}
 const LANG_FG: Record<Language, string> = {
   de: '#15803d',
   nl: '#1d4ed8',
@@ -29,8 +24,6 @@ export default function VocabCard({ item, languages, onTap }: Props) {
     onTap(item)
   }
 
-  const primaryLang = languages[0] ?? 'de'
-
   return (
     <button
       onClick={handleTap}
@@ -43,7 +36,7 @@ export default function VocabCard({ item, languages, onTap }: Props) {
         borderTop: `3px solid ${item.color}`,
       }}
     >
-      {/* Emoji area */}
+      {/* Emoji */}
       <div
         className="flex items-center justify-center w-full py-5"
         style={{ background: `${item.color}10` }}
@@ -51,25 +44,22 @@ export default function VocabCard({ item, languages, onTap }: Props) {
         <span style={{ fontSize: 44, lineHeight: 1 }}>{item.emoji}</span>
       </div>
 
-      {/* Words */}
-      <div className="w-full px-3 py-3 flex flex-col gap-1.5">
-        <span className="text-base font-extrabold text-surface-800 leading-tight text-center">
-          {item[primaryLang]}
-        </span>
-
-        {languages.length > 1 && (
-          <div className="flex flex-wrap gap-1 justify-center">
-            {languages.slice(1).map((lang) => (
-              <span
-                key={lang}
-                className="text-[11px] font-bold rounded-lg px-1.5 py-0.5"
-                style={{ background: LANG_BG[lang], color: LANG_FG[lang] }}
-              >
-                {item[lang]}
-              </span>
-            ))}
+      {/* All languages listed under the picture */}
+      <div className="w-full px-2 py-2.5 flex flex-col gap-1">
+        {languages.map((lang, i) => (
+          <div key={lang} className="flex items-center gap-1.5 justify-center">
+            <span className="text-sm leading-none">{LANG_FLAGS[lang]}</span>
+            <span
+              className="text-sm font-black leading-tight text-center"
+              style={{
+                color: LANG_FG[lang],
+                fontSize: i === 0 ? 15 : 13,
+              }}
+            >
+              {item[lang]}
+            </span>
           </div>
-        )}
+        ))}
       </div>
     </button>
   )

@@ -78,13 +78,16 @@ export default function Home() {
 
       {/* ── Hero ───────────────────────────────────────────────────── */}
       <div
-        className="relative overflow-hidden"
+        className="relative"
         style={{ background: 'linear-gradient(145deg, #1e1b4b 0%, #3730a3 40%, #6366f1 100%)' }}
       >
-        <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full opacity-10"
-          style={{ background: 'radial-gradient(circle, #a5b4fc, transparent)' }} />
-        <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full opacity-15"
-          style={{ background: 'radial-gradient(circle, #818cf8, transparent)' }} />
+        {/* Decorative blobs — clipped separately so pill stays visible */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full opacity-10"
+            style={{ background: 'radial-gradient(circle, #a5b4fc, transparent)' }} />
+          <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full opacity-15"
+            style={{ background: 'radial-gradient(circle, #818cf8, transparent)' }} />
+        </div>
 
         <div className="relative flex flex-col items-center pt-14 pb-12 px-6">
           <div className="text-7xl mb-3 animate-bounce-in drop-shadow-xl">🌍</div>
