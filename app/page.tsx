@@ -41,6 +41,22 @@ const MAIN_BUTTONS = [
     glow: 'rgba(14,165,233,0.30)',
   },
   {
+    href: '/truefalse',
+    icon: '✅',
+    label: 'True or False',
+    sub: 'Is this the right word?',
+    gradient: 'linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%)',
+    glow: 'rgba(124,58,237,0.30)',
+  },
+  {
+    href: '/quiz',
+    icon: '🔍',
+    label: 'Find the Emoji',
+    sub: 'Read the word · tap the emoji',
+    gradient: 'linear-gradient(135deg, #065f46 0%, #10b981 100%)',
+    glow: 'rgba(16,185,129,0.30)',
+  },
+  {
     href: '/memory',
     icon: '🃏',
     label: 'Memory',
