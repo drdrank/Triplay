@@ -120,10 +120,26 @@ export default function Home() {
           </Link>
         ))}
 
+        {/* Quick learn row */}
+        <div className="flex gap-3 mt-1">
+          {[
+            { href: '/abc',     icon: '🔤', label: 'ABC',    color: '#7c3aed' },
+            { href: '/numbers', icon: '🔢', label: '123',    color: '#f59e0b' },
+            { href: '/colors',  icon: '🎨', label: 'Colors', color: '#ec4899' },
+          ].map(({ href, icon, label, color }) => (
+            <Link key={href} href={href}
+              className="flex-1 flex flex-col items-center gap-1 py-3 rounded-2xl font-bold text-sm active:scale-95 transition-transform"
+              style={{ background: color + '15', color }}>
+              <span className="text-2xl">{icon}</span>
+              {label}
+            </Link>
+          ))}
+        </div>
+
         {/* Parent mode */}
         <Link
           href="/parent"
-          className="flex items-center justify-center gap-2 mt-2 py-3 rounded-2xl text-sm font-bold text-gray-400 active:opacity-60"
+          className="flex items-center justify-center gap-2 mt-1 py-3 rounded-2xl text-sm font-bold text-gray-400 active:opacity-60"
           style={{ background: '#F3F4F6' }}
         >
           👨‍👩‍👧 Parent Mode
