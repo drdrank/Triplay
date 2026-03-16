@@ -24,6 +24,15 @@ const BUTTONS = [
     glow: 'rgba(168,85,247,0.35)',
   },
   {
+    href: '/memory',
+    icon: '🃏',
+    label: 'Memory',
+    sub: 'Gedächtnis · Geheugen · Hafıza',
+    from: '#0891b2',
+    to: '#0e7490',
+    glow: 'rgba(8,145,178,0.35)',
+  },
+  {
     href: '/stickers',
     icon: '⭐',
     label: 'Stickers',
