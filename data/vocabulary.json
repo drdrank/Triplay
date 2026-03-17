@@ -4156,5 +4156,419 @@
     "emoji": "🔬",
     "color": "#6366f1",
     "category": "school"
+  },
+  {
+    "id": "fantasy-unicorn",
+    "category": "fantasy",
+    "emoji": "🦄",
+    "color": "#EC4899",
+    "de": "Einhorn",
+    "nl": "Eenhoorn",
+    "tr": "Tek boynuzlu at"
+  },
+  {
+    "id": "fantasy-dragon",
+    "category": "fantasy",
+    "emoji": "🐉",
+    "color": "#EF4444",
+    "de": "Drache",
+    "nl": "Draak",
+    "tr": "Ejderha"
+  },
+  {
+    "id": "fantasy-wizard",
+    "category": "fantasy",
+    "emoji": "🧙",
+    "color": "#8B5CF6",
+    "de": "Zauberer",
+    "nl": "Tovenaar",
+    "tr": "Büyücü"
+  },
+  {
+    "id": "fantasy-fairy",
+    "category": "fantasy",
+    "emoji": "🧚",
+    "color": "#F9A8D4",
+    "de": "Fee",
+    "nl": "Fee",
+    "tr": "Peri"
+  },
+  {
+    "id": "fantasy-mermaid",
+    "category": "fantasy",
+    "emoji": "🧜",
+    "color": "#06B6D4",
+    "de": "Meerjungfrau",
+    "nl": "Zeemeermin",
+    "tr": "Deniz kızı"
+  },
+  {
+    "id": "fantasy-crown",
+    "category": "fantasy",
+    "emoji": "👑",
+    "color": "#F59E0B",
+    "de": "Krone",
+    "nl": "Kroon",
+    "tr": "Taç"
+  },
+  {
+    "id": "fantasy-castle",
+    "category": "fantasy",
+    "emoji": "🏰",
+    "color": "#6B7280",
+    "de": "Schloss",
+    "nl": "Kasteel",
+    "tr": "Kale"
+  },
+  {
+    "id": "fantasy-wand",
+    "category": "fantasy",
+    "emoji": "🪄",
+    "color": "#A78BFA",
+    "de": "Zauberstab",
+    "nl": "Toverstaf",
+    "tr": "Sihirli değnek"
+  },
+  {
+    "id": "fantasy-rainbow",
+    "category": "fantasy",
+    "emoji": "🌈",
+    "color": "#EC4899",
+    "de": "Regenbogen",
+    "nl": "Regenboog",
+    "tr": "Gökkuşağı"
+  },
+  {
+    "id": "fantasy-ghost",
+    "category": "fantasy",
+    "emoji": "👻",
+    "color": "#A3A3A3",
+    "de": "Gespenst",
+    "nl": "Spook",
+    "tr": "Hayalet"
+  },
+  {
+    "id": "party-cake",
+    "category": "party",
+    "emoji": "🎂",
+    "color": "#EC4899",
+    "de": "Geburtstagskuchen",
+    "nl": "Verjaardagstaart",
+    "tr": "Doğum günü pastası"
+  },
+  {
+    "id": "party-balloon",
+    "category": "party",
+    "emoji": "🎈",
+    "color": "#EF4444",
+    "de": "Luftballon",
+    "nl": "Ballon",
+    "tr": "Balon"
+  },
+  {
+    "id": "party-gift",
+    "category": "party",
+    "emoji": "🎁",
+    "color": "#EF4444",
+    "de": "Geschenk",
+    "nl": "Cadeau",
+    "tr": "Hediye"
+  },
+  {
+    "id": "party-confetti",
+    "category": "party",
+    "emoji": "🎉",
+    "color": "#F59E0B",
+    "de": "Konfetti",
+    "nl": "Confetti",
+    "tr": "Konfeti"
+  },
+  {
+    "id": "party-candle",
+    "category": "party",
+    "emoji": "🕯️",
+    "color": "#F59E0B",
+    "de": "Kerze",
+    "nl": "Kaars",
+    "tr": "Mum"
+  },
+  {
+    "id": "party-fireworks",
+    "category": "party",
+    "emoji": "🎆",
+    "color": "#8B5CF6",
+    "de": "Feuerwerk",
+    "nl": "Vuurwerk",
+    "tr": "Havai fişek"
+  },
+  {
+    "id": "party-ribbon",
+    "category": "party",
+    "emoji": "🎀",
+    "color": "#EC4899",
+    "de": "Schleife",
+    "nl": "Strik",
+    "tr": "Kurdele"
+  },
+  {
+    "id": "party-lollipop",
+    "category": "party",
+    "emoji": "🍭",
+    "color": "#EF4444",
+    "de": "Lollipop",
+    "nl": "Lolly",
+    "tr": "Lolipop"
+  },
+  {
+    "id": "party-popcorn",
+    "category": "party",
+    "emoji": "🍿",
+    "color": "#F59E0B",
+    "de": "Popcorn",
+    "nl": "Popcorn",
+    "tr": "Patlamış mısır"
+  },
+  {
+    "id": "party-clown",
+    "category": "party",
+    "emoji": "🤡",
+    "color": "#EF4444",
+    "de": "Clown",
+    "nl": "Clown",
+    "tr": "Palyaço"
+  },
+  {
+    "id": "beach-crab",
+    "category": "beach",
+    "emoji": "🦀",
+    "color": "#EF4444",
+    "de": "Krabbe",
+    "nl": "Krab",
+    "tr": "Yengeç"
+  },
+  {
+    "id": "beach-shell",
+    "category": "beach",
+    "emoji": "🐚",
+    "color": "#F9A8D4",
+    "de": "Muschel",
+    "nl": "Schelp",
+    "tr": "Deniz kabuğu"
+  },
+  {
+    "id": "beach-wave",
+    "category": "beach",
+    "emoji": "🌊",
+    "color": "#3B82F6",
+    "de": "Welle",
+    "nl": "Golf",
+    "tr": "Dalga"
+  },
+  {
+    "id": "beach-palm",
+    "category": "beach",
+    "emoji": "🌴",
+    "color": "#22C55E",
+    "de": "Palme",
+    "nl": "Palmboom",
+    "tr": "Palmiye"
+  },
+  {
+    "id": "beach-sunglasses",
+    "category": "beach",
+    "emoji": "🕶️",
+    "color": "#1E3A5F",
+    "de": "Sonnenbrille",
+    "nl": "Zonnebril",
+    "tr": "Güneş gözlüğü"
+  },
+  {
+    "id": "beach-umbrella",
+    "category": "beach",
+    "emoji": "⛱️",
+    "color": "#F59E0B",
+    "de": "Sonnenschirm",
+    "nl": "Parasol",
+    "tr": "Şemsiye"
+  },
+  {
+    "id": "beach-starfish",
+    "category": "beach",
+    "emoji": "🌟",
+    "color": "#F59E0B",
+    "de": "Seestern",
+    "nl": "Zeester",
+    "tr": "Denizyıldızı"
+  },
+  {
+    "id": "beach-dolphin",
+    "category": "beach",
+    "emoji": "🐬",
+    "color": "#3B82F6",
+    "de": "Delfin",
+    "nl": "Dolfijn",
+    "tr": "Yunus"
+  },
+  {
+    "id": "beach-swimsuit",
+    "category": "beach",
+    "emoji": "🩱",
+    "color": "#EC4899",
+    "de": "Badeanzug",
+    "nl": "Badpak",
+    "tr": "Mayo"
+  },
+  {
+    "id": "beach-bucket",
+    "category": "beach",
+    "emoji": "🪣",
+    "color": "#F59E0B",
+    "de": "Eimer",
+    "nl": "Emmer",
+    "tr": "Kova"
+  },
+  {
+    "id": "toys-kite",
+    "category": "toys",
+    "emoji": "🪁",
+    "color": "#F59E0B",
+    "de": "Drachen",
+    "nl": "Vlieger",
+    "tr": "Uçurtma"
+  },
+  {
+    "id": "toys-yoyo",
+    "category": "toys",
+    "emoji": "🪀",
+    "color": "#EF4444",
+    "de": "Jojo",
+    "nl": "Jojo",
+    "tr": "Yoyo"
+  },
+  {
+    "id": "toys-puppet",
+    "category": "toys",
+    "emoji": "🪆",
+    "color": "#EC4899",
+    "de": "Puppe",
+    "nl": "Marionet",
+    "tr": "Kukla"
+  },
+  {
+    "id": "toys-robot",
+    "category": "toys",
+    "emoji": "🤖",
+    "color": "#6B7280",
+    "de": "Roboter",
+    "nl": "Robot",
+    "tr": "Robot"
+  },
+  {
+    "id": "toys-lego",
+    "category": "toys",
+    "emoji": "🧱",
+    "color": "#EF4444",
+    "de": "Lego",
+    "nl": "Lego",
+    "tr": "Lego"
+  },
+  {
+    "id": "toys-train",
+    "category": "toys",
+    "emoji": "🚂",
+    "color": "#EF4444",
+    "de": "Spielzeugzug",
+    "nl": "Speelgoedtrein",
+    "tr": "Oyuncak tren"
+  },
+  {
+    "id": "toys-doll",
+    "category": "toys",
+    "emoji": "🎎",
+    "color": "#F9A8D4",
+    "de": "Puppe",
+    "nl": "Pop",
+    "tr": "Bebek"
+  },
+  {
+    "id": "toys-gamepad",
+    "category": "toys",
+    "emoji": "🎮",
+    "color": "#6B7280",
+    "de": "Gamepad",
+    "nl": "Controller",
+    "tr": "Oyun kumandası"
+  },
+  {
+    "id": "space-alien",
+    "category": "space",
+    "emoji": "👽",
+    "color": "#22C55E",
+    "de": "Außerirdischer",
+    "nl": "Buitenaards wezen",
+    "tr": "Uzaylı"
+  },
+  {
+    "id": "space-comet",
+    "category": "space",
+    "emoji": "☄️",
+    "color": "#F59E0B",
+    "de": "Komet",
+    "nl": "Komeet",
+    "tr": "Kuyruklu yıldız"
+  },
+  {
+    "id": "space-saturn",
+    "category": "space",
+    "emoji": "🪐",
+    "color": "#F59E0B",
+    "de": "Saturn",
+    "nl": "Saturnus",
+    "tr": "Satürn"
+  },
+  {
+    "id": "space-telescope",
+    "category": "space",
+    "emoji": "🔭",
+    "color": "#6B7280",
+    "de": "Teleskop",
+    "nl": "Telescoop",
+    "tr": "Teleskop"
+  },
+  {
+    "id": "space-earth",
+    "category": "space",
+    "emoji": "🌍",
+    "color": "#3B82F6",
+    "de": "Erde",
+    "nl": "Aarde",
+    "tr": "Dünya"
+  },
+  {
+    "id": "space-astronaut",
+    "category": "space",
+    "emoji": "👨‍🚀",
+    "color": "#6B7280",
+    "de": "Astronaut",
+    "nl": "Astronaut",
+    "tr": "Astronot"
+  },
+  {
+    "id": "space-ufo",
+    "category": "space",
+    "emoji": "🛸",
+    "color": "#8B5CF6",
+    "de": "UFO",
+    "nl": "UFO",
+    "tr": "UFO"
+  },
+  {
+    "id": "space-galaxy",
+    "category": "space",
+    "emoji": "🌌",
+    "color": "#8B5CF6",
+    "de": "Galaxie",
+    "nl": "Melkweg",
+    "tr": "Galaksi"
   }
 ]

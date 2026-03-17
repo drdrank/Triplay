@@ -34,6 +34,9 @@ const CATEGORIES = [
   { id: 'colors',    label: 'Colors',    icon: '🎨' },
   { id: 'body',      label: 'Body',      icon: '👁️' },
   { id: 'numbers',   label: 'Numbers',   icon: '🔢' },
+  { id: 'fantasy',   label: 'Fantasy',   icon: '🦄' },
+  { id: 'party',     label: 'Party',     icon: '🎉' },
+  { id: 'beach',     label: 'Beach',     icon: '🏖️' },
 ]
 
 export default function LearnPage() {

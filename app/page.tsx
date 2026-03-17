@@ -56,6 +56,14 @@ const MAIN_BUTTONS = [
     glow: 'rgba(139,92,246,0.40)',
   },
   {
+    href: '/oddoneout',
+    icon: '🔎',
+    label: 'Odd One Out',
+    sub: 'Find what doesn\'t belong',
+    gradient: 'linear-gradient(135deg, #0c4a6e 0%, #7C3AED 100%)',
+    glow: 'rgba(124,58,237,0.40)',
+  },
+  {
     href: '/memory',
     icon: '🃏',
     label: 'Memory',
