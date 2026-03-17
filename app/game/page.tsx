@@ -120,10 +120,10 @@ export default function GamePage() {
         </Link>
 
         <div className="text-center">
-          <div className="text-white font-black text-base">Find the Word!</div>
+          <div className="text-white font-black text-base">Finde das Wort!</div>
           {streak >= 3 && (
             <div className="font-bold text-xs animate-bounce-in" style={{ color: '#FEF08A' }}>
-              🔥 {streak} streak!
+              🔥 {streak}x!
             </div>
           )}
         </div>
@@ -244,7 +244,7 @@ export default function GamePage() {
             }}
           >
             <div className="text-9xl mb-4 animate-bounce-in">{newSticker.emoji}</div>
-            <div className="text-2xl font-black text-white mb-1">New Sticker!</div>
+            <div className="text-2xl font-black text-white mb-1">Neuer Sticker!</div>
             <div className="text-base font-bold mb-8" style={{ color: '#00D4AA' }}>{newSticker.name}</div>
             <button
               onClick={nextRound}
@@ -254,7 +254,7 @@ export default function GamePage() {
                 boxShadow: '0 6px 24px rgba(255,107,53,0.45)',
               }}
             >
-              Keep Playing →
+              Weiter spielen →
             </button>
           </div>
         </div>

@@ -79,8 +79,8 @@ export default function TrueFalsePage() {
           </svg>
         </Link>
         <div className="text-center">
-          <div className="text-white font-black text-base">True or False?</div>
-          {streak >= 3 && <div className="font-bold text-xs animate-bounce-in" style={{ color: '#FEF08A' }}>🔥 {streak} in a row!</div>}
+          <div className="text-white font-black text-base">Wahr oder Falsch?</div>
+          {streak >= 3 && <div className="font-bold text-xs animate-bounce-in" style={{ color: '#FEF08A' }}>🔥 {streak}x!</div>}
         </div>
         <div className="flex items-center gap-1.5 rounded-2xl px-3 py-1.5 font-black text-sm text-white"
           style={{ background: 'rgba(255,255,255,0.18)' }}>
@@ -104,7 +104,7 @@ export default function TrueFalsePage() {
 
         {/* Question */}
         <div className="text-sm font-bold text-center" style={{ color: 'rgba(196,181,253,0.65)' }}>
-          {LANG_FLAGS[lang]} Is this the correct word?
+          {LANG_FLAGS[lang]} Ist das das richtige Wort?
         </div>
 
         {/* Word display */}
@@ -129,7 +129,7 @@ export default function TrueFalsePage() {
         {/* Correct answer hint on wrong */}
         {state === 'wrong' && (
           <div className="text-base font-bold animate-fade-up" style={{ color: '#00D4AA' }}>
-            ✓ Correct: {target[lang]}
+            ✓ Richtig: {target[lang]}
           </div>
         )}
 
@@ -137,7 +137,7 @@ export default function TrueFalsePage() {
         {state !== 'playing' && (
           <div className="text-2xl font-black animate-bounce-in"
             style={{ color: state === 'correct' ? '#00D4AA' : '#F87171' }}>
-            {state === 'correct' ? '🎉 Correct!' : '❌ Nope!'}
+            {state === 'correct' ? '🎉 Richtig!' : '❌ Falsch!'}
           </div>
         )}
 

@@ -4,20 +4,20 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const NAV = [
-  { href: '/',        label: 'Home',    icon: (a: boolean) => (
+  { href: '/',        label: 'Start',   icon: (a: boolean) => (
     <svg width="22" height="22" viewBox="0 0 24 24" fill={a ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={a ? 0 : 1.8} strokeLinecap="round" strokeLinejoin="round">
       <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H5a1 1 0 01-1-1V9.5z"/>
       <path d="M9 21V12h6v9" fill={a ? 'white' : 'none'} strokeWidth={a ? 0 : 1.8}/>
     </svg>
   )},
-  { href: '/learn',   label: 'Learn',   icon: (a: boolean) => (
+  { href: '/learn',   label: 'Lernen',  icon: (a: boolean) => (
     <svg width="22" height="22" viewBox="0 0 24 24" fill={a ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={a ? 0 : 1.8} strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 3L2 8l10 5 10-5-10-5z"/>
       <path d="M2 17l10 5 10-5"/>
       <path d="M2 12l10 5 10-5"/>
     </svg>
   )},
-  { href: '/game',    label: 'Play',    icon: (a: boolean) => (
+  { href: '/game',    label: 'Spielen', icon: (a: boolean) => (
     <svg width="22" height="22" viewBox="0 0 24 24" fill={a ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={a ? 0 : 1.8} strokeLinecap="round" strokeLinejoin="round">
       <rect x="2" y="6" width="20" height="12" rx="4"/>
       <path d="M12 9v6M9 12h6" stroke={a ? 'rgba(255,255,255,0.6)' : 'currentColor'} strokeWidth="1.8" strokeLinecap="round"/>
@@ -32,7 +32,7 @@ const NAV = [
       <rect x="13" y="16" width="9" height="5" rx="2"/>
     </svg>
   )},
-  { href: '/stickers',label: 'Stars',   icon: (a: boolean) => (
+  { href: '/stickers',label: 'Sticker', icon: (a: boolean) => (
     <svg width="22" height="22" viewBox="0 0 24 24" fill={a ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={a ? 0 : 1.8} strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
     </svg>

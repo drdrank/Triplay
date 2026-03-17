@@ -43,11 +43,11 @@ function buildDeck(items: VocabItem[]): Card[] {
 }
 
 const DIFFICULTIES = [
-  { pairs: 4,  label: 'Easy',     sub: '4 pairs · 8 cards',   gradient: 'linear-gradient(135deg,#16a34a,#00D4AA)', glow: 'rgba(0,212,170,0.35)'  },
-  { pairs: 6,  label: 'Medium',   sub: '6 pairs · 12 cards',  gradient: 'linear-gradient(135deg,#FF6B35,#F59E0B)', glow: 'rgba(255,107,53,0.35)' },
-  { pairs: 8,  label: 'Hard',     sub: '8 pairs · 16 cards',  gradient: 'linear-gradient(135deg,#DC2626,#EF4444)', glow: 'rgba(239,68,68,0.35)'  },
-  { pairs: 10, label: 'Expert',   sub: '10 pairs · 20 cards', gradient: 'linear-gradient(135deg,#5C4AE4,#8B5CF6)', glow: 'rgba(92,74,228,0.35)'  },
-  { pairs: 12, label: 'Champion', sub: '12 pairs · 24 cards', gradient: 'linear-gradient(135deg,#EC4899,#BE185D)', glow: 'rgba(236,72,153,0.35)' },
+  { pairs: 4,  label: 'Leicht',    sub: '4 Paare · 8 Karten',   gradient: 'linear-gradient(135deg,#16a34a,#00D4AA)', glow: 'rgba(0,212,170,0.35)'  },
+  { pairs: 6,  label: 'Mittel',    sub: '6 Paare · 12 Karten',  gradient: 'linear-gradient(135deg,#FF6B35,#F59E0B)', glow: 'rgba(255,107,53,0.35)' },
+  { pairs: 8,  label: 'Schwer',    sub: '8 Paare · 16 Karten',  gradient: 'linear-gradient(135deg,#DC2626,#EF4444)', glow: 'rgba(239,68,68,0.35)'  },
+  { pairs: 10, label: 'Experte',   sub: '10 Paare · 20 Karten', gradient: 'linear-gradient(135deg,#5C4AE4,#8B5CF6)', glow: 'rgba(92,74,228,0.35)'  },
+  { pairs: 12, label: 'Champion',  sub: '12 Paare · 24 Karten', gradient: 'linear-gradient(135deg,#EC4899,#BE185D)', glow: 'rgba(236,72,153,0.35)' },
 ]
 
 function formatTime(s: number) {
@@ -167,14 +167,14 @@ export default function MemoryPage() {
                 <path d="M15 18l-6-6 6-6"/>
               </svg>
             </Link>
-            <h1 className="text-xl font-black text-white">Memory Game</h1>
+            <h1 className="text-xl font-black text-white">Memory Spiel</h1>
           </div>
-          <p className="text-sm pl-12" style={{ color: 'rgba(196,181,253,0.7)' }}>Match the emoji to the words!</p>
+          <p className="text-sm pl-12" style={{ color: 'rgba(196,181,253,0.7)' }}>Ordne das Emoji dem Wort zu!</p>
         </div>
 
         <div className="flex flex-col gap-3 px-5 pt-6 pb-28">
           <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: 'rgba(196,181,253,0.45)' }}>
-            Choose difficulty
+            Schwierigkeit wählen
           </p>
 
           {DIFFICULTIES.map(({ pairs, label, sub, gradient, glow }) => (
@@ -195,7 +195,7 @@ export default function MemoryPage() {
           <div className="mt-1 rounded-2xl p-4 flex flex-col gap-2"
             style={{ background: '#1A1830', border: '1px solid rgba(255,255,255,0.08)' }}>
             <p className="text-xs font-bold text-center" style={{ color: 'rgba(196,181,253,0.6)' }}>
-              Word cards show all your active languages:
+              Wortkarten zeigen alle aktiven Sprachen:
             </p>
             <div className="flex justify-center gap-3">
               {langs.map(lang => (
@@ -206,7 +206,7 @@ export default function MemoryPage() {
                 </div>
               ))}
             </div>
-            <p className="text-[11px] text-center" style={{ color: 'rgba(196,181,253,0.4)' }}>Tap a word card to hear all languages!</p>
+            <p className="text-[11px] text-center" style={{ color: 'rgba(196,181,253,0.4)' }}>Tippe eine Wortkarte um alle Sprachen zu hören!</p>
           </div>
         </div>
       </div>
@@ -230,14 +230,14 @@ export default function MemoryPage() {
         </button>
         <div className="text-center">
           <div className="text-white font-black text-base">Memory</div>
-          <div className="text-xs font-medium" style={{ color: 'rgba(196,181,253,0.7)' }}>{matched}/{pairs} matched</div>
+          <div className="text-xs font-medium" style={{ color: 'rgba(196,181,253,0.7)' }}>{matched}/{pairs} gefunden</div>
         </div>
         <div className="flex flex-col items-end gap-1">
           <div className="rounded-xl px-3 py-1 text-white font-bold text-sm"
             style={{ background: 'rgba(255,255,255,0.15)' }}>
             ⏱ {formatTime(timer)}
           </div>
-          <div className="text-[10px] font-medium" style={{ color: 'rgba(196,181,253,0.6)' }}>{moves} moves</div>
+          <div className="text-[10px] font-medium" style={{ color: 'rgba(196,181,253,0.6)' }}>{moves} Züge</div>
         </div>
       </div>
 
@@ -306,12 +306,12 @@ export default function MemoryPage() {
           <div className="modal-panel w-full max-w-xs rounded-4xl p-8 text-center"
             style={{ background: '#1A1830', border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 24px 80px rgba(0,0,0,0.6)' }}>
             <div className="text-8xl mb-3 animate-bounce-in">🎉</div>
-            <div className="text-2xl font-black text-white mb-4">You did it!</div>
+            <div className="text-2xl font-black text-white mb-4">Geschafft!</div>
             <div className="flex gap-3 mb-6">
               {[
-                { val: moves,        label: 'moves', color: '#60A5FA' },
-                { val: formatTime(timer), label: 'time',  color: '#00D4AA' },
-                { val: pairs,        label: 'pairs', color: '#C4B5FD' },
+                { val: moves,             label: 'Züge',  color: '#60A5FA' },
+                { val: formatTime(timer), label: 'Zeit',  color: '#00D4AA' },
+                { val: pairs,             label: 'Paare', color: '#C4B5FD' },
               ].map(({ val, label, color }) => (
                 <div key={label} className="flex-1 rounded-2xl py-3"
                   style={{ background: `${color}12`, border: `1px solid ${color}25` }}>
@@ -324,12 +324,12 @@ export default function MemoryPage() {
               <button onClick={() => startGame(pairs)}
                 className="flex-1 rounded-2xl py-3.5 font-black text-white active:scale-95 transition-transform text-sm"
                 style={{ background: 'linear-gradient(135deg, #5C4AE4, #8B5CF6)', boxShadow: '0 4px 16px rgba(92,74,228,0.4)' }}>
-                Play Again
+                Nochmal spielen
               </button>
               <button onClick={() => setDifficulty(null)}
                 className="flex-1 rounded-2xl py-3.5 font-black active:scale-95 transition-transform text-sm"
                 style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.7)' }}>
-                Menu
+                Menü
               </button>
             </div>
           </div>

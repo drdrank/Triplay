@@ -93,8 +93,8 @@ export default function QuizPage() {
           </svg>
         </Link>
         <div className="text-center">
-          <div className="text-white font-black text-base">Find the Emoji!</div>
-          {streak >= 3 && <div className="font-bold text-xs animate-bounce-in" style={{ color: '#FEF08A' }}>🔥 {streak} in a row!</div>}
+          <div className="text-white font-black text-base">Finde das Emoji!</div>
+          {streak >= 3 && <div className="font-bold text-xs animate-bounce-in" style={{ color: '#FEF08A' }}>🔥 {streak}x!</div>}
         </div>
         <div className="flex items-center gap-1.5 rounded-2xl px-3 py-1.5 font-black text-sm text-white"
           style={{ background: 'rgba(255,255,255,0.18)' }}>
@@ -106,7 +106,7 @@ export default function QuizPage() {
       <div className="px-5 pt-6 pb-4">
         <div className="rounded-3xl p-5 glass-card">
           <p className="text-xs font-black uppercase tracking-widest mb-3 text-center" style={{ color: '#C4B5FD' }}>
-            Which emoji is this?
+            Welches Emoji ist das?
           </p>
           <div className="flex flex-col gap-2">
             {langs.map((lang) => (
@@ -158,12 +158,12 @@ export default function QuizPage() {
           <div className="modal-panel w-full max-w-xs rounded-4xl p-8 text-center"
             style={{ background: '#1A1830', border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 24px 80px rgba(0,0,0,0.6)' }}>
             <div className="text-9xl mb-4 animate-bounce-in">{newSticker.emoji}</div>
-            <div className="text-2xl font-black text-white mb-1">New Sticker!</div>
+            <div className="text-2xl font-black text-white mb-1">Neuer Sticker!</div>
             <div className="text-base font-bold mb-8" style={{ color: '#C4B5FD' }}>{newSticker.name}</div>
             <button onClick={nextRound}
               className="w-full rounded-2xl py-4 text-lg font-black text-white active:scale-95 transition-transform"
               style={{ background: 'linear-gradient(135deg, #3b0764, #8B5CF6)', boxShadow: '0 6px 24px rgba(139,92,246,0.45)' }}>
-              Keep Playing →
+              Weiter spielen →
             </button>
           </div>
         </div>

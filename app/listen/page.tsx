@@ -115,8 +115,8 @@ export default function ListenPage() {
           </svg>
         </Link>
         <div className="text-center">
-          <div className="text-white font-black text-base">Listen &amp; Find!</div>
-          {streak >= 3 && <div className="font-bold text-xs animate-bounce-in" style={{ color: '#FEF08A' }}>🔥 {streak} streak!</div>}
+          <div className="text-white font-black text-base">Hören &amp; Finden!</div>
+          {streak >= 3 && <div className="font-bold text-xs animate-bounce-in" style={{ color: '#FEF08A' }}>🔥 {streak}x!</div>}
         </div>
         <div className="flex items-center gap-1.5 rounded-2xl px-3 py-1.5 font-black text-sm text-white"
           style={{ background: 'rgba(255,255,255,0.18)' }}>
@@ -127,7 +127,7 @@ export default function ListenPage() {
       {/* Audio cue */}
       <div className="flex flex-col items-center px-6 pt-7 pb-4">
         <p className="text-sm font-semibold mb-4" style={{ color: 'rgba(196,181,253,0.65)' }}>
-          Which emoji matches the word you hear?
+          Welches Emoji passt zum gehörten Wort?
         </p>
 
         <div className="flex flex-col items-center justify-center rounded-4xl mb-4 w-44 transition-all duration-300"
@@ -165,7 +165,7 @@ export default function ListenPage() {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/>
           </svg>
-          Hear it again
+          Nochmal hören
         </button>
       </div>
 
@@ -198,12 +198,12 @@ export default function ListenPage() {
           <div className="modal-panel w-full max-w-xs rounded-4xl p-8 text-center"
             style={{ background: '#1A1830', border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 24px 80px rgba(0,0,0,0.6)' }}>
             <div className="text-9xl mb-4 animate-bounce-in">{newSticker.emoji}</div>
-            <div className="text-2xl font-black text-white mb-1">New Sticker!</div>
+            <div className="text-2xl font-black text-white mb-1">Neuer Sticker!</div>
             <div className="text-base font-bold mb-8" style={{ color: '#00D4AA' }}>{newSticker.name}</div>
             <button onClick={nextRound}
               className="w-full rounded-2xl py-4 text-lg font-black text-white active:scale-95 transition-transform"
               style={{ background: 'linear-gradient(135deg, #065f46, #0369a1)', boxShadow: '0 6px 24px rgba(3,105,161,0.4)' }}>
-              Keep Playing →
+              Weiter spielen →
             </button>
           </div>
         </div>

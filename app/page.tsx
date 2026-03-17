@@ -18,7 +18,7 @@ const MAIN_BUTTONS = [
   {
     href: '/learn',
     icon: '📖',
-    label: 'Learn',
+    label: 'Lernen',
     sub: 'Lernen · Leren · Öğrenmek',
     gradient: 'linear-gradient(135deg, #5C4AE4 0%, #4338CA 100%)',
     glow: 'rgba(92,74,228,0.40)',
@@ -26,40 +26,40 @@ const MAIN_BUTTONS = [
   {
     href: '/game',
     icon: '🎮',
-    label: 'Play',
-    sub: 'Find the right word',
+    label: 'Spielen',
+    sub: 'Finde das richtige Wort',
     gradient: 'linear-gradient(135deg, #FF6B35 0%, #DC2626 100%)',
     glow: 'rgba(255,107,53,0.40)',
   },
   {
     href: '/listen',
     icon: '🎧',
-    label: 'Listen & Find',
-    sub: 'Hear it · tap the emoji',
+    label: 'Hören & Finden',
+    sub: 'Hör es · tippe das Emoji',
     gradient: 'linear-gradient(135deg, #00BFA5 0%, #0EA5E9 100%)',
     glow: 'rgba(0,191,165,0.40)',
   },
   {
     href: '/truefalse',
     icon: '✅',
-    label: 'True or False',
-    sub: 'Is this the right word?',
+    label: 'Wahr oder Falsch',
+    sub: 'Ist das das richtige Wort?',
     gradient: 'linear-gradient(135deg, #00D4AA 0%, #059669 100%)',
     glow: 'rgba(0,212,170,0.40)',
   },
   {
     href: '/quiz',
     icon: '🔍',
-    label: 'Find the Emoji',
-    sub: 'Read the word · tap the emoji',
+    label: 'Finde das Emoji',
+    sub: 'Lies das Wort · tippe das Emoji',
     gradient: 'linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%)',
     glow: 'rgba(139,92,246,0.40)',
   },
   {
     href: '/oddoneout',
     icon: '🔎',
-    label: 'Odd One Out',
-    sub: 'Find what doesn\'t belong',
+    label: 'Was passt nicht?',
+    sub: 'Finde das Fremde',
     gradient: 'linear-gradient(135deg, #0c4a6e 0%, #7C3AED 100%)',
     glow: 'rgba(124,58,237,0.40)',
   },
@@ -67,15 +67,15 @@ const MAIN_BUTTONS = [
     href: '/memory',
     icon: '🃏',
     label: 'Memory',
-    sub: 'Match emoji to word',
+    sub: 'Emoji dem Wort zuordnen',
     gradient: 'linear-gradient(135deg, #EC4899 0%, #BE185D 100%)',
     glow: 'rgba(236,72,153,0.40)',
   },
   {
     href: '/stickers',
     icon: '⭐',
-    label: 'Stickers',
-    sub: 'Collect your rewards',
+    label: 'Sticker',
+    sub: 'Sammle deine Belohnungen',
     gradient: 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)',
     glow: 'rgba(245,158,11,0.40)',
   },
@@ -84,7 +84,7 @@ const MAIN_BUTTONS = [
 const QUICK_LINKS = [
   { href: '/abc',     icon: '🔤', label: 'ABC',    gradient: 'linear-gradient(135deg, #5C4AE4, #7C3AED)' },
   { href: '/numbers', icon: '🔢', label: '1 2 3',  gradient: 'linear-gradient(135deg, #FF6B35, #F59E0B)' },
-  { href: '/colors',  icon: '🎨', label: 'Colors', gradient: 'linear-gradient(135deg, #EC4899, #8B5CF6)' },
+  { href: '/colors',  icon: '🎨', label: 'Farben', gradient: 'linear-gradient(135deg, #EC4899, #8B5CF6)' },
 ]
 
 export default function Home() {
@@ -127,7 +127,7 @@ export default function Home() {
             TriPlay
           </h1>
           <p className="font-semibold text-sm mb-6" style={{ color: '#C4B5FD' }}>
-            Learn 3 languages through play
+            Lerne 3 Sprachen durch Spielen
           </p>
           <div className="flex gap-4 mb-2">
             {(['🇩🇪', '🇳🇱', '🇹🇷'] as const).map((flag, i) => (
@@ -179,7 +179,7 @@ export default function Home() {
             style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}
           >
             <span className="text-xs font-black uppercase tracking-widest" style={{ color: '#00D4AA' }}>
-              ✦ Word of the Day
+              ✦ Wort des Tages
             </span>
           </div>
           <div className="flex items-center gap-4 p-4">
@@ -223,10 +223,10 @@ export default function Home() {
             <span className="text-2xl animate-flame">🔥</span>
             <div className="flex-1">
               <div className="text-white font-black text-sm">
-                {streak} day streak! {streak >= 7 && "You're on fire!"}
+                {streak} Tage am Stück! {streak >= 7 && 'Du brennst!'}
               </div>
               <div className="text-xs font-semibold" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                Come back tomorrow to keep it going
+                Komm morgen wieder!
               </div>
             </div>
             <div className="font-black text-xl" style={{ color: 'rgba(255,255,255,0.3)' }}>{streak}🔥</div>
@@ -273,7 +273,7 @@ export default function Home() {
       {/* ── Quick learn row ──────────────────────────────────────── */}
       <div className="px-4 pt-2 pb-4">
         <p className="text-xs font-bold uppercase tracking-wider mb-2.5 px-1" style={{ color: 'rgba(196,181,253,0.45)' }}>
-          Quick Learn
+          Schnell lernen
         </p>
         <div className="flex gap-2.5">
           {QUICK_LINKS.map(({ href, icon, label, gradient }) => (
@@ -304,7 +304,7 @@ export default function Home() {
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
           </svg>
-          Parent Mode
+          Elternbereich
         </Link>
       </div>
 

@@ -60,12 +60,12 @@ type RoundState = 'playing' | 'correct' | 'wrong' | 'sticker'
 
 // Friendly category display names
 const CAT_LABELS: Record<string, string> = {
-  animals: 'Animals 🐾', food: 'Food 🍽️', clothes: 'Clothes 👕', family: 'Family 👨‍👩‍👧',
-  feelings: 'Feelings 😊', transport: 'Transport 🚗', places: 'Places 🏠', school: 'School 🎒',
-  sports: 'Sports ⚽', music: 'Music 🎵', weather: 'Weather ⛅', toys: 'Toys 🪁',
-  space: 'Space 🚀', ocean: 'Ocean 🌊', garden: 'Garden 🌱', jobs: 'Jobs 👷',
-  farm: 'Farm 🌾', house: 'House 🏠', insects: 'Bugs 🐛', nature: 'Nature 🌿',
-  objects: 'Objects 📦', fantasy: 'Fantasy 🦄', party: 'Party 🎉', beach: 'Beach 🏖️',
+  animals: 'Tiere 🐾', food: 'Essen 🍽️', clothes: 'Kleidung 👕', family: 'Familie 👨‍👩‍👧',
+  feelings: 'Gefühle 😊', transport: 'Fahrzeuge 🚗', places: 'Orte 🏠', school: 'Schule 🎒',
+  sports: 'Sport ⚽', music: 'Musik 🎵', weather: 'Wetter ⛅', toys: 'Spielzeug 🪁',
+  space: 'Weltall 🚀', ocean: 'Ozean 🌊', garden: 'Garten 🌱', jobs: 'Berufe 👷',
+  farm: 'Bauernhof 🌾', house: 'Zuhause 🏠', insects: 'Insekten 🐛', nature: 'Natur 🌿',
+  objects: 'Dinge 📦', fantasy: 'Fantasie 🦄', party: 'Party 🎉', beach: 'Strand 🏖️',
 }
 
 export default function OddOneOutPage() {
@@ -134,8 +134,8 @@ export default function OddOneOutPage() {
           </svg>
         </Link>
         <div className="text-center">
-          <div className="text-white font-black text-base">Odd One Out!</div>
-          {streak >= 3 && <div className="font-bold text-xs animate-bounce-in" style={{ color: '#FEF08A' }}>🔥 {streak} in a row!</div>}
+          <div className="text-white font-black text-base">Was passt nicht?</div>
+          {streak >= 3 && <div className="font-bold text-xs animate-bounce-in" style={{ color: '#FEF08A' }}>🔥 {streak}x!</div>}
         </div>
         <div className="flex items-center gap-1.5 rounded-2xl px-3 py-1.5 font-black text-sm text-white"
           style={{ background: 'rgba(255,255,255,0.18)' }}>
@@ -146,12 +146,12 @@ export default function OddOneOutPage() {
       {/* Category hint */}
       <div className="flex flex-col items-center px-6 pt-7 pb-4">
         <p className="text-xs font-black uppercase tracking-widest mb-2" style={{ color: 'rgba(196,181,253,0.6)' }}>
-          Which one doesn&apos;t belong?
+          Was gehört nicht dazu?
         </p>
         <div className="rounded-2xl px-5 py-2.5 mb-1"
           style={{ background: 'rgba(124,58,237,0.15)', border: '1.5px solid rgba(124,58,237,0.35)' }}>
           <span className="font-black text-base" style={{ color: '#A78BFA' }}>
-            {CAT_LABELS[mainCat] ?? mainCat} — find the odd one!
+            {CAT_LABELS[mainCat] ?? mainCat} — finde das Fremde!
           </span>
         </div>
       </div>
@@ -201,7 +201,7 @@ export default function OddOneOutPage() {
           <div className="rounded-2xl px-5 py-3 text-center animate-bounce-in"
             style={{ background: 'rgba(220,38,38,0.15)', border: '1px solid rgba(220,38,38,0.35)' }}>
             <p className="text-sm font-black" style={{ color: '#F87171' }}>
-              ❌ Nope! The odd one was {oddItem.emoji} — {oddItem[langs[0]]}
+              ❌ Falsch! Das Fremde war {oddItem.emoji} — {oddItem[langs[0]]}
             </p>
           </div>
         </div>
@@ -214,12 +214,12 @@ export default function OddOneOutPage() {
           <div className="modal-panel w-full max-w-xs rounded-4xl p-8 text-center"
             style={{ background: '#1A1830', border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 24px 80px rgba(0,0,0,0.6)' }}>
             <div className="text-9xl mb-4 animate-bounce-in">{newSticker.emoji}</div>
-            <div className="text-2xl font-black text-white mb-1">New Sticker!</div>
+            <div className="text-2xl font-black text-white mb-1">Neuer Sticker!</div>
             <div className="text-base font-bold mb-8" style={{ color: '#A78BFA' }}>{newSticker.name}</div>
             <button onClick={nextRound}
               className="w-full rounded-2xl py-4 text-lg font-black text-white active:scale-95 transition-transform"
               style={{ background: 'linear-gradient(135deg, #0c4a6e, #7C3AED)', boxShadow: '0 6px 24px rgba(124,58,237,0.45)' }}>
-              Keep Playing →
+              Weiter spielen →
             </button>
           </div>
         </div>
