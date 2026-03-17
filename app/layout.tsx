@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
-    statusBarStyle: 'default',
+    statusBarStyle: 'black-translucent',
     title: 'TriPlay',
   },
 }
@@ -18,7 +18,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
-  themeColor: '#6366f1',
+  themeColor: '#5C4AE4',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

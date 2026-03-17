@@ -66,35 +66,25 @@ export default function TrueFalsePage() {
   const { target, lang, shownWord } = round
 
   return (
-    <div className="flex flex-col min-h-dvh bg-white">
+    <div className="flex flex-col min-h-dvh" style={{ background: '#0F0E1A' }}>
 
       {/* Header */}
-      <div
-        className="flex items-center justify-between px-5 pt-12 pb-4"
-        style={{ background: 'linear-gradient(145deg, #7c3aed 0%, #6d28d9 50%, #8b5cf6 100%)' }}
-      >
-        <Link
-          href="/"
-          className="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center text-white active:opacity-60 transition-opacity"
-        >
+      <div className="flex items-center justify-between px-5 pt-12 pb-4"
+        style={{ background: 'linear-gradient(135deg, #064e3b 0%, #00D4AA 100%)' }}>
+        <Link href="/"
+          className="w-9 h-9 rounded-xl flex items-center justify-center text-white active:opacity-60 transition-opacity"
+          style={{ background: 'rgba(255,255,255,0.15)' }}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M15 18l-6-6 6-6"/>
           </svg>
         </Link>
-
         <div className="text-center">
           <div className="text-white font-black text-base">True or False?</div>
-          {streak >= 3 && (
-            <div className="text-amber-300 font-bold text-xs animate-bounce-in">🔥 {streak} in a row!</div>
-          )}
+          {streak >= 3 && <div className="font-bold text-xs animate-bounce-in" style={{ color: '#FEF08A' }}>🔥 {streak} in a row!</div>}
         </div>
-
-        <div
-          className="flex items-center gap-1.5 rounded-2xl px-3 py-1.5 text-white font-black text-sm"
-          style={{ background: 'rgba(255,255,255,0.15)' }}
-        >
-          <span className="text-amber-300">⭐</span>
-          {score}
+        <div className="flex items-center gap-1.5 rounded-2xl px-3 py-1.5 font-black text-sm text-white"
+          style={{ background: 'rgba(255,255,255,0.18)' }}>
+          <span style={{ color: '#FEF08A' }}>⭐</span>{score}
         </div>
       </div>
 
@@ -102,81 +92,76 @@ export default function TrueFalsePage() {
       <div className="flex flex-col items-center px-6 pt-8 pb-28 gap-6">
 
         {/* Emoji */}
-        <div
-          className="flex items-center justify-center rounded-4xl"
+        <div className="flex items-center justify-center rounded-4xl"
           style={{
-            width: 180,
-            height: 180,
-            background: `${target.color}14`,
+            width: 180, height: 180,
+            background: `${target.color}18`,
             border: `2px solid ${target.color}30`,
-            boxShadow: `0 8px 32px ${target.color}25`,
-          }}
-        >
+            boxShadow: `0 8px 40px ${target.color}25`,
+          }}>
           <span style={{ fontSize: 108 }}>{target.emoji}</span>
         </div>
 
-        {/* Question label */}
-        <div className="text-sm font-bold text-center" style={{ color: '#71717a' }}>
+        {/* Question */}
+        <div className="text-sm font-bold text-center" style={{ color: 'rgba(196,181,253,0.65)' }}>
           {LANG_FLAGS[lang]} Is this the correct word?
         </div>
 
-        {/* Shown word */}
-        <div
-          className="w-full rounded-3xl px-6 py-5 text-center text-4xl font-black transition-all duration-200"
+        {/* Word display */}
+        <div className="w-full rounded-3xl px-6 py-5 text-center text-4xl font-black transition-all duration-200"
           style={{
             background:
-              state === 'correct' ? '#f0fdf4' :
-              state === 'wrong'   ? '#fef2f2' : '#f4f4f5',
+              state === 'correct' ? 'rgba(0,212,170,0.12)' :
+              state === 'wrong'   ? 'rgba(239,68,68,0.12)' :
+              '#1A1830',
             color:
-              state === 'correct' ? '#15803d' :
-              state === 'wrong'   ? '#b91c1c' : '#18181b',
-          }}
-        >
+              state === 'correct' ? '#00D4AA' :
+              state === 'wrong'   ? '#F87171' :
+              '#ffffff',
+            border:
+              state === 'correct' ? '1px solid rgba(0,212,170,0.3)' :
+              state === 'wrong'   ? '1px solid rgba(239,68,68,0.3)' :
+              '1px solid rgba(255,255,255,0.08)',
+          }}>
           {shownWord}
         </div>
 
-        {/* Correct answer hint when wrong */}
+        {/* Correct answer hint on wrong */}
         {state === 'wrong' && (
-          <div className="text-base font-bold animate-fade-up" style={{ color: '#15803d' }}>
+          <div className="text-base font-bold animate-fade-up" style={{ color: '#00D4AA' }}>
             ✓ Correct: {target[lang]}
           </div>
         )}
 
         {/* Result */}
         {state !== 'playing' && (
-          <div
-            className="text-2xl font-black animate-bounce-in"
-            style={{ color: state === 'correct' ? '#16a34a' : '#dc2626' }}
-          >
+          <div className="text-2xl font-black animate-bounce-in"
+            style={{ color: state === 'correct' ? '#00D4AA' : '#F87171' }}>
             {state === 'correct' ? '🎉 Correct!' : '❌ Nope!'}
           </div>
         )}
 
         {/* YES / NO buttons */}
-        <div className="flex gap-4 w-full mt-auto pt-4">
-          <button
-            onClick={() => handleAnswer(false)}
-            disabled={state !== 'playing'}
+        <div className="flex gap-4 w-full mt-auto pt-2">
+          <button onClick={() => handleAnswer(false)} disabled={state !== 'playing'}
             className="flex-1 flex flex-col items-center gap-2 rounded-3xl py-7 font-black text-xl transition-all active:scale-95 disabled:opacity-40"
             style={{
-              background: 'linear-gradient(135deg, #fee2e2, #fecaca)',
-              color: '#dc2626',
-              boxShadow: '0 4px 20px rgba(239,68,68,0.2)',
-            }}
-          >
+              background: 'rgba(239,68,68,0.12)',
+              color: '#F87171',
+              border: '1.5px solid rgba(239,68,68,0.25)',
+              boxShadow: '0 4px 20px rgba(239,68,68,0.12)',
+            }}>
             <span className="text-5xl">❌</span>
             No
           </button>
-          <button
-            onClick={() => handleAnswer(true)}
-            disabled={state !== 'playing'}
+          <button onClick={() => handleAnswer(true)} disabled={state !== 'playing'}
             className="flex-1 flex flex-col items-center gap-2 rounded-3xl py-7 font-black text-xl transition-all active:scale-95 disabled:opacity-40"
             style={{
-              background: 'linear-gradient(135deg, #dcfce7, #bbf7d0)',
-              color: '#16a34a',
-              boxShadow: '0 4px 20px rgba(34,197,94,0.2)',
-            }}
-          >
+              background: 'rgba(0,212,170,0.12)',
+              color: '#00D4AA',
+              border: '1.5px solid rgba(0,212,170,0.25)',
+              boxShadow: '0 4px 20px rgba(0,212,170,0.12)',
+            }}>
             <span className="text-5xl">✅</span>
             Yes
           </button>

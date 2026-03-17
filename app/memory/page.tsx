@@ -19,9 +19,9 @@ interface Card {
 }
 
 const LANG_FG: Record<Language, string> = {
-  de: '#15803d',
-  nl: '#1d4ed8',
-  tr: '#b91c1c',
+  de: '#4ADE80',
+  nl: '#60A5FA',
+  tr: '#F87171',
 }
 
 function shuffle<T>(arr: T[]): T[] {
@@ -43,11 +43,11 @@ function buildDeck(items: VocabItem[]): Card[] {
 }
 
 const DIFFICULTIES = [
-  { pairs: 4,  label: 'Easy',      sub: '4 pairs · 8 cards',   gradient: 'linear-gradient(135deg,#16a34a,#22c55e)', glow: 'rgba(34,197,94,0.3)'   },
-  { pairs: 6,  label: 'Medium',    sub: '6 pairs · 12 cards',  gradient: 'linear-gradient(135deg,#d97706,#f59e0b)', glow: 'rgba(245,158,11,0.3)'  },
-  { pairs: 8,  label: 'Hard',      sub: '8 pairs · 16 cards',  gradient: 'linear-gradient(135deg,#dc2626,#ef4444)', glow: 'rgba(239,68,68,0.3)'   },
-  { pairs: 10, label: 'Expert',    sub: '10 pairs · 20 cards', gradient: 'linear-gradient(135deg,#7c3aed,#a855f7)', glow: 'rgba(168,85,247,0.3)'  },
-  { pairs: 12, label: 'Champion',  sub: '12 pairs · 24 cards', gradient: 'linear-gradient(135deg,#0369a1,#0ea5e9)', glow: 'rgba(14,165,233,0.3)'  },
+  { pairs: 4,  label: 'Easy',     sub: '4 pairs · 8 cards',   gradient: 'linear-gradient(135deg,#16a34a,#00D4AA)', glow: 'rgba(0,212,170,0.35)'  },
+  { pairs: 6,  label: 'Medium',   sub: '6 pairs · 12 cards',  gradient: 'linear-gradient(135deg,#FF6B35,#F59E0B)', glow: 'rgba(255,107,53,0.35)' },
+  { pairs: 8,  label: 'Hard',     sub: '8 pairs · 16 cards',  gradient: 'linear-gradient(135deg,#DC2626,#EF4444)', glow: 'rgba(239,68,68,0.35)'  },
+  { pairs: 10, label: 'Expert',   sub: '10 pairs · 20 cards', gradient: 'linear-gradient(135deg,#5C4AE4,#8B5CF6)', glow: 'rgba(92,74,228,0.35)'  },
+  { pairs: 12, label: 'Champion', sub: '12 pairs · 24 cards', gradient: 'linear-gradient(135deg,#EC4899,#BE185D)', glow: 'rgba(236,72,153,0.35)' },
 ]
 
 function formatTime(s: number) {
@@ -111,7 +111,6 @@ export default function MemoryPage() {
     const newDeck = deck.map(c => c.uid === uid ? { ...c, flipped: true } : c)
     setDeck(newDeck)
 
-    // Speak all languages when a word card is flipped
     if (card.type === 'word') speakAllLangs(card.item)
 
     const newSelected = [...selected, uid]
@@ -152,44 +151,39 @@ export default function MemoryPage() {
 
   const pairs   = difficulty ?? 4
   const matched = deck.filter(c => c.matched).length / 2
-  // More pairs → more columns
   const cols    = pairs <= 6 ? 3 : 4
 
   // ── Difficulty picker ───────────────────────────────────────────
   if (difficulty === null) {
     return (
-      <div className="flex flex-col min-h-dvh bg-white">
-        <div
-          className="px-5 pt-12 pb-6"
-          style={{ background: 'linear-gradient(145deg, #0c4a6e 0%, #0369a1 50%, #0ea5e9 100%)' }}
-        >
+      <div className="flex flex-col min-h-dvh" style={{ background: '#0F0E1A' }}>
+        <div className="px-5 pt-12 pb-6"
+          style={{ background: 'linear-gradient(135deg, #1e0a3c 0%, #5C4AE4 100%)' }}>
           <div className="flex items-center gap-3 mb-1">
-            <Link
-              href="/"
-              className="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center text-white active:opacity-60 transition-opacity"
-            >
+            <Link href="/"
+              className="w-9 h-9 rounded-xl flex items-center justify-center text-white active:opacity-60 transition-opacity"
+              style={{ background: 'rgba(255,255,255,0.15)' }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M15 18l-6-6 6-6"/>
               </svg>
             </Link>
             <h1 className="text-xl font-black text-white">Memory Game</h1>
           </div>
-          <p className="text-sky-100/70 text-sm pl-12">Match the emoji to all 3 words!</p>
+          <p className="text-sm pl-12" style={{ color: 'rgba(196,181,253,0.7)' }}>Match the emoji to the words!</p>
         </div>
 
         <div className="flex flex-col gap-3 px-5 pt-6 pb-28">
-          <p className="text-xs font-bold text-surface-400 uppercase tracking-wider mb-1">Choose difficulty</p>
+          <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: 'rgba(196,181,253,0.45)' }}>
+            Choose difficulty
+          </p>
 
           {DIFFICULTIES.map(({ pairs, label, sub, gradient, glow }) => (
-            <button
-              key={pairs}
-              onClick={() => startGame(pairs)}
+            <button key={pairs} onClick={() => startGame(pairs)}
               className="rounded-3xl py-4 px-5 text-white active:scale-[0.97] transition-transform flex items-center justify-between"
-              style={{ background: gradient, boxShadow: `0 6px 20px ${glow}` }}
-            >
+              style={{ background: gradient, boxShadow: `0 6px 24px ${glow}` }}>
               <div className="text-left">
                 <div className="font-black text-lg">{label}</div>
-                <div className="text-white/65 text-sm font-medium">{sub}</div>
+                <div className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.65)' }}>{sub}</div>
               </div>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M9 18l6-6-6-6"/>
@@ -197,19 +191,22 @@ export default function MemoryPage() {
             </button>
           ))}
 
-          {/* Languages being used */}
-          <div className="mt-1 rounded-2xl p-4 flex flex-col gap-2" style={{ background: '#f4f4f5' }}>
-            <p className="text-xs font-bold text-surface-500 text-center">Word cards show all your active languages:</p>
+          {/* Languages preview */}
+          <div className="mt-1 rounded-2xl p-4 flex flex-col gap-2"
+            style={{ background: '#1A1830', border: '1px solid rgba(255,255,255,0.08)' }}>
+            <p className="text-xs font-bold text-center" style={{ color: 'rgba(196,181,253,0.6)' }}>
+              Word cards show all your active languages:
+            </p>
             <div className="flex justify-center gap-3">
               {langs.map(lang => (
                 <div key={lang} className="flex items-center gap-1.5 rounded-xl px-3 py-1.5"
-                  style={{ background: 'white', border: `1.5px solid ${LANG_FG[lang]}30` }}>
+                  style={{ background: `${LANG_FG[lang]}12`, border: `1.5px solid ${LANG_FG[lang]}30` }}>
                   <span className="text-base">{LANG_FLAGS[lang]}</span>
                   <span className="text-xs font-bold" style={{ color: LANG_FG[lang] }}>{LANG_LABELS[lang]}</span>
                 </div>
               ))}
             </div>
-            <p className="text-[11px] text-surface-400 text-center">Tap a word card to hear all languages!</p>
+            <p className="text-[11px] text-center" style={{ color: 'rgba(196,181,253,0.4)' }}>Tap a word card to hear all languages!</p>
           </div>
         </div>
       </div>
@@ -218,110 +215,83 @@ export default function MemoryPage() {
 
   // ── Game board ──────────────────────────────────────────────────
   return (
-    <div className="flex flex-col min-h-dvh bg-white">
+    <div className="flex flex-col min-h-dvh" style={{ background: '#0F0E1A' }}>
       <Confetti active={showConfetti} count={80} />
 
       {/* Header */}
-      <div
-        className="flex items-center justify-between px-5 pt-12 pb-4"
-        style={{ background: 'linear-gradient(145deg, #0c4a6e 0%, #0369a1 50%, #0ea5e9 100%)' }}
-      >
-        <button
-          onClick={() => { setRunning(false); setDifficulty(null) }}
-          className="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center text-white active:opacity-60 transition-opacity"
-        >
+      <div className="flex items-center justify-between px-5 pt-12 pb-4"
+        style={{ background: 'linear-gradient(135deg, #1e0a3c 0%, #5C4AE4 100%)' }}>
+        <button onClick={() => { setRunning(false); setDifficulty(null) }}
+          className="w-9 h-9 rounded-xl flex items-center justify-center text-white active:opacity-60 transition-opacity"
+          style={{ background: 'rgba(255,255,255,0.15)' }}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M15 18l-6-6 6-6"/>
           </svg>
         </button>
-
         <div className="text-center">
           <div className="text-white font-black text-base">Memory</div>
-          <div className="text-sky-200 text-xs font-medium">{matched}/{pairs} matched</div>
+          <div className="text-xs font-medium" style={{ color: 'rgba(196,181,253,0.7)' }}>{matched}/{pairs} matched</div>
         </div>
-
         <div className="flex flex-col items-end gap-1">
-          <div className="rounded-xl px-3 py-1 text-white font-bold text-sm" style={{ background: 'rgba(255,255,255,0.15)' }}>
+          <div className="rounded-xl px-3 py-1 text-white font-bold text-sm"
+            style={{ background: 'rgba(255,255,255,0.15)' }}>
             ⏱ {formatTime(timer)}
           </div>
-          <div className="text-sky-200 text-[10px] font-medium">{moves} moves</div>
+          <div className="text-[10px] font-medium" style={{ color: 'rgba(196,181,253,0.6)' }}>{moves} moves</div>
         </div>
       </div>
 
       {/* Progress bar */}
-      <div className="h-1.5" style={{ background: '#e4e4e7' }}>
-        <div
-          className="h-full transition-all duration-500"
-          style={{
-            width: `${(matched / pairs) * 100}%`,
-            background: 'linear-gradient(to right, #0ea5e9, #0369a1)',
-          }}
-        />
+      <div className="h-1" style={{ background: 'rgba(255,255,255,0.06)' }}>
+        <div className="h-full transition-all duration-500"
+          style={{ width: `${(matched / pairs) * 100}%`, background: 'linear-gradient(to right, #5C4AE4, #00D4AA)' }} />
       </div>
 
       {/* Card grid */}
-      <div
-        className="grid gap-2 p-3 flex-1"
-        style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}
-      >
+      <div className="grid gap-2 p-3 flex-1"
+        style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}>
         {deck.map((card) => {
           const isFlipped = card.flipped || card.matched
           const isMatched = card.matched
-
           return (
-            <button
-              key={card.uid}
-              onClick={() => handleFlip(card.uid)}
+            <button key={card.uid} onClick={() => handleFlip(card.uid)}
               className="rounded-2xl transition-all active:scale-90 overflow-hidden"
               style={{
                 aspectRatio: card.type === 'word' ? '3/4' : '1/1',
                 background: isMatched
-                  ? '#f0fdf4'
+                  ? 'rgba(0,212,170,0.12)'
                   : isFlipped
-                  ? 'white'
-                  : 'linear-gradient(135deg, #0369a1, #0ea5e9)',
+                  ? '#1A1830'
+                  : 'linear-gradient(135deg, #2D1B69, #5C4AE4)',
                 boxShadow: isMatched
-                  ? '0 2px 8px rgba(34,197,94,0.2), 0 0 0 1.5px #86efac'
+                  ? '0 2px 12px rgba(0,212,170,0.2), 0 0 0 1.5px rgba(0,212,170,0.4)'
                   : isFlipped
-                  ? '0 2px 8px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.05)'
-                  : '0 2px 8px rgba(3,105,161,0.25)',
-              }}
-            >
+                  ? '0 2px 8px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.08)'
+                  : '0 2px 12px rgba(92,74,228,0.3)',
+              }}>
               {isFlipped ? (
                 card.type === 'image' ? (
-                  /* Image card */
                   <div className="flex flex-col items-center justify-center h-full gap-1 p-1">
                     <span style={{ fontSize: pairs <= 6 ? 40 : 30 }}>{card.item.emoji}</span>
-                    {isMatched && (
-                      <span className="text-xs font-black" style={{ color: '#16a34a' }}>✓</span>
-                    )}
+                    {isMatched && <span className="text-xs font-black" style={{ color: '#00D4AA' }}>✓</span>}
                   </div>
                 ) : (
-                  /* Word card — shows ALL languages */
                   <div className="flex flex-col items-center justify-center h-full gap-1 p-2">
                     {langs.map((lang) => (
                       <div key={lang} className="flex items-center gap-1 w-full justify-center">
                         <span style={{ fontSize: pairs <= 6 ? 13 : 11 }}>{LANG_FLAGS[lang]}</span>
-                        <span
-                          className="font-black text-center leading-tight"
-                          style={{
-                            fontSize: pairs <= 6 ? 12 : 10,
-                            color: isMatched ? LANG_FG[lang] : LANG_FG[lang],
-                          }}
-                        >
+                        <span className="font-black text-center leading-tight"
+                          style={{ fontSize: pairs <= 6 ? 12 : 10, color: LANG_FG[lang] }}>
                           {card.item[lang]}
                         </span>
                       </div>
                     ))}
-                    {isMatched && (
-                      <span className="text-[10px] font-black mt-0.5" style={{ color: '#16a34a' }}>✓</span>
-                    )}
+                    {isMatched && <span className="text-[10px] font-black mt-0.5" style={{ color: '#00D4AA' }}>✓</span>}
                   </div>
                 )
               ) : (
-                /* Card back */
                 <div className="flex items-center justify-center h-full">
-                  <span className="text-white/40 font-black" style={{ fontSize: pairs <= 6 ? 22 : 18 }}>?</span>
+                  <span className="font-black" style={{ fontSize: pairs <= 6 ? 22 : 18, color: 'rgba(255,255,255,0.25)' }}>?</span>
                 </div>
               )}
             </button>
@@ -331,46 +301,34 @@ export default function MemoryPage() {
 
       {/* Won overlay */}
       {won && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-6"
-          style={{ background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(8px)' }}
-        >
-          <div
-            className="modal-panel w-full max-w-xs rounded-4xl bg-white p-8 text-center"
-            style={{ boxShadow: '0 24px 60px rgba(0,0,0,0.25)' }}
-          >
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-6"
+          style={{ background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(12px)' }}>
+          <div className="modal-panel w-full max-w-xs rounded-4xl p-8 text-center"
+            style={{ background: '#1A1830', border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 24px 80px rgba(0,0,0,0.6)' }}>
             <div className="text-8xl mb-3 animate-bounce-in">🎉</div>
-            <div className="text-2xl font-black text-surface-800 mb-4">You did it!</div>
-
-            {/* Stats */}
+            <div className="text-2xl font-black text-white mb-4">You did it!</div>
             <div className="flex gap-3 mb-6">
-              <div className="flex-1 rounded-2xl py-3" style={{ background: '#eff6ff' }}>
-                <div className="text-xl font-black" style={{ color: '#2563eb' }}>{moves}</div>
-                <div className="text-[11px] font-bold text-surface-400 mt-0.5">moves</div>
-              </div>
-              <div className="flex-1 rounded-2xl py-3" style={{ background: '#f0fdf4' }}>
-                <div className="text-xl font-black" style={{ color: '#16a34a' }}>{formatTime(timer)}</div>
-                <div className="text-[11px] font-bold text-surface-400 mt-0.5">time</div>
-              </div>
-              <div className="flex-1 rounded-2xl py-3" style={{ background: '#fdf4ff' }}>
-                <div className="text-xl font-black" style={{ color: '#9333ea' }}>{pairs}</div>
-                <div className="text-[11px] font-bold text-surface-400 mt-0.5">pairs</div>
-              </div>
+              {[
+                { val: moves,        label: 'moves', color: '#60A5FA' },
+                { val: formatTime(timer), label: 'time',  color: '#00D4AA' },
+                { val: pairs,        label: 'pairs', color: '#C4B5FD' },
+              ].map(({ val, label, color }) => (
+                <div key={label} className="flex-1 rounded-2xl py-3"
+                  style={{ background: `${color}12`, border: `1px solid ${color}25` }}>
+                  <div className="text-xl font-black" style={{ color }}>{val}</div>
+                  <div className="text-[11px] font-bold mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>{label}</div>
+                </div>
+              ))}
             </div>
-
             <div className="flex gap-2.5">
-              <button
-                onClick={() => startGame(pairs)}
+              <button onClick={() => startGame(pairs)}
                 className="flex-1 rounded-2xl py-3.5 font-black text-white active:scale-95 transition-transform text-sm"
-                style={{ background: 'linear-gradient(135deg, #0369a1, #0ea5e9)' }}
-              >
+                style={{ background: 'linear-gradient(135deg, #5C4AE4, #8B5CF6)', boxShadow: '0 4px 16px rgba(92,74,228,0.4)' }}>
                 Play Again
               </button>
-              <button
-                onClick={() => setDifficulty(null)}
+              <button onClick={() => setDifficulty(null)}
                 className="flex-1 rounded-2xl py-3.5 font-black active:scale-95 transition-transform text-sm"
-                style={{ background: '#f4f4f5', color: '#52525b' }}
-              >
+                style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.7)' }}>
                 Menu
               </button>
             </div>
